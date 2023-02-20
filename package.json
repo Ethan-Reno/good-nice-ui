@@ -1,0 +1,48 @@
+{
+  "name": "lift-companion-ui-test",
+  "private": false,
+  "version": "0.1.6",
+  "type": "module",
+  "main": "dist/lift-companion-ui.umd.js",
+  "module": "dist/lift-companion-ui.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+        "import": "./dist/my-lib.es.js",
+        "require": "./dist/my-lib.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && npm run build:styles",
+    "build:styles": "postcss src/tailwind.css -o dist/index.css",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "rollup": "^3.17.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "tailwindcss": "^3.2.7",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.0-beta.1",
+    "vite-tsconfig-paths": "^4.0.5"
+  }
+}
