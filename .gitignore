@@ -1,6 +1,5 @@
 # General
 node_modules/
-.bundle-analysis.html
 
 # Build outputs
 dist
