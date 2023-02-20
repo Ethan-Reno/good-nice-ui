@@ -23,5 +23,7 @@ export const getFiles = (entry, extensions = [], excludeExtensions = []) => {
     }
   });
 
+  console.log(fileNames);
+
   return fileNames;
 };

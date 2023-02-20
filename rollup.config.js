@@ -1,7 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
-import peerDeps from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import visualizer from 'rollup-plugin-visualizer';
 import { terser } from 'rollup-plugin-terser';
@@ -22,9 +22,7 @@ const excludeExtensions = [
 export default {
   input: [
     './src/index.ts',
-    ...getFiles('./src/common', extensions, excludeExtensions),
     ...getFiles('./src/components', extensions, excludeExtensions),
-    ...getFiles('./src/hooks', extensions, excludeExtensions),
   ],
   output: {
     dir: 'dist',
@@ -34,7 +32,7 @@ export default {
     sourcemap: true,
   },
   plugins: [
-    peerDeps(),
+    peerDepsExternal(),
     resolve(),
     commonjs(),
     typescript({
