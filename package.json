@@ -1,6 +1,6 @@
 {
   "name": "lift-companion-ui",
-  "version": "0.1.20",
+  "version": "0.1.28",
   "description": "UI test",
   "author": "Ethan Reno",
   "license": "MIT",
@@ -10,7 +10,9 @@
     "dist",
     "README.md"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "manager.ts"
+  ],
   "outputDir": "./dist",
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -31,9 +33,11 @@
     "@storybook/addon-interactions": "^7.0.0-beta.53",
     "@storybook/addon-links": "^7.0.0-beta.53",
     "@storybook/blocks": "^7.0.0-alpha.8",
+    "@storybook/manager-api": "^7.0.0-beta.53",
     "@storybook/react": "^7.0.0-beta.53",
     "@storybook/react-vite": "^7.0.0-beta.53",
     "@storybook/testing-library": "^0.0.14-next.1",
+    "@storybook/theming": "^7.0.0-beta.53",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
@@ -57,13 +61,8 @@
     "vite-tsconfig-paths": "^4.0.5"
   },
   "peerDependencies": {
-    "autoprefixer": ">=10.4.13",
     "class-variance-authority": ">=0.4.0",
-    "clsx": ">=1.2.1",
-    "postcss": "^>=.4.21",
     "react": ">=18.2.0",
-    "react-dom": ">=18.2.0",
-    "tailwind-merge": ">=1.10.0",
-    "tailwindcss": ">=3.2.7"
+    "react-dom": ">=18.2.0"
   }
 }
