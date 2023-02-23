@@ -1,11 +1,13 @@
 # General
 node_modules/
+.env
 
 # Build outputs
 dist
 storybook-static
 *.tgz
 *bundle-analysis.html
+*build-storybook.log
 
 # Dev files
 debug.log
