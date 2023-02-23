@@ -4,6 +4,8 @@ export * from './Button';
 export { default as Dialog } from './Dialog';
 export * from './Dialog';
 
+export * from './Icons';
+
 export { default as Input } from './Input';
 export * from './Input';
 

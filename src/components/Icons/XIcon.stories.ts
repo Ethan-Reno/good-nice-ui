@@ -1,16 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import Button from './Button';
+import XIcon from './XIcon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Icons/XIcon',
+  component: XIcon,
   tags: ['autodocs'],
-  args: {
-    children: 'Test',
-  }
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof XIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -19,7 +15,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: 'default',
-    onClick: () => console.log('clicked')
+    label: 'test',
+    size: 24,
+    color: 'currentColor',
+    strokeWidth: 2
   },
 };
