@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Label from './Label';
 
@@ -14,5 +15,5 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 
 export const Default: Story = {
-  args: {children: 'Test Label'},
+  render: () => <Label>Test Label</Label>
 };

@@ -19,7 +19,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: 'default',
     onClick: () => console.log('clicked')
   },
 };
