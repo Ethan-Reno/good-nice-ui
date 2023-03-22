@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { cn } from "../../utils/cn";
 import { XIcon } from "..";
@@ -41,7 +41,7 @@ const DialogContent = React.forwardRef<
   <DialogPrimitive.Content
     ref={ref}
     className={cn(
-      "relative z-50 rounded-lg bg-white p-6 animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10",
+      "relative z-50 rounded-sm bg-white p-6 animate-in data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10",
       "dark:bg-zinc-800",
       className
     )}

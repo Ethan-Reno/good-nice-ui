@@ -1,5 +1,4 @@
-import * as React from "react"
-import Label from "components/Label";
+import React from "react"
 import { cn } from "../../utils/cn"
 
 export interface InputProps
