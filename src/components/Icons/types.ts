@@ -1,5 +1,4 @@
 import * as AccessibleIconPrimitive from "@radix-ui/react-accessible-icon";
-import { VariantProps } from "class-variance-authority";
 
 interface LucideIconProps {
   size?: number;
@@ -9,4 +8,4 @@ interface LucideIconProps {
 
 export interface IconProps
   extends LucideIconProps,
-    VariantProps<typeof AccessibleIconPrimitive.Root> {}
+    React.ComponentPropsWithoutRef<typeof AccessibleIconPrimitive.Root> {}

@@ -30,7 +30,6 @@ export const Default: Story = {
   args: {
     trigger: triggerButton,
     accessibleTitle: 'title for screen reader',
-    accessibleDescription: 'description for screen reader',
     content: defaultContent,
   },
 };

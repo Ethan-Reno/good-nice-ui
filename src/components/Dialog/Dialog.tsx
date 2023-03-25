@@ -60,14 +60,12 @@ export interface DialogProps {
   trigger: React.ReactNode;
   content: React.ReactNode;
   accessibleTitle: string;
-  accessibleDescription?: string;
 }
 
 const Dialog = ({
   trigger,
   content,
   accessibleTitle,
-  accessibleDescription,
 }: DialogProps) => {
 
   return (
@@ -78,11 +76,6 @@ const Dialog = ({
         <ScreenReaderOnly asChild>
           <DialogPrimitive.Title>{accessibleTitle}</DialogPrimitive.Title>
         </ScreenReaderOnly>
-        {accessibleDescription &&
-          <ScreenReaderOnly asChild>
-            <DialogPrimitive.Description>{accessibleDescription}</DialogPrimitive.Description>
-          </ScreenReaderOnly>
-        }
         <DialogContent>{content}</DialogContent>
       </DialogPortal>
     </DialogRoot>

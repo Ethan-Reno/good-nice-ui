@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { XIcon } from '..';
 
 import Button from './Button';
 
@@ -22,3 +24,12 @@ export const Default: Story = {
     onClick: () => console.log('clicked')
   },
 };
+
+export const WithIcon: Story = {
+  render: () =>
+    <Button
+      size='square'
+    >
+      <XIcon label="Button with X Icon" />
+    </Button>
+}
