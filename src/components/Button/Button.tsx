@@ -1,4 +1,5 @@
 import React from "react"
+import { cn } from "utils/cn";
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?: 'primary' | 'secondary' | 'outline',
@@ -28,20 +29,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       large: "h-11 px-8",
       square: "p-2"
     };
-  
-    let baseClasses = [
-      baseStyles,
-      variantStyles[variant],
-      sizeStyles[size],
-    ];
-  
-    if (className) {
-      baseClasses = [...baseClasses, ...className.split(' ')];
-    }
 
     return (
       <button
-        className={baseClasses.join(' ')}
+        className={cn(
+          baseStyles,
+          variantStyles[variant],
+          sizeStyles[size],
+          className
+        )}
         ref={ref}
         {...props}
       />
