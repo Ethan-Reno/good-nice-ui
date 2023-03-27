@@ -1,10 +1,15 @@
 import * as React from "react"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { cn } from "utils/cn"
+import { Check, Circle } from "lucide-react"
 
 const DropdownMenuRoot = DropdownMenuPrimitive.Root
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
+
+const DropdownMenuGroup = DropdownMenuPrimitive.DropdownMenuGroup
+
+const DropdownMenuRadioGroup = DropdownMenuPrimitive.DropdownMenuRadioGroup
 
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
@@ -39,6 +44,49 @@ const DropdownMenuItem = React.forwardRef<
   />
 ))
 
+const DropdownMenuCheckboxItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
+>(({ className, children, checked, ...props }, ref) => (
+  <DropdownMenuPrimitive.CheckboxItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
+      className
+    )}
+    checked={checked}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.CheckboxItem>
+))
+
+const DropdownMenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
+>(({ className, children, ...props }, ref) => (
+  <DropdownMenuPrimitive.RadioItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
+      className
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Circle className="h-2 w-2 fill-current" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.RadioItem>
+))
+
 const DropdownMenuLabel = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
@@ -67,20 +115,89 @@ const DropdownMenuSeparator = React.forwardRef<
   />
 ))
 
-// export interface DropdownMenuItemProps {
-//   onClick: () => void;
-//   isDisabled?: boolean;
-//   label: string;
-//   icon?: string;
-// }
+export interface DropdownMenuItemGroup {
+  type: 'item' | 'checkbox' | 'radio';
+  items:
+    DropdownMenuPrimitive.DropdownMenuItemProps[] |
+    DropdownMenuPrimitive.DropdownMenuCheckboxItemProps[] |
+    DropdownMenuPrimitive.DropdownMenuRadioItemProps[]
+  label?: string;
+  value?: any;
+  onValueChange?: any;
+}
 
 export interface DropdownMenuProps {
   trigger: React.ReactNode;
-  menuItems: DropdownMenuPrimitive.DropdownMenuItemProps[]
+  groupedMenuItems: DropdownMenuItemGroup[];
   label?: string;
 }
 
-const DropdownMenu = ({ trigger, menuItems, label }: DropdownMenuProps) => {
+const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
+  const {
+    type,
+    label,
+    items,
+  } = menuItemGroup;
+  switch (type) {
+    case 'item':
+      return (
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>{label}</DropdownMenuLabel>
+          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuItemProps) => {
+            const { disabled, onSelect, ...props } = menuItem;
+            return (
+              <DropdownMenuItem
+                disabled={disabled}
+                onSelect={onSelect}
+                {...props}
+              />
+            )
+          })}
+        </DropdownMenuGroup>
+      )
+    case 'checkbox':
+      return (
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>{label}</DropdownMenuLabel>
+          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps) => {
+            const { disabled, onSelect, checked, ...props } = menuItem;
+            return (
+              <DropdownMenuCheckboxItem
+                disabled={disabled}
+                onSelect={onSelect}
+                checked={checked}
+                {...props}
+              />
+            )
+          })}
+        </DropdownMenuGroup>
+      )
+    case 'radio':
+      return (
+        <DropdownMenuRadioGroup
+          value={menuItemGroup.value}
+          onValueChange={menuItemGroup.onValueChange}
+        >
+          <DropdownMenuLabel>{label}</DropdownMenuLabel>
+          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuRadioItemProps) => {
+            const { disabled, onSelect, value, ...props } = menuItem;
+            return (
+              <DropdownMenuRadioItem
+                value={value}
+                disabled={disabled}
+                onSelect={onSelect}
+                {...props}
+              />
+            )
+          })}
+        </DropdownMenuRadioGroup>
+      )
+  }
+};
+
+
+const DropdownMenu = ({ trigger, groupedMenuItems, label }: DropdownMenuProps) => {
+  console.log(groupedMenuItems);
   return (
     <DropdownMenuRoot>
       <DropdownMenuTrigger asChild>
@@ -94,20 +211,9 @@ const DropdownMenu = ({ trigger, menuItems, label }: DropdownMenuProps) => {
               <DropdownMenuSeparator />
             </>
           }
-          {menuItems.map((menuItem) => {
-            const {
-              disabled,
-              onSelect,
-              textValue,
-            } = menuItem;
-            return (
-              <DropdownMenuItem
-                disabled={disabled}
-                onSelect={onSelect}
-                children={textValue}
-              />
-            )
-          })}
+          <DropdownMenuPrimitive.DropdownMenuGroup>
+            {groupedMenuItems.map((menuItemGroup) => constructMenuItemGroup(menuItemGroup))}
+          </DropdownMenuPrimitive.DropdownMenuGroup>
         </>
       </DropdownMenuContent>
     </DropdownMenuRoot>
