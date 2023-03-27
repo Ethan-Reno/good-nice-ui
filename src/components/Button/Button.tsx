@@ -1,13 +1,13 @@
-import React from "react"
+import React, { forwardRef, ComponentPropsWithoutRef } from "react"
 import { cn } from "utils/cn";
 
-export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   variant?: 'primary' | 'secondary' | 'outline',
   size?: 'small' | 'medium' | 'large' | 'square';
   isLoading?: boolean;
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     variant = 'primary',
     size = 'medium',

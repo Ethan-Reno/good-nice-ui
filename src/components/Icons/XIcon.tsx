@@ -1,7 +1,9 @@
 import React from 'react';
-import * as AccessibleIconPrimitive from "@radix-ui/react-accessible-icon";
+import { Root } from "@radix-ui/react-accessible-icon";
 import { X } from 'lucide-react';
 import { IconProps } from './types';
+
+const IconRoot = Root
 
 const XIcon = ({
   label = 'X Icon',
@@ -10,7 +12,7 @@ const XIcon = ({
   strokeWidth = 2
 }: IconProps ) => {
   return (
-    <AccessibleIconPrimitive.Root
+    <IconRoot
       label={label}
     >
       <X
@@ -18,7 +20,7 @@ const XIcon = ({
         color={color}
         strokeWidth={strokeWidth}  
       />
-    </AccessibleIconPrimitive.Root>
+    </IconRoot>
   );
 }
 

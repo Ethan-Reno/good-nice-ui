@@ -1,7 +1,9 @@
 import React from 'react';
-import * as AccessibleIconPrimitive from "@radix-ui/react-accessible-icon";
+import { Root } from "@radix-ui/react-accessible-icon";
 import { IconProps } from './types';
 import { Triangle } from 'lucide-react';
+
+const IconRoot = Root
 
 const TriangleIcon = ({
   label = 'Triangle Icon',
@@ -10,7 +12,7 @@ const TriangleIcon = ({
   strokeWidth = 2
 }: IconProps ) => {
   return (
-    <AccessibleIconPrimitive.Root
+    <IconRoot
       label={label}
     >
       <Triangle
@@ -18,7 +20,7 @@ const TriangleIcon = ({
         color={color}
         strokeWidth={strokeWidth}  
       />
-    </AccessibleIconPrimitive.Root>
+    </IconRoot>
   );
 }
 
