@@ -1,40 +1,59 @@
-import * as React from "react"
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import React, {
+  forwardRef,
+  ReactNode,
+  ElementRef,
+  ComponentPropsWithoutRef
+} from "react"
+
+import {
+  Root,
+  Portal,
+  Trigger,
+  Item,
+  ItemIndicator,
+  Group,
+  CheckboxItem,
+  Content,
+  RadioItem,
+  RadioGroup,
+  Label,
+  Separator,
+  DropdownMenuItemProps,
+  DropdownMenuCheckboxItemProps,
+  DropdownMenuRadioItemProps,
+} from "@radix-ui/react-dropdown-menu"
+
 import { cn } from "utils/cn"
 import { Check, Circle } from "lucide-react"
 
-const DropdownMenuRoot = DropdownMenuPrimitive.Root
+const DropdownMenuRoot = Root
 
-const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
+const DropdownMenuTrigger = Trigger
 
-const DropdownMenuGroup = DropdownMenuPrimitive.DropdownMenuGroup
-
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.DropdownMenuRadioGroup
-
-const DropdownMenuContent = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+const DropdownMenuContent = forwardRef<
+  ElementRef<typeof Content>,
+  ComponentPropsWithoutRef<typeof Content>
 >(({ className, sideOffset = 4, ...props }, ref) => (
-  <DropdownMenuPrimitive.Portal>
-    <DropdownMenuPrimitive.Content
+  <Portal>
+    <Content
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "animate-in data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border p-1",
+        "animate-in bg-white dark:bg-zinc-900 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border p-1",
         className
       )}
       {...props}
     />
-  </DropdownMenuPrimitive.Portal>
+  </Portal>
 ))
 
-const DropdownMenuItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+const DropdownMenuItem = forwardRef<
+  ElementRef<typeof Item>,
+  ComponentPropsWithoutRef<typeof Item> & {
     inset?: boolean,
   }
 >(({ inset, ...props }, ref) => (
-  <DropdownMenuPrimitive.Item
+  <Item
     ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-zinc-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-zinc-700",
@@ -44,11 +63,11 @@ const DropdownMenuItem = React.forwardRef<
   />
 ))
 
-const DropdownMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
+const DropdownMenuCheckboxItem = forwardRef<
+  ElementRef<typeof CheckboxItem>,
+  ComponentPropsWithoutRef<typeof CheckboxItem>
 >(({ className, children, checked, ...props }, ref) => (
-  <DropdownMenuPrimitive.CheckboxItem
+  <CheckboxItem
     ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
@@ -58,19 +77,19 @@ const DropdownMenuCheckboxItem = React.forwardRef<
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <DropdownMenuPrimitive.ItemIndicator>
+      <ItemIndicator>
         <Check className="h-4 w-4" />
-      </DropdownMenuPrimitive.ItemIndicator>
+      </ItemIndicator>
     </span>
     {children}
-  </DropdownMenuPrimitive.CheckboxItem>
+  </CheckboxItem>
 ))
 
-const DropdownMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
+const DropdownMenuRadioItem = forwardRef<
+  ElementRef<typeof RadioItem>,
+  ComponentPropsWithoutRef<typeof RadioItem>
 >(({ className, children, ...props }, ref) => (
-  <DropdownMenuPrimitive.RadioItem
+  <RadioItem
     ref={ref}
     className={cn(
       "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
@@ -79,21 +98,21 @@ const DropdownMenuRadioItem = React.forwardRef<
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <DropdownMenuPrimitive.ItemIndicator>
+      <ItemIndicator>
         <Circle className="h-2 w-2 fill-current" />
-      </DropdownMenuPrimitive.ItemIndicator>
+      </ItemIndicator>
     </span>
     {children}
-  </DropdownMenuPrimitive.RadioItem>
+  </RadioItem>
 ))
 
-const DropdownMenuLabel = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
+const DropdownMenuLabel = forwardRef<
+  ElementRef<typeof Label>,
+  ComponentPropsWithoutRef<typeof Label> & {
     inset?: boolean
   }
 >(({ className, inset, ...props }, ref) => (
-  <DropdownMenuPrimitive.Label
+  <Label
     ref={ref}
     className={cn(
       "px-2 py-1.5 text-sm font-semibold text-zinc-900 dark:text-zinc-300",
@@ -104,11 +123,11 @@ const DropdownMenuLabel = React.forwardRef<
   />
 ))
 
-const DropdownMenuSeparator = React.forwardRef<
-  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+const DropdownMenuSeparator = forwardRef<
+  ElementRef<typeof Separator>,
+  ComponentPropsWithoutRef<typeof Separator>
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator
+  <Separator
     ref={ref}
     className={cn("-mx-1 my-1 h-px bg-zinc-100 dark:bg-zinc-700", className)}
     {...props}
@@ -118,16 +137,16 @@ const DropdownMenuSeparator = React.forwardRef<
 export interface DropdownMenuItemGroup {
   type: 'item' | 'checkbox' | 'radio';
   items:
-    DropdownMenuPrimitive.DropdownMenuItemProps[] |
-    DropdownMenuPrimitive.DropdownMenuCheckboxItemProps[] |
-    DropdownMenuPrimitive.DropdownMenuRadioItemProps[]
+    DropdownMenuItemProps[] |
+    DropdownMenuCheckboxItemProps[] |
+    DropdownMenuRadioItemProps[]
   label?: string;
-  value?: any;
-  onValueChange?: any;
+  radioValue?: any;
+  onRadioValueChange?: any;
 }
 
 export interface DropdownMenuProps {
-  trigger: React.ReactNode;
+  trigger: ReactNode;
   groupedMenuItems: DropdownMenuItemGroup[];
   label?: string;
 }
@@ -141,9 +160,9 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
   switch (type) {
     case 'item':
       return (
-        <DropdownMenuGroup>
+        <Group>
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
-          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuItemProps) => {
+          {items.map((menuItem: DropdownMenuItemProps) => {
             const { disabled, onSelect, ...props } = menuItem;
             return (
               <DropdownMenuItem
@@ -153,13 +172,13 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
               />
             )
           })}
-        </DropdownMenuGroup>
+        </Group>
       )
     case 'checkbox':
       return (
-        <DropdownMenuGroup>
+        <Group>
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
-          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps) => {
+          {items.map((menuItem: DropdownMenuCheckboxItemProps) => {
             const { disabled, onSelect, checked, ...props } = menuItem;
             return (
               <DropdownMenuCheckboxItem
@@ -170,16 +189,17 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
               />
             )
           })}
-        </DropdownMenuGroup>
+        </Group>
       )
     case 'radio':
+      const { radioValue, onRadioValueChange } = menuItemGroup;
       return (
-        <DropdownMenuRadioGroup
-          value={menuItemGroup.value}
-          onValueChange={menuItemGroup.onValueChange}
+        <RadioGroup
+          value={radioValue}
+          onValueChange={onRadioValueChange}
         >
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
-          {menuItemGroup.items.map((menuItem: DropdownMenuPrimitive.DropdownMenuRadioItemProps) => {
+          {items.map((menuItem: DropdownMenuRadioItemProps) => {
             const { disabled, onSelect, value, ...props } = menuItem;
             return (
               <DropdownMenuRadioItem
@@ -190,14 +210,16 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
               />
             )
           })}
-        </DropdownMenuRadioGroup>
+        </RadioGroup>
       )
   }
 };
 
-
-const DropdownMenu = ({ trigger, groupedMenuItems, label }: DropdownMenuProps) => {
-  console.log(groupedMenuItems);
+const DropdownMenu = ({
+  trigger,
+  groupedMenuItems,
+  label
+}: DropdownMenuProps) => {
   return (
     <DropdownMenuRoot>
       <DropdownMenuTrigger asChild>
@@ -211,9 +233,7 @@ const DropdownMenu = ({ trigger, groupedMenuItems, label }: DropdownMenuProps) =
               <DropdownMenuSeparator />
             </>
           }
-          <DropdownMenuPrimitive.DropdownMenuGroup>
-            {groupedMenuItems.map((menuItemGroup) => constructMenuItemGroup(menuItemGroup))}
-          </DropdownMenuPrimitive.DropdownMenuGroup>
+          {groupedMenuItems.map((menuItemGroup) => constructMenuItemGroup(menuItemGroup))}
         </>
       </DropdownMenuContent>
     </DropdownMenuRoot>

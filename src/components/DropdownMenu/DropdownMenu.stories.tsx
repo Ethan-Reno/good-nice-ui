@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import DropdownMenu, { DropdownMenuItemGroup } from '.';
 import Button from '../Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
 const meta = {
   title: 'Components/DropdownMenu',
   component: DropdownMenu,
@@ -12,8 +11,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
 
 const triggerButton = <Button variant='primary'>Trigger</Button>;
 
@@ -73,14 +70,14 @@ const DropdownMenuWithCheckmarks = () => {
 }
 
 const DropdownMenuWithRadioGroup = () => {
-  const [value, setValue] = useState("Option 1")
+  const [radioValue, setRadioValue] = useState("Option 1")
 
   const menuItems: DropdownMenuItemGroup[] = [
     {
       type: 'radio',
       label: 'Radio Items',
-      value: value,
-      onValueChange: setValue,
+      radioValue: radioValue,
+      onRadioValueChange: setRadioValue,
       items: [
         {
           children: 'Option 1',
