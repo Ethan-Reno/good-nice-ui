@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     isLoading,
     ...props
   }, ref) => {
-    const baseStyles = 'active:scale-95 border text-white inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-zinc-400 disabled:pointer-events-none dark:focus:ring-offset-zinc-900 data-[state=open]:bg-zinc-100 dark:data-[state=open]:bg-zinc-800';
+    const baseStyles = 'active:scale-95 border text-white inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-zinc-400 disabled:pointer-events-none dark:focus:ring-offset-zinc-900 data-[state=open]:bg-white data-[state=open]:text-zinc-900 dark:data-[state=open]:bg-zinc-800 dark:data-[state=open]:text-white';
   
     const variantStyles = {
       primary: 'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700',

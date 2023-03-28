@@ -16,8 +16,8 @@ const triggerButton = <Button variant='primary'>Trigger</Button>;
 
 const standardMenuItems: DropdownMenuItemGroup[] = [
   {
-    type: 'item',
-    label: 'Standard Items',
+    type: 'default',
+    label: 'Label',
     items: [
       {
         children: 'Option 1',
@@ -26,6 +26,11 @@ const standardMenuItems: DropdownMenuItemGroup[] = [
       {
         children: 'Option 2',
         onSelect: () => console.log('clicked Option 2'),
+      },
+      {
+        children: 'With Separator',
+        onSelect: () => console.log('clicked With Separator'),
+        hasSeparator: true,
       },
       {
         children: 'Disabled Option',
@@ -105,6 +110,10 @@ export const Default: Story = {
   args: {
     groupedMenuItems: standardMenuItems,
     trigger: triggerButton,
+    contentProps: {
+      align: 'start',
+      sideOffset: 4
+    }
   }
 };
 

@@ -1,45 +1,34 @@
-import React, {
-  forwardRef,
-  ReactNode,
-  ElementRef,
-  ComponentPropsWithoutRef
-} from "react"
-
+import React from "react"
 import {
   Root,
   Portal,
   Trigger,
   Item,
   ItemIndicator,
-  Group,
   CheckboxItem,
   Content,
   RadioItem,
   RadioGroup,
   Label,
   Separator,
-  DropdownMenuItemProps,
   DropdownMenuCheckboxItemProps,
   DropdownMenuRadioItemProps,
+  DropdownMenuSeparatorProps,
+  DropdownMenuContentProps,
 } from "@radix-ui/react-dropdown-menu"
-
 import { cn } from "utils/cn"
 import { Check, Circle } from "lucide-react"
+import { DropdownMenuItemCustomProps, DropdownMenuItemGroup, DropdownMenuLabelCustomProps, DropdownMenuProps } from "./types"
 
 const DropdownMenuRoot = Root
 
 const DropdownMenuTrigger = Trigger
 
-const DropdownMenuContent = forwardRef<
-  ElementRef<typeof Content>,
-  ComponentPropsWithoutRef<typeof Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
+const DropdownMenuContent = (({ className, align = 'start', sideOffset = 4, ...props }: DropdownMenuContentProps) => (
   <Portal>
     <Content
-      ref={ref}
-      sideOffset={sideOffset}
       className={cn(
-        "animate-in bg-white dark:bg-zinc-900 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border p-1",
+        "animate-in bg-white dark:bg-zinc-900 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border border-zinc-400 dark:border-white p-1",
         className
       )}
       {...props}
@@ -47,30 +36,20 @@ const DropdownMenuContent = forwardRef<
   </Portal>
 ))
 
-const DropdownMenuItem = forwardRef<
-  ElementRef<typeof Item>,
-  ComponentPropsWithoutRef<typeof Item> & {
-    inset?: boolean,
-  }
->(({ inset, ...props }, ref) => (
+const DropdownMenuItem = (({ inset, ...props }: DropdownMenuItemCustomProps) => (
   <Item
-    ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-zinc-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-zinc-700",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-zinc-200 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-zinc-700",
       inset && "pl-8",
     )}
     {...props}
   />
 ))
 
-const DropdownMenuCheckboxItem = forwardRef<
-  ElementRef<typeof CheckboxItem>,
-  ComponentPropsWithoutRef<typeof CheckboxItem>
->(({ className, children, checked, ...props }, ref) => (
+const DropdownMenuCheckboxItem = (({ className, children, checked, ...props}: DropdownMenuCheckboxItemProps) => (
   <CheckboxItem
-    ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-zinc-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-zinc-700",
       className
     )}
     checked={checked}
@@ -85,14 +64,10 @@ const DropdownMenuCheckboxItem = forwardRef<
   </CheckboxItem>
 ))
 
-const DropdownMenuRadioItem = forwardRef<
-  ElementRef<typeof RadioItem>,
-  ComponentPropsWithoutRef<typeof RadioItem>
->(({ className, children, ...props }, ref) => (
+const DropdownMenuRadioItem = (({ className, children, ...props }: DropdownMenuRadioItemProps) => (
   <RadioItem
-    ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-slate-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-700",
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-zinc-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-zinc-700",
       className
     )}
     {...props}
@@ -106,14 +81,8 @@ const DropdownMenuRadioItem = forwardRef<
   </RadioItem>
 ))
 
-const DropdownMenuLabel = forwardRef<
-  ElementRef<typeof Label>,
-  ComponentPropsWithoutRef<typeof Label> & {
-    inset?: boolean
-  }
->(({ className, inset, ...props }, ref) => (
+const DropdownMenuLabel = (({ className, inset, ...props }: DropdownMenuLabelCustomProps) => (
   <Label
-    ref={ref}
     className={cn(
       "px-2 py-1.5 text-sm font-semibold text-zinc-900 dark:text-zinc-300",
       inset && "pl-8",
@@ -123,33 +92,12 @@ const DropdownMenuLabel = forwardRef<
   />
 ))
 
-const DropdownMenuSeparator = forwardRef<
-  ElementRef<typeof Separator>,
-  ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
+const DropdownMenuSeparator = (({ className, ...props }: DropdownMenuSeparatorProps) => (
   <Separator
-    ref={ref}
-    className={cn("-mx-1 my-1 h-px bg-zinc-100 dark:bg-zinc-700", className)}
+    className={cn("-mx-1 my-1 h-px bg-zinc-400 dark:bg-zinc-100", className)}
     {...props}
   />
 ))
-
-export interface DropdownMenuItemGroup {
-  type: 'item' | 'checkbox' | 'radio';
-  items:
-    DropdownMenuItemProps[] |
-    DropdownMenuCheckboxItemProps[] |
-    DropdownMenuRadioItemProps[]
-  label?: string;
-  radioValue?: any;
-  onRadioValueChange?: any;
-}
-
-export interface DropdownMenuProps {
-  trigger: ReactNode;
-  groupedMenuItems: DropdownMenuItemGroup[];
-  label?: string;
-}
 
 const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
   const {
@@ -158,38 +106,35 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
     items,
   } = menuItemGroup;
   switch (type) {
-    case 'item':
+    case 'default':
       return (
-        <Group>
+        <>
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
-          {items.map((menuItem: DropdownMenuItemProps) => {
-            const { disabled, onSelect, ...props } = menuItem;
+          {items.map((menuItem: DropdownMenuItemCustomProps) => {
+            const { hasSeparator, ...props } = menuItem;
             return (
-              <DropdownMenuItem
-                disabled={disabled}
-                onSelect={onSelect}
-                {...props}
-              />
+              <>
+                <DropdownMenuItem {...props} />
+                {hasSeparator && <DropdownMenuSeparator />}
+              </>
             )
           })}
-        </Group>
+        </>
       )
     case 'checkbox':
       return (
-        <Group>
+        <>
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
           {items.map((menuItem: DropdownMenuCheckboxItemProps) => {
-            const { disabled, onSelect, checked, ...props } = menuItem;
+            const { checked, ...props } = menuItem;
             return (
               <DropdownMenuCheckboxItem
-                disabled={disabled}
-                onSelect={onSelect}
                 checked={checked}
                 {...props}
               />
             )
           })}
-        </Group>
+        </>
       )
     case 'radio':
       const { radioValue, onRadioValueChange } = menuItemGroup;
@@ -200,12 +145,10 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
         >
           <DropdownMenuLabel>{label}</DropdownMenuLabel>
           {items.map((menuItem: DropdownMenuRadioItemProps) => {
-            const { disabled, onSelect, value, ...props } = menuItem;
+            const { value, ...props } = menuItem;
             return (
               <DropdownMenuRadioItem
                 value={value}
-                disabled={disabled}
-                onSelect={onSelect}
                 {...props}
               />
             )
@@ -218,14 +161,15 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
 const DropdownMenu = ({
   trigger,
   groupedMenuItems,
-  label
+  label,
+  contentProps,
 }: DropdownMenuProps) => {
   return (
     <DropdownMenuRoot>
       <DropdownMenuTrigger asChild>
         {trigger}
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent {...contentProps} >
         <>
           {label &&
             <>

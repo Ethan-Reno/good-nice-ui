@@ -5,4 +5,3 @@ export { default as XIcon } from './XIcon';
 export * from './XIcon';
 
 export * from './types';
-
