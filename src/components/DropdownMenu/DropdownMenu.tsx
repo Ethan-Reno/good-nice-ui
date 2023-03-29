@@ -27,6 +27,8 @@ const DropdownMenuTrigger = Trigger
 const DropdownMenuContent = (({ className, align = 'start', sideOffset = 4, ...props }: DropdownMenuContentProps) => (
   <Portal>
     <Content
+      align={align}
+      sideOffset={sideOffset}
       className={cn(
         "animate-in bg-white dark:bg-zinc-900 data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] overflow-hidden rounded-md border border-zinc-400 dark:border-white p-1",
         className
@@ -94,7 +96,7 @@ const DropdownMenuLabel = (({ className, inset, ...props }: DropdownMenuLabelCus
 
 const DropdownMenuSeparator = (({ className, ...props }: DropdownMenuSeparatorProps) => (
   <Separator
-    className={cn("-mx-1 my-1 h-px bg-zinc-400 dark:bg-zinc-100", className)}
+    className={cn("mx-1 my-1 h-px bg-zinc-400 dark:bg-zinc-100", className)}
     {...props}
   />
 ))

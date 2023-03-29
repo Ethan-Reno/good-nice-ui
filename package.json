@@ -1,6 +1,6 @@
 {
   "name": "lift-companion-ui",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "UI test",
   "author": {
     "name": "Ethan Reno"
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@radix-ui/react-accessible-icon": "^1.0.1",
+    "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.2",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@radix-ui/react-label": "^2.0.0",
