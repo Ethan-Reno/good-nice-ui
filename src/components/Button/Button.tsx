@@ -2,7 +2,7 @@ import React, { forwardRef, ComponentPropsWithoutRef } from "react"
 import { cn } from "utils/cn";
 
 export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  variant?: 'primary' | 'secondary' | 'outline',
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost',
   size?: 'small' | 'medium' | 'large' | 'square';
   isLoading?: boolean;
 }
@@ -15,18 +15,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     isLoading,
     ...props
   }, ref) => {
-    const baseStyles = 'active:scale-95 border text-white inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:opacity-50 dark:focus:ring-zinc-400 disabled:pointer-events-none dark:focus:ring-offset-zinc-900 data-[state=open]:bg-white data-[state=open]:text-zinc-900 dark:data-[state=open]:bg-zinc-800 dark:data-[state=open]:text-white';
+    const baseStyles = 'active:scale-95 shadow-none border text-zinc-50 inline-flex items-center justify-center rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-900 disabled:opacity-50 ring-offset-transparent dark:focus:ring-zinc-50 disabled:pointer-events-none data-[state=open]:bg-transparent data-[state=open]:text-zinc-900 dark:data-[state=open]:text-zinc-50';
   
     const variantStyles = {
       primary: 'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700',
       secondary: 'bg-red-500 hover:bg-red-600 border-red-500 hover:border-red-600',
-      outline: 'border-zinc-900 dark:border-zinc-50 text-zinc-900 dark:text-white',
+      outline: 'bg-transparent border-zinc-900 dark:border-zinc-50 text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+      ghost: 'bg-transparent border-transparent text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700'
     };
   
     const sizeStyles = {
-      small: "h-9 px-2",
-      medium: "h-10 py-2 px-4",
-      large: "h-11 px-8",
+      small: "py-1 px-2",
+      medium: "py-2 px-4",
+      large: "py-3 px-6",
       square: "p-2"
     };
 
