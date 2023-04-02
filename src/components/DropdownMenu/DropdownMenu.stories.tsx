@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import DropdownMenu, { DropdownMenuItemGroup } from '.';
-import Button from '../Button';
+import { DropdownMenuItemGroup } from './types';
+import { TriangleIcon, XIcon, DropdownMenu, Button } from '..';
 
 const meta = {
   title: 'Components/DropdownMenu',
@@ -17,7 +17,6 @@ const triggerButton = <Button variant='primary'>Trigger</Button>;
 const standardMenuItems: DropdownMenuItemGroup[] = [
   {
     type: 'default',
-    label: 'Label',
     items: [
       {
         children: 'Option 1',
@@ -28,12 +27,22 @@ const standardMenuItems: DropdownMenuItemGroup[] = [
         onSelect: () => console.log('clicked Option 2'),
       },
       {
-        children: 'With Separator',
+        children: (
+          <div className='flex gap-1 items-center'>
+            <TriangleIcon label='test' size={14} />
+            Option 3
+          </div>
+        ),
         onSelect: () => console.log('clicked With Separator'),
         hasSeparator: true,
       },
       {
-        children: 'Disabled Option',
+        children: (
+          <div className='flex gap-1 items-center'>
+            <XIcon label='test' size={14} />
+            Disabled Option
+          </div>
+        ),
         onSelect: () => console.log('should not see this'),
         disabled: true
       },

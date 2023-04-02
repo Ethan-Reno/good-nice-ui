@@ -1,19 +1,14 @@
-export { default as Avatar } from './Avatar';
-export * from './Avatar';
+export { Avatar } from './Avatar/Avatar';
 
-export { default as Button } from './Button';
-export * from './Button';
+export { Button } from './Button/Button';
 
-export { default as Dialog } from './Dialog';
-export * from './Dialog';
+export { Dialog } from './Dialog/Dialog';
 
-export { default as DropdownMenu } from './DropdownMenu';
-export * from './DropdownMenu';
+export { DropdownMenu } from './DropdownMenu/DropdownMenu';
 
+// TODO: Overhaul icon implementation and exports
 export * from './Icons';
 
-export { default as Input } from './Input';
-export * from './Input';
+export { Input } from './Input/Input';
 
-export { default as Label } from './Label';
-export * from './Label';
+export { Label } from './Label/Label';

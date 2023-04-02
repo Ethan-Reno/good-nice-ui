@@ -4,7 +4,7 @@ import { cn } from "../../utils/cn"
 export interface InputProps
   extends InputHTMLAttributes<HTMLInputElement> {}
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, ...props }, ref) => {
     return (
       <input
@@ -17,8 +17,4 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       />
     )
   }
-)
-
-Input.displayName = "Input"
-
-export default Input;
+);
