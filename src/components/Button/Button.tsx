@@ -1,5 +1,5 @@
 import React, { forwardRef, ComponentPropsWithoutRef } from "react"
-import { cn } from "utils/cn";
+import { cn } from "../../utils/cn";
 
 export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';

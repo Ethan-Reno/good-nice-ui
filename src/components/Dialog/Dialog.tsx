@@ -17,7 +17,7 @@ import {
 } from "@radix-ui/react-dialog";
 import { cn } from "../../utils/cn";
 import { XIcon } from "..";
-import { ScreenReaderOnly } from "utils/ScreenReaderOnly";
+import { ScreenReaderOnly } from "../../utils/ScreenReaderOnly";
 
 const DialogRoot = Root
 

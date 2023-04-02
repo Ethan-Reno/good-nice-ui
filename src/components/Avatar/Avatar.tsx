@@ -7,7 +7,7 @@ import {
   AvatarImageProps,
   AvatarFallbackProps,
 } from "@radix-ui/react-avatar"
-import { cn } from "utils/cn"
+import { cn } from "../../utils/cn"
 
 const AvatarRoot = (({ className, ...props }: AvatarRootProps) => (
   <Root

@@ -16,7 +16,7 @@ import {
   DropdownMenuSeparatorProps,
   DropdownMenuContentProps,
 } from "@radix-ui/react-dropdown-menu"
-import { cn } from "utils/cn"
+import { cn } from "../../utils/cn"
 import { Check, Circle } from "lucide-react"
 import { DropdownMenuItemCustomProps, DropdownMenuItemGroup, DropdownMenuLabelCustomProps, DropdownMenuProps } from "./types"
 

@@ -1,35 +1,20 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "sourceMap": true,
-    "jsx": "react",
+    "declaration": false,
+    "noEmitOnError": true,
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "rootDir": ".",
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
+    "module": "ESNext",
+    "target": "ESNext",
     "esModuleInterop": true,
-    "baseUrl": "src/",
+    "isolatedModules": true,
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "paths": {
-      "components/*": [
-        "components/*"
-      ],
-    }
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "jsx": "react-jsx",
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "dist",
-    "scripts",
-  ],
-  "types": [
-    "typePatches"
-  ]
+  "exclude": ["**/node_modules"]
 }
