@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import DropdownMenu, { DropdownMenuItemGroup } from '.';
-import Button from '../Button';
-import { TriangleIcon, XIcon } from '..';
+import { DropdownMenuItemGroup } from './types';
+import { TriangleIcon, XIcon, DropdownMenu, Button } from '..';
 
 const meta = {
   title: 'Components/DropdownMenu',

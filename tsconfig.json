@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "strict": false,
     "emitDeclarationOnly": true,
     "declarationMap": true,
     "moduleResolution": "node",

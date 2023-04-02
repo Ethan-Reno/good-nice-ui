@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Input from './Input';
-import { Label } from '..';
+import { Input, Label } from '..';
 
 const meta = {
   title: 'Components/Input',

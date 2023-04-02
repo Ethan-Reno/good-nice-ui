@@ -150,6 +150,7 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
           onValueChange={onRadioValueChange}
         >
           {label && <DropdownMenuLabel>{label}</DropdownMenuLabel>}
+          {/* TODO: tsconfig strict to true, resolve ts error */}
           {items.map((menuItem: DropdownMenuRadioItemProps) => {
             const { value, ...props } = menuItem;
             return (
