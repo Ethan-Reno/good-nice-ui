@@ -16,14 +16,14 @@ import {
   Title,
 } from "@radix-ui/react-dialog";
 import { cn } from "../../utils/cn";
-import { XIcon } from "..";
+import { XIcon } from "../Icons";
 import { ScreenReaderOnly } from "../../utils/ScreenReaderOnly";
 
-const DialogRoot = Root
+const DialogRoot = Root;
 
-const DialogTrigger = Trigger
+const DialogTrigger = Trigger;
 
-const DialogTitle = Title
+const DialogTitle = Title;
 
 const DialogPortal = ({
   className,
@@ -35,7 +35,7 @@ const DialogPortal = ({
       {children}
     </div>
   </Portal>
-)
+);
 
 const DialogOverlay = (({ className, children, ...props }: DialogOverlayProps) => (
   <Overlay
@@ -46,7 +46,7 @@ const DialogOverlay = (({ className, children, ...props }: DialogOverlayProps) =
     )}
     {...props}
   />
-))
+));
 
 const DialogContent = (({ className, children, ...props }: DialogContentProps) => (
   <Content
@@ -69,7 +69,7 @@ const DialogContent = (({ className, children, ...props }: DialogContentProps) =
       <XIcon label='Close Modal' />
     </Close>
   </Content>
-))
+));
 
 export interface DialogProps {
   trigger: ReactNode;
@@ -77,9 +77,9 @@ export interface DialogProps {
   accessibleTitle: string;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
+};
 
-const Dialog = ({
+export const Dialog = ({
   trigger,
   content,
   accessibleTitle,
@@ -100,7 +100,3 @@ const Dialog = ({
     </DialogRoot>
   )
 };
-
-Dialog.displayName = 'Dialog';
-
-export default Dialog;

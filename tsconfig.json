@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "declaration": false,
-    "noEmitOnError": true,
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
     "moduleResolution": "node",
     "module": "ESNext",
-    "target": "ESNext",
+    "target": "ES6",
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["esnext", "dom"],
@@ -16,5 +15,7 @@
     "outDir": "dist",
     "jsx": "react-jsx",
   },
-  "exclude": ["**/node_modules"]
+  "include": [
+    "./src/index.ts"
+  ],
 }

@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Root,
   Portal,
@@ -15,14 +15,14 @@ import {
   DropdownMenuRadioItemProps,
   DropdownMenuSeparatorProps,
   DropdownMenuContentProps,
-} from "@radix-ui/react-dropdown-menu"
-import { cn } from "../../utils/cn"
-import { Check, Circle } from "lucide-react"
-import { DropdownMenuItemCustomProps, DropdownMenuItemGroup, DropdownMenuLabelCustomProps, DropdownMenuProps } from "./types"
+} from "@radix-ui/react-dropdown-menu";
+import { cn } from "../../utils/cn";
+import { Check, Circle } from "lucide-react";
+import { DropdownMenuItemCustomProps, DropdownMenuItemGroup, DropdownMenuLabelCustomProps, DropdownMenuProps } from "./types";
 
-const DropdownMenuRoot = Root
+const DropdownMenuRoot = Root;
 
-const DropdownMenuTrigger = Trigger
+const DropdownMenuTrigger = Trigger;
 
 const DropdownMenuContent = (({ className, align = 'start', sideOffset = 4, ...props }: DropdownMenuContentProps) => (
   <Portal>
@@ -37,7 +37,7 @@ const DropdownMenuContent = (({ className, align = 'start', sideOffset = 4, ...p
       {...props}
     />
   </Portal>
-))
+));
 
 const DropdownMenuItem = (({ inset, ...props }: DropdownMenuItemCustomProps) => (
   <Item
@@ -48,7 +48,7 @@ const DropdownMenuItem = (({ inset, ...props }: DropdownMenuItemCustomProps) => 
     )}
     {...props}
   />
-))
+));
 
 const DropdownMenuCheckboxItem = (({ className, children, checked, ...props}: DropdownMenuCheckboxItemProps) => (
   <CheckboxItem
@@ -67,7 +67,7 @@ const DropdownMenuCheckboxItem = (({ className, children, checked, ...props}: Dr
     </span>
     {children}
   </CheckboxItem>
-))
+));
 
 const DropdownMenuRadioItem = (({ className, children, ...props }: DropdownMenuRadioItemProps) => (
   <RadioItem
@@ -85,7 +85,7 @@ const DropdownMenuRadioItem = (({ className, children, ...props }: DropdownMenuR
     </span>
     {children}
   </RadioItem>
-))
+));
 
 const DropdownMenuLabel = (({ className, inset, ...props }: DropdownMenuLabelCustomProps) => (
   <Label
@@ -96,14 +96,14 @@ const DropdownMenuLabel = (({ className, inset, ...props }: DropdownMenuLabelCus
     )}
     {...props}
   />
-))
+));
 
 const DropdownMenuSeparator = (({ className, ...props }: DropdownMenuSeparatorProps) => (
   <Separator
     className={cn("mx-2 my-1 h-px bg-zinc-400 dark:bg-zinc-500", className)}
     {...props}
   />
-))
+));
 
 const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
   const {
@@ -126,7 +126,7 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
             )
           })}
         </>
-      )
+      );
     case 'checkbox':
       return (
         <>
@@ -141,7 +141,7 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
             )
           })}
         </>
-      )
+      );
     case 'radio':
       const { radioValue, onRadioValueChange } = menuItemGroup;
       return (
@@ -160,11 +160,11 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
             )
           })}
         </RadioGroup>
-      )
+      );
   }
 };
 
-const DropdownMenu = ({
+export const DropdownMenu = ({
   trigger,
   groupedMenuItems,
   label,
@@ -189,7 +189,3 @@ const DropdownMenu = ({
     </DropdownMenuRoot>
   );
 };
-
-DropdownMenu.displayName = 'DropdownMenu';
-
-export default DropdownMenu;

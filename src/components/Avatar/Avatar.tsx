@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react";
 import {
   Root,
   Image,
@@ -6,8 +6,8 @@ import {
   AvatarProps as AvatarRootProps,
   AvatarImageProps,
   AvatarFallbackProps,
-} from "@radix-ui/react-avatar"
-import { cn } from "../../utils/cn"
+} from "@radix-ui/react-avatar";
+import { cn } from "../../utils/cn";
 
 const AvatarRoot = (({ className, ...props }: AvatarRootProps) => (
   <Root
@@ -17,14 +17,14 @@ const AvatarRoot = (({ className, ...props }: AvatarRootProps) => (
     )}
     {...props}
   />
-))
+));
 
 const AvatarImage = (({ className, ...props }: AvatarImageProps) => (
   <Image
     className={cn("aspect-square h-full w-full", className)}
     {...props}
   />
-))
+));
 
 const AvatarFallback = (({ className, ...props }: AvatarFallbackProps) => (
   <Fallback
@@ -34,16 +34,16 @@ const AvatarFallback = (({ className, ...props }: AvatarFallbackProps) => (
     )}
     {...props}
   />
-))
+));
 
 export interface AvatarProps {
   src: string;
   alt: string;
   fallback: string;
   fallbackDelayMs?: number;
-}
+};
 
-const Avatar = ({ src, alt, fallback, fallbackDelayMs }: AvatarProps) => {
+export const Avatar = ({ src, alt, fallback, fallbackDelayMs }: AvatarProps) => {
   return (
     <AvatarRoot>
       <AvatarImage src={src} alt={alt} />
@@ -52,8 +52,4 @@ const Avatar = ({ src, alt, fallback, fallbackDelayMs }: AvatarProps) => {
       </AvatarFallback>
     </AvatarRoot>
   )
-}
-
-Avatar.displayName = 'Avatar';
-
-export default Avatar;
+};

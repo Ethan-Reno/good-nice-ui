@@ -7,7 +7,6 @@ dist
 storybook-static
 *.tgz
 *bundle-analysis.html
-*bundle-analysis-min.html
 *build-storybook.log
 
 # Dev files

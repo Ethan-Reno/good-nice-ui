@@ -7,7 +7,7 @@ export interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   isLoading?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({
     variant = 'primary',
     size = 'medium',
@@ -44,8 +44,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       />
     )
   }
-)
-
-Button.displayName = 'Button';
-
-export default Button;
+);
