@@ -1,5 +1,6 @@
-import React, { forwardRef, ElementRef, ComponentPropsWithoutRef } from "react"
-import { Root } from "@radix-ui/react-label";
+import React, { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
+import { Root } from '@radix-ui/react-label';
+import { cn } from '../../utils/cn';
 
 const LabelRoot = Root;
 
@@ -9,7 +10,12 @@ export const Label = forwardRef<
 >(({ className, ...props }, ref) => (
   <LabelRoot
     ref={ref}
-    className={"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"}
+    className={cn(
+      'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+      className
+    )}
     {...props}
   />
 ));
+
+Label.displayName = 'Label';

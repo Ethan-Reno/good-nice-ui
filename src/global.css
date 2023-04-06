@@ -5,7 +5,7 @@ html {
   scrollbar-width: auto;
 }
 
-html[data-mode*="dark"] {
+html[data-mode*='dark'] {
   @apply bg-zinc-800;
   @apply text-zinc-50;
   scrollbar-color: #ffffffb3 transparent;

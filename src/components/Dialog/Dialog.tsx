@@ -1,8 +1,4 @@
-import React, {
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import React, { ReactNode, Dispatch, SetStateAction } from 'react';
 import {
   Root,
   Trigger,
@@ -14,10 +10,10 @@ import {
   DialogContentProps,
   Close,
   Title,
-} from "@radix-ui/react-dialog";
-import { cn } from "../../utils/cn";
-import { XIcon } from "../Icons";
-import { ScreenReaderOnly } from "../../utils/ScreenReaderOnly";
+} from '@radix-ui/react-dialog';
+import { cn } from '../../utils/cn';
+import { XIcon } from '../Icons';
+import { ScreenReaderOnly } from '../../utils/ScreenReaderOnly';
 
 const DialogRoot = Root;
 
@@ -25,11 +21,7 @@ const DialogTrigger = Trigger;
 
 const DialogTitle = Title;
 
-const DialogPortal = ({
-  className,
-  children,
-  ...props
-}: DialogPortalProps) => (
+const DialogPortal = ({ className, children, ...props }: DialogPortalProps) => (
   <Portal className={cn(className)} {...props}>
     <div className="fixed inset-0 z-50 flex justify-center items-center">
       {children}
@@ -37,23 +29,31 @@ const DialogPortal = ({
   </Portal>
 );
 
-const DialogOverlay = (({ className, children, ...props }: DialogOverlayProps) => (
+const DialogOverlay = ({
+  className,
+  children,
+  ...props
+}: DialogOverlayProps) => (
   <Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-all duration-100",
-      "data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out",
+      'fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-all duration-100',
+      'data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out',
       className
     )}
     {...props}
   />
-));
+);
 
-const DialogContent = (({ className, children, ...props }: DialogContentProps) => (
+const DialogContent = ({
+  className,
+  children,
+  ...props
+}: DialogContentProps) => (
   <Content
     className={cn(
-      "relative z-50 rounded-sm bg-white p-6 animate-in",
-      "dark:bg-zinc-800",
-      "data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10",
+      'relative z-50 rounded-sm bg-white p-6 animate-in',
+      'dark:bg-zinc-800',
+      'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10',
       className
     )}
     {...props}
@@ -61,15 +61,15 @@ const DialogContent = (({ className, children, ...props }: DialogContentProps) =
     {children}
     <Close
       className={cn(
-        "absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:pointer-events-none",
-        "dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900",
-        "data-[state=open]:bg-zinc-100 dark:data-[state=open]:bg-zinc-800"
+        'absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:pointer-events-none',
+        'dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900',
+        'data-[state=open]:bg-zinc-100 dark:data-[state=open]:bg-zinc-800'
       )}
     >
-      <XIcon label='Close Modal' />
+      <XIcon label="Close Modal" />
     </Close>
   </Content>
-));
+);
 
 export interface DialogProps {
   trigger: ReactNode;
@@ -77,7 +77,7 @@ export interface DialogProps {
   accessibleTitle: string;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
-};
+}
 
 export const Dialog = ({
   trigger,
@@ -86,17 +86,16 @@ export const Dialog = ({
   isOpen,
   setIsOpen,
 }: DialogProps) => {
-
   return (
     <DialogRoot open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogPortal>
-      <DialogOverlay />
+        <DialogOverlay />
         <ScreenReaderOnly asChild>
           <DialogTitle>{accessibleTitle}</DialogTitle>
         </ScreenReaderOnly>
         <DialogContent>{content}</DialogContent>
       </DialogPortal>
     </DialogRoot>
-  )
+  );
 };

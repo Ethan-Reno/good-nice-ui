@@ -1,1 +1,4 @@
 postcss.config.js
+tailwind.config.js
+dist
+node_modules

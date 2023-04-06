@@ -15,6 +15,6 @@ export const Default: Story = {
     label: 'test',
     size: 24,
     color: 'currentColor',
-    strokeWidth: 2
+    strokeWidth: 2,
   },
 };

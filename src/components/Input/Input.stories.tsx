@@ -12,14 +12,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () =>
-    <Input placeholder="placeholder" />
+  render: () => <Input placeholder="placeholder" />,
 };
 
 export const WithLabel: Story = {
-  render: () =>
+  render: () => (
     <div className="flex flex-col w-full gap-2">
       <Label htmlFor="test input">Label</Label>
       <Input id="test input" placeholder="placeholder" />
     </div>
+  ),
 };
