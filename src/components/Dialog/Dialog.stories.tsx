@@ -14,27 +14,29 @@ type Story = StoryObj<typeof meta>;
 const DefaultDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const triggerButton = <Button variant='primary'>Trigger</Button>;
+  const triggerButton = <Button variant="primary">Trigger</Button>;
 
   const defaultContent = (
     <div className="flex flex-col gap-4 w-80">
       <h1>Dialog</h1>
-      <Input title='test' placeholder='placeholder' />
-      <Button onClick={() => setIsOpen(false)} variant='primary'>Submit</Button>
+      <Input title="test" placeholder="placeholder" />
+      <Button onClick={() => setIsOpen(false)} variant="primary">
+        Submit
+      </Button>
     </div>
   );
 
   return (
     <Dialog
       trigger={triggerButton}
-      accessibleTitle='title'
+      accessibleTitle="title"
       isOpen={isOpen}
       setIsOpen={setIsOpen}
       content={defaultContent}
     />
-  )
+  );
 };
 
 export const Default: Story = {
-  render: () => <DefaultDialog />
+  render: () => <DefaultDialog />,
 };

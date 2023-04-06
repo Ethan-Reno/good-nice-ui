@@ -12,5 +12,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Label>Test Label</Label>
+  render: () => <Label>Test Label</Label>,
 };

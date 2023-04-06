@@ -8,7 +8,7 @@ const meta = {
   tags: ['autodocs'],
   args: {
     children: 'Test',
-  }
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -16,15 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    onClick: () => console.log('clicked')
+    onClick: () => console.log('clicked'),
   },
 };
 
 export const WithIcon: Story = {
-  render: () =>
-    <Button
-      size='square'
-    >
+  render: () => (
+    <Button size="square">
       <XIcon label="Button with X Icon" />
     </Button>
-}
+  ),
+};

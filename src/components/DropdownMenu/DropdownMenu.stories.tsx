@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const triggerButton = <Button variant='primary'>Trigger</Button>;
+const triggerButton = <Button variant="primary">Trigger</Button>;
 
 const standardMenuItems: DropdownMenuItemGroup[] = [
   {
@@ -28,8 +28,8 @@ const standardMenuItems: DropdownMenuItemGroup[] = [
       },
       {
         children: (
-          <div className='flex gap-1 items-center'>
-            <TriangleIcon label='test' size={14} />
+          <div className="flex gap-1 items-center">
+            <TriangleIcon label="test" size={14} />
             Option 3
           </div>
         ),
@@ -38,21 +38,21 @@ const standardMenuItems: DropdownMenuItemGroup[] = [
       },
       {
         children: (
-          <div className='flex gap-1 items-center'>
-            <XIcon label='test' size={14} />
+          <div className="flex gap-1 items-center">
+            <XIcon label="test" size={14} />
             Disabled Option
           </div>
         ),
         onSelect: () => console.log('should not see this'),
-        disabled: true
+        disabled: true,
       },
-    ]
+    ],
   },
 ];
 
 const DropdownMenuWithCheckmarks = () => {
-  const [showOption1, setShowOption1] = useState(true)
-  const [showOption2, setShowOption2] = useState(false)
+  const [showOption1, setShowOption1] = useState(true);
+  const [showOption2, setShowOption2] = useState(false);
 
   const menuItems: DropdownMenuItemGroup[] = [
     {
@@ -63,28 +63,23 @@ const DropdownMenuWithCheckmarks = () => {
           children: 'Option 1',
           onSelect: () => console.log('clicked Option 1'),
           checked: showOption1,
-          onCheckedChange: () => setShowOption1(!showOption1)
+          onCheckedChange: () => setShowOption1(!showOption1),
         },
         {
           children: 'Option 2',
           onSelect: () => console.log('clicked Option 2'),
           checked: showOption2,
-          onCheckedChange: () => setShowOption2(!showOption2)
+          onCheckedChange: () => setShowOption2(!showOption2),
         },
-      ]
+      ],
     },
   ];
 
-  return (
-    <DropdownMenu 
-      trigger={triggerButton}
-      groupedMenuItems={menuItems}
-    />
-  )
-}
+  return <DropdownMenu trigger={triggerButton} groupedMenuItems={menuItems} />;
+};
 
 const DropdownMenuWithRadioGroup = () => {
-  const [radioValue, setRadioValue] = useState("Option 1")
+  const [radioValue, setRadioValue] = useState('Option 1');
 
   const menuItems: DropdownMenuItemGroup[] = [
     {
@@ -96,24 +91,19 @@ const DropdownMenuWithRadioGroup = () => {
         {
           children: 'Option 1',
           onSelect: () => console.log('clicked Option 1'),
-          value: "Option 1"
+          value: 'Option 1',
         },
         {
           children: 'Option 2',
           onSelect: () => console.log('clicked Option 2'),
-          value: "Option 2"
+          value: 'Option 2',
         },
-      ]
+      ],
     },
   ];
 
-  return (
-    <DropdownMenu 
-      trigger={triggerButton}
-      groupedMenuItems={menuItems}
-    />
-  )
-}
+  return <DropdownMenu trigger={triggerButton} groupedMenuItems={menuItems} />;
+};
 
 export const Default: Story = {
   args: {
@@ -121,15 +111,15 @@ export const Default: Story = {
     trigger: triggerButton,
     contentProps: {
       align: 'start',
-      sideOffset: 4
-    }
-  }
+      sideOffset: 4,
+    },
+  },
 };
 
 export const WithCheckboxes: Story = {
-  render: () => <DropdownMenuWithCheckmarks />
-}
+  render: () => <DropdownMenuWithCheckmarks />,
+};
 
 export const WithRadioGroup: Story = {
-  render: () => <DropdownMenuWithRadioGroup />
-}
+  render: () => <DropdownMenuWithRadioGroup />,
+};
