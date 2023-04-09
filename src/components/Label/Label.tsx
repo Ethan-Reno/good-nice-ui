@@ -1,6 +1,6 @@
 import React, { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import { Root } from '@radix-ui/react-label';
-import { cn } from '../../utils/cn';
+import { clsx } from 'clsx';
 
 const LabelRoot = Root;
 
@@ -10,7 +10,7 @@ export const Label = forwardRef<
 >(({ className, ...props }, ref) => (
   <LabelRoot
     ref={ref}
-    className={cn(
+    className={clsx(
       'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
       className
     )}

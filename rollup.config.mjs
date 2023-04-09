@@ -4,35 +4,47 @@ import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
 import { visualizer } from 'rollup-plugin-visualizer';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+// import typescript from 'rollup-plugin-typescript2';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx' ];
+const globals = {
+  react: 'react',
+  'react-dom': 'react-dom',
+};
 
-export default  {
+export default {
   input: 'src/index.ts',
-  output: {
-    dir: 'dist',
-    format: 'esm',
-    sourcemap: true,
-    preserveModules: true,
-    preserveModulesRoot: 'src',
-    globals: {
-      react: 'react',
-      'react-dom': 'react-dom',
+  output: [
+    {
+      dir: 'dist',
+      format: 'esm',
+      sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      globals: globals,
     },
-  },
+    {
+      dir: 'dist',
+      format: 'cjs',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      sourcemap: true,
+      entryFileNames: '[name].cjs',
+    },
+  ],
   plugins: [
     peerDepsExternal(),
     resolve({ extensions }),
     typescript(),
-    babel({
-      babelHelpers: 'bundled',
-      include: [
-        'src/**/*.ts',
-        'src/**/*.tsx'
-      ],
-      extensions,
-      exclude: './node_modules/**'
-    }),
+    // babel({
+    //   babelHelpers: 'bundled',
+    //   include: [
+    //     'src/**/*.ts',
+    //     'src/**/*.tsx'
+    //   ],
+    //   extensions,
+    //   exclude: './node_modules/**'
+    // }),
     terser(),
     visualizer({
       sourcemap: true,

@@ -7,11 +7,11 @@ import {
   AvatarImageProps,
   AvatarFallbackProps,
 } from '@radix-ui/react-avatar';
-import { cn } from '../../utils/cn';
+import { clsx } from 'clsx';
 
 const AvatarRoot = ({ className, ...props }: AvatarRootProps) => (
   <Root
-    className={cn(
+    className={clsx(
       'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
       className
     )}
@@ -20,12 +20,12 @@ const AvatarRoot = ({ className, ...props }: AvatarRootProps) => (
 );
 
 const AvatarImage = ({ className, ...props }: AvatarImageProps) => (
-  <Image className={cn('aspect-square h-full w-full', className)} {...props} />
+  <Image className={clsx('aspect-square h-full w-full', className)} {...props} />
 );
 
 const AvatarFallback = ({ className, ...props }: AvatarFallbackProps) => (
   <Fallback
-    className={cn(
+    className={clsx(
       'flex h-full w-full items-center justify-center rounded-full bg-zinc-200 dark:bg-zinc-600',
       className
     )}

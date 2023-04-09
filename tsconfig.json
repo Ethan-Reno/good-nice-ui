@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationDir": "dist",
     "strict": false,
     "emitDeclarationOnly": true,
     "declarationMap": true,
@@ -13,8 +14,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "outDir": "dist",
-    "jsx": "react-jsx",
+    "jsx": "react",
   },
   "include": [
     "./src/index.ts"

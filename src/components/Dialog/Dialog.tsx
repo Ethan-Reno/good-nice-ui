@@ -11,7 +11,7 @@ import {
   Close,
   Title,
 } from '@radix-ui/react-dialog';
-import { cn } from '../../utils/cn';
+import { clsx } from 'clsx';
 import { XIcon } from '../Icons';
 import { ScreenReaderOnly } from '../../utils/ScreenReaderOnly';
 
@@ -22,7 +22,7 @@ const DialogTrigger = Trigger;
 const DialogTitle = Title;
 
 const DialogPortal = ({ className, children, ...props }: DialogPortalProps) => (
-  <Portal className={cn(className)} {...props}>
+  <Portal className={clsx(className)} {...props}>
     <div className="fixed inset-0 z-50 flex justify-center items-center">
       {children}
     </div>
@@ -35,7 +35,7 @@ const DialogOverlay = ({
   ...props
 }: DialogOverlayProps) => (
   <Overlay
-    className={cn(
+    className={clsx(
       'fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-all duration-100',
       'data-[state=closed]:animate-out data-[state=open]:fade-in data-[state=closed]:fade-out',
       className
@@ -50,7 +50,7 @@ const DialogContent = ({
   ...props
 }: DialogContentProps) => (
   <Content
-    className={cn(
+    className={clsx(
       'relative z-50 rounded-sm bg-white p-6 animate-in',
       'dark:bg-zinc-800',
       'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10',
@@ -60,7 +60,7 @@ const DialogContent = ({
   >
     {children}
     <Close
-      className={cn(
+      className={clsx(
         'absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:pointer-events-none',
         'dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900',
         'data-[state=open]:bg-zinc-100 dark:data-[state=open]:bg-zinc-800'

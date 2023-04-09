@@ -1,5 +1,5 @@
 import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
-import { cn } from '../../utils/cn';
+import { clsx } from 'clsx';
 
 export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
@@ -35,7 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        className={cn(
+        className={clsx(
           baseStyles,
           variantStyles[variant],
           sizeStyles[size],

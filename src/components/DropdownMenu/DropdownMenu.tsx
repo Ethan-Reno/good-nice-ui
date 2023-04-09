@@ -16,7 +16,7 @@ import {
   DropdownMenuSeparatorProps,
   DropdownMenuContentProps,
 } from '@radix-ui/react-dropdown-menu';
-import { cn } from '../../utils/cn';
+import { clsx } from 'clsx';
 import { Check, Circle } from 'lucide-react';
 import {
   DropdownMenuItemCustomProps,
@@ -39,7 +39,7 @@ const DropdownMenuContent = ({
     <Content
       align={align}
       sideOffset={sideOffset}
-      className={cn(
+      className={clsx(
         'animate-in bg-white dark:bg-zinc-800 z-50 min-w-[8rem] overflow-hidden rounded-md border border-zinc-400 dark:border-zinc-500 p-1',
         'data-[side=right]:slide-in-from-left-2 data-[side=left]:slide-in-from-right-2 data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2',
         className
@@ -51,7 +51,7 @@ const DropdownMenuContent = ({
 
 const DropdownMenuItem = ({ inset, ...props }: DropdownMenuItemCustomProps) => (
   <Item
-    className={cn(
+    className={clsx(
       'relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-zinc-200 dark:focus:bg-zinc-700',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8'
@@ -67,7 +67,7 @@ const DropdownMenuCheckboxItem = ({
   ...props
 }: DropdownMenuCheckboxItemProps) => (
   <CheckboxItem
-    className={cn(
+    className={clsx(
       'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-zinc-100 dark:focus:bg-zinc-700',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className
@@ -90,7 +90,7 @@ const DropdownMenuRadioItem = ({
   ...props
 }: DropdownMenuRadioItemProps) => (
   <RadioItem
-    className={cn(
+    className={clsx(
       'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm font-medium outline-none focus:bg-zinc-100 dark:focus:bg-zinc-700',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className
@@ -112,7 +112,7 @@ const DropdownMenuLabel = ({
   ...props
 }: DropdownMenuLabelCustomProps) => (
   <Label
-    className={cn(
+    className={clsx(
       'underline underline-offset-2 px-2 py-1.5 text-sm font-semi-bold text-zinc-900 dark:text-zinc-300',
       inset && 'pl-8',
       className
@@ -126,7 +126,7 @@ const DropdownMenuSeparator = ({
   ...props
 }: DropdownMenuSeparatorProps) => (
   <Separator
-    className={cn('mx-2 my-1 h-px bg-zinc-400 dark:bg-zinc-500', className)}
+    className={clsx('mx-2 my-1 h-px bg-zinc-400 dark:bg-zinc-500', className)}
     {...props}
   />
 );
