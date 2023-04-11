@@ -23,3 +23,21 @@ export const WithLabel: Story = {
     </div>
   ),
 };
+
+export const WithErrorMessage: Story = {
+  render: () => (
+    <div className="flex flex-col w-full gap-2">
+      <Label htmlFor="test input">Label</Label>
+      <Input id="test input" error='There is an error message' placeholder="placeholder" />
+    </div>
+  ),
+};
+
+export const WithErrorNoMessage: Story = {
+  render: () => (
+    <div className="flex flex-col w-full gap-2">
+      <Label htmlFor="test input">Label</Label>
+      <Input id="test input" error={true} placeholder="placeholder" />
+    </div>
+  ),
+};
