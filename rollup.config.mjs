@@ -1,10 +1,8 @@
-import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
 import { visualizer } from 'rollup-plugin-visualizer';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-// import typescript from 'rollup-plugin-typescript2';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx' ];
 const globals = {
@@ -17,10 +15,11 @@ export default {
   output: [
     {
       dir: 'dist',
-      format: 'esm',
-      sourcemap: true,
+      format: 'es',
       preserveModules: true,
       preserveModulesRoot: 'src',
+      sourcemap: false,
+      entryFileNames: '[name].js',
       globals: globals,
     },
     {
@@ -28,23 +27,16 @@ export default {
       format: 'cjs',
       preserveModules: true,
       preserveModulesRoot: 'src',
-      sourcemap: true,
+      sourcemap: false,
       entryFileNames: '[name].cjs',
+      globals: globals,
     },
   ],
   plugins: [
     peerDepsExternal(),
     resolve({ extensions }),
     typescript(),
-    // babel({
-    //   babelHelpers: 'bundled',
-    //   include: [
-    //     'src/**/*.ts',
-    //     'src/**/*.tsx'
-    //   ],
-    //   extensions,
-    //   exclude: './node_modules/**'
-    // }),
+    // babel here if wanted
     terser(),
     visualizer({
       sourcemap: true,

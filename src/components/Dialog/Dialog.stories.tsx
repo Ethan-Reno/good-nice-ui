@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Input, Dialog } from '..';
+import { Button } from '../Button/Button';
+import { Input } from '../Input/Input';
+import { Dialog } from './Dialog';
 
 const meta = {
   title: 'Components/Dialog',
