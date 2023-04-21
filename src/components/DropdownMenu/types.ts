@@ -1,19 +1,21 @@
 import {
   Item,
+  RadioItem,
   Label,
   DropdownMenuItemProps,
-  DropdownMenuCheckboxItemProps,
   DropdownMenuRadioItemProps,
+  DropdownMenuCheckboxItemProps,
   DropdownMenuContentProps,
   DropdownMenuLabelProps,
 } from '@radix-ui/react-dropdown-menu';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-export interface DropdownMenuItemCustomProps
+export interface DropdownMenuDefaultItemProps
   extends DropdownMenuItemProps,
     ComponentPropsWithoutRef<typeof Item> {
   inset?: boolean;
   hasSeparator?: boolean;
+  value?: any;
 }
 
 export interface DropdownMenuLabelCustomProps
@@ -25,7 +27,7 @@ export interface DropdownMenuLabelCustomProps
 export interface DropdownMenuItemGroup {
   type: 'default' | 'checkbox' | 'radio';
   items:
-    | DropdownMenuItemCustomProps[]
+    | DropdownMenuDefaultItemProps[]
     | DropdownMenuCheckboxItemProps[]
     | DropdownMenuRadioItemProps[];
   label?: string;

@@ -5,10 +5,6 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx' ];
-const globals = {
-  react: 'react',
-  'react-dom': 'react-dom',
-};
 
 export default {
   input: 'src/index.ts',
@@ -18,18 +14,14 @@ export default {
       format: 'es',
       preserveModules: true,
       preserveModulesRoot: 'src',
-      sourcemap: false,
+      sourcemap: true,
       entryFileNames: '[name].js',
-      globals: globals,
     },
     {
       dir: 'dist',
       format: 'cjs',
-      preserveModules: true,
-      preserveModulesRoot: 'src',
-      sourcemap: false,
+      sourcemap: true,
       entryFileNames: '[name].cjs',
-      globals: globals,
     },
   ],
   plugins: [

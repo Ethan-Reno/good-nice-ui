@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "dist",
-    "strict": false,
+    "strict": true,
     "emitDeclarationOnly": true,
     "declarationMap": true,
     "moduleResolution": "node",

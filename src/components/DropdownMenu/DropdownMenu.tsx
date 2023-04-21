@@ -19,7 +19,7 @@ import {
 import { clsx } from 'clsx';
 import { Check, Circle } from 'lucide-react';
 import {
-  DropdownMenuItemCustomProps,
+  DropdownMenuDefaultItemProps,
   DropdownMenuItemGroup,
   DropdownMenuLabelCustomProps,
   DropdownMenuProps,
@@ -49,7 +49,7 @@ const DropdownMenuContent = ({
   </Portal>
 );
 
-const DropdownMenuItem = ({ inset, ...props }: DropdownMenuItemCustomProps) => (
+const DropdownMenuItem = ({ inset, ...props }: DropdownMenuDefaultItemProps) => (
   <Item
     className={clsx(
       'relative flex cursor-default select-none items-center rounded-sm py-1.5 px-2 text-sm font-medium outline-none focus:bg-zinc-200 dark:focus:bg-zinc-700',
@@ -138,7 +138,7 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
       return (
         <>
           {label && <DropdownMenuLabel>{label}</DropdownMenuLabel>}
-          {items.map((menuItem: DropdownMenuItemCustomProps) => {
+          {items.map((menuItem: DropdownMenuDefaultItemProps) => {
             const { key, hasSeparator, ...props } = menuItem;
             return (
               <>
@@ -173,9 +173,11 @@ const constructMenuItemGroup = (menuItemGroup: DropdownMenuItemGroup) => {
         <RadioGroup value={radioValue} onValueChange={onRadioValueChange}>
           {label && <DropdownMenuLabel>{label}</DropdownMenuLabel>}
           {/* TODO: tsconfig strict to true, resolve ts error */}
-          {items.map((menuItem: DropdownMenuRadioItemProps) => {
-            const { key, value, ...props } = menuItem;
-            return <DropdownMenuRadioItem key={key} value={value} {...props} />;
+          {items.map((menuItem) => {
+            if ('value' in menuItem) {
+              const { key, value, ...props } = menuItem;
+              return <DropdownMenuRadioItem key={key} value={value} {...props} />;
+            }
           })}
         </RadioGroup>
       );
