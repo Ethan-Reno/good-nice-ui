@@ -18,6 +18,4 @@ const XIcon = ({
   );
 };
 
-XIcon.displayName = 'XIcon';
-
 export default XIcon;

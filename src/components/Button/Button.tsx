@@ -13,17 +13,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'active:scale-95 shadow-none border text-zinc-50 inline-flex items-center justify-center rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-900 disabled:opacity-50 ring-offset-transparent dark:focus:ring-zinc-50 disabled:pointer-events-none data-[state=open]:bg-transparent data-[state=open]:text-zinc-900 dark:data-[state=open]:text-zinc-50';
+      'shadow-none border text-zinc-50 inline-flex items-center justify-center rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 disabled:opacity-50 dark:focus-visible:ring-zinc-200 disabled:pointer-events-none data-[state=open]:bg-transparent data-[state=open]:text-zinc-900 dark:data-[state=open]:text-zinc-50';
 
     const variantStyles = {
       primary:
-        'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700',
+        'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 active:bg-blue-800',
       secondary:
-        'bg-red-500 hover:bg-red-600 border-red-500 hover:border-red-600',
+        'bg-red-500 hover:bg-red-600 border-red-500 hover:border-red-600 active:bg-red-700',
       outline:
-        'bg-transparent border-zinc-900 dark:border-zinc-50 text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+        'bg-transparent border-zinc-900 dark:border-zinc-50 text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700 active:bg-zinc-300 dark:active:bg-zinc-600',
       ghost:
-        'bg-transparent border-transparent text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700',
+        'bg-transparent border-transparent text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700 active:bg-zinc-300 dark:active:bg-zinc-600',
     };
 
     const sizeStyles = {
@@ -47,5 +47,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
-Button.displayName = 'Button';

@@ -19,8 +19,6 @@ const DialogRoot = Root;
 
 const DialogTrigger = Trigger;
 
-const DialogTitle = Title;
-
 const DialogPortal = ({ className, children, ...props }: DialogPortalProps) => (
   <Portal className={clsx(className)} {...props}>
     <div className="fixed inset-0 z-50 flex justify-center items-center">
@@ -46,43 +44,43 @@ const DialogOverlay = ({
 
 const DialogContent = ({
   className,
+  title,
   children,
   ...props
 }: DialogContentProps) => (
   <Content
     className={clsx(
-      'relative z-50 rounded-sm bg-white p-6 animate-in',
+      'relative max-w-screen-sm sm:max-w-screen-md w-full z-50 rounded-md bg-white p-6 animate-in',
       'dark:bg-zinc-800',
       'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10',
       className
     )}
     {...props}
   >
+    <div className='flex justify-between items-start'>
+      <Title>{title}</Title>
+      <Close
+        className='ml-3 rounded-md transition-opacity hover:opacity-100 focus-styles disabled:pointer-events-none text-zinc-500 dark:text-zinc-400'
+      >
+        <XIcon label="Close Modal" />
+      </Close>
+    </div>
     {children}
-    <Close
-      className={clsx(
-        'absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 disabled:pointer-events-none',
-        'dark:focus:ring-zinc-400 dark:focus:ring-offset-zinc-900',
-        'data-[state=open]:bg-zinc-100 dark:data-[state=open]:bg-zinc-800'
-      )}
-    >
-      <XIcon label="Close Modal" />
-    </Close>
   </Content>
 );
 
 export interface DialogProps {
   trigger: ReactNode;
+  title: string;
   content: ReactNode;
-  accessibleTitle: string;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Dialog = ({
   trigger,
+  title,
   content,
-  accessibleTitle,
   isOpen,
   setIsOpen,
 }: DialogProps) => {
@@ -91,10 +89,7 @@ export const Dialog = ({
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       <DialogPortal>
         <DialogOverlay />
-        <ScreenReaderOnly asChild>
-          <DialogTitle>{accessibleTitle}</DialogTitle>
-        </ScreenReaderOnly>
-        <DialogContent>{content}</DialogContent>
+        <DialogContent title={title}>{content}</DialogContent>
       </DialogPortal>
     </DialogRoot>
   );

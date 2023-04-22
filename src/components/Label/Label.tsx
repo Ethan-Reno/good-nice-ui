@@ -17,5 +17,3 @@ export const Label = forwardRef<
     {...props}
   />
 ));
-
-Label.displayName = 'Label';

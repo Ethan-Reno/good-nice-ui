@@ -18,6 +18,4 @@ const TriangleIcon = ({
   );
 };
 
-TriangleIcon.displayName = 'TriangleIcon';
-
 export default TriangleIcon;

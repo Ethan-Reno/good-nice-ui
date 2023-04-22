@@ -19,9 +19,8 @@ const DefaultDialog = () => {
   const triggerButton = <Button variant="primary">Trigger</Button>;
 
   const defaultContent = (
-    <div className="flex flex-col gap-4 w-80">
-      <h1>Dialog</h1>
-      <Input title="test" placeholder="placeholder" />
+    <div className="flex flex-col gap-4 pt-5 w-full">
+      <Input title="test" placeholder="placeholder" className='w-full' />
       <Button onClick={() => setIsOpen(false)} variant="primary">
         Submit
       </Button>
@@ -31,7 +30,7 @@ const DefaultDialog = () => {
   return (
     <Dialog
       trigger={triggerButton}
-      accessibleTitle="title"
+      title="title"
       isOpen={isOpen}
       setIsOpen={setIsOpen}
       content={defaultContent}
