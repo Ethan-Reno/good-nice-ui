@@ -4,6 +4,6 @@
 
 @layer base {
   .focus-styles {
-    @apply focus-visible:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-200;
+    @apply focus-visible:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-200;
   } 
 }
