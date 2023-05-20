@@ -12,3 +12,5 @@ export * from './components/Icons';
 export { Input } from './components/Input/Input';
 
 export { Label } from './components/Label/Label';
+
+export * from './components/Select/Select';
