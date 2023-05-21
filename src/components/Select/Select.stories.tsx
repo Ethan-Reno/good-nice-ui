@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from './Select';
-import { SelectSeparator } from '@radix-ui/react-select';
 
 const meta = {
   title: 'Components/Select',

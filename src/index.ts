@@ -6,7 +6,6 @@ export { Dialog } from './components/Dialog/Dialog';
 
 export { DropdownMenu } from './components/DropdownMenu/DropdownMenu';
 
-// TODO: Overhaul icon implementation and exports
 export * from './components/Icons';
 
 export { Input } from './components/Input/Input';
@@ -14,3 +13,5 @@ export { Input } from './components/Input/Input';
 export { Label } from './components/Label/Label';
 
 export * from './components/Select/Select';
+
+export * from './components/Tooltip/Tooltip';
