@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger } from './Dialog';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
-import { Dialog } from './Dialog';
+import { Label } from '../Label/Label';
 
 const meta = {
   title: 'Components/Dialog',
@@ -15,27 +23,38 @@ type Story = StoryObj<typeof meta>;
 
 const DefaultDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const triggerButton = <Button variant="primary">Trigger</Button>;
-
-  const defaultContent = (
-    <div className="flex flex-col gap-4 pt-5 w-full">
-      <Input title="test" placeholder="placeholder" className='w-full' />
-      <Button onClick={() => setIsOpen(false)} variant="primary">
-        Submit
-      </Button>
-    </div>
-  );
-
   return (
-    <Dialog
-      trigger={triggerButton}
-      title="title"
-      isOpen={isOpen}
-      setIsOpen={setIsOpen}
-      content={defaultContent}
-    />
-  );
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button variant="outline" onClick={() => setIsOpen(true)}>Edit Profile</Button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you're done.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input id="username" value="@peduarte" className="col-span-3" />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button type="submit" onClick={() => setIsOpen(false)}>Save changes</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
 };
 
 export const Default: Story = {
