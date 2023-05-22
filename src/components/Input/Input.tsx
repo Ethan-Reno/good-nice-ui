@@ -1,27 +1,24 @@
-import React, { InputHTMLAttributes, forwardRef } from 'react';
-import { clsx } from 'clsx';
-
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  className?: string; 
-  error?: string | boolean;
-}
-
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, error, ...props }, ref) => {
+import * as React from "react";
+import clsx from "clsx";
+ 
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {};
+ 
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
     return (
-      <div className='relative'>
-        <input
-          className={clsx(
-            'block w-full rounded-md bg-transparent border-0 py-1.5 pl-3 pr-20 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:focus:ring-blue-600 sm:text-sm sm:leading-6 focus:outline-none',
-            error
-              && 'ring-red-500 focus:ring-red-500',
-            className
-          )}
-          ref={ref}
-          {...props}
-        />
-        {typeof(error) === 'string' && <div className="absolute text-xs text-red-500 top-10 left-1">* {error}</div>}
-      </div>
-    );
+      <input
+        type={type}
+        className={clsx(
+          "flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        )}
+        ref={ref}
+        {...props}
+      />
+    )
   }
 );
+Input.displayName = "Input";
+ 
+export { Input };

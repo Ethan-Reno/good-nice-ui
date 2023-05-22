@@ -1,5 +1,6 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar } from './Avatar';
+import { Avatar, AvatarImage, AvatarFallback } from './Avatar';
 
 const meta = {
   title: 'Components/Avatar',
@@ -11,18 +12,22 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    src: 'https://avatars.githubusercontent.com/u/76115441?v=4',
-    alt: 'alt',
-    fallback: 'ER',
+  render: () => {
+    return (
+      <Avatar>
+        <AvatarImage src="https://avatars.githubusercontent.com/u/76115441?v=4" alt='alt'/>
+        <AvatarFallback>ER</AvatarFallback>
+      </Avatar>
+    );
   },
 };
 
-export const FallbackAvatar: Story = {
-  args: {
-    src: '',
-    alt: 'alt',
-    fallback: 'ER',
-    fallbackDelayMs: 600,
+export const FallbackAvatarStory: Story = {
+  render: () => {
+    return (
+      <Avatar>
+        <AvatarFallback>ER</AvatarFallback>
+      </Avatar>
+    );
   },
 };

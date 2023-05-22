@@ -1,10 +1,10 @@
-export { Avatar } from './components/Avatar/Avatar';
+export * from './components/Avatar/Avatar';
 
 export { Button } from './components/Button/Button';
 
-export { Dialog } from './components/Dialog/Dialog';
+export * from './components/Dialog/Dialog';
 
-export { DropdownMenu } from './components/DropdownMenu/DropdownMenu';
+export * from './components/DropdownMenu/DropdownMenu';
 
 export * from './components/Icons';
 
