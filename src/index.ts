@@ -6,6 +6,8 @@ export * from './components/Dialog/Dialog';
 
 export * from './components/DropdownMenu/DropdownMenu';
 
+export * from './components/Form/Form';
+
 export * from './components/Icons';
 
 export { Input } from './components/Input/Input';
