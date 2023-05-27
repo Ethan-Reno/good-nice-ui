@@ -1,9 +1,9 @@
-import * as React from "react"
-import { format } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
-import { clsx } from "clsx"
-import { Button } from "../Button/Button"
-import { Calendar } from "../Calendar/Calendar"
+import * as React from "react";
+import { format } from "date-fns";
+import { Calendar as CalendarIcon } from "lucide-react";
+import { clsx } from "clsx";
+import { Button } from "../Button/Button";
+import { Calendar } from "../Calendar/Calendar";
 import {
   Popover,
   PopoverContent,
@@ -11,7 +11,7 @@ import {
 } from "../Popover/Popover";
 
 export function DatePicker() {
-  const [date, setDate] = React.useState<Date>()
+  const [date, setDate] = React.useState<Date>();
 
   return (
     <Popover>
@@ -36,5 +36,5 @@ export function DatePicker() {
         />
       </PopoverContent>
     </Popover>
-  )
-}
+  );
+};
