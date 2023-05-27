@@ -16,15 +16,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    onClick: () => console.log('clicked'),
-  },
+  render: () => (
+    <Button variant="primary">
+      Button
+    </Button>
+  ),
 };
 
 export const WithIcon: Story = {
   render: () => (
-    <Button size="square">
-      <XIcon label="Button with X Icon" />
+    <Button variant="primary">
+      <XIcon label="X Icon" />
+      Close
     </Button>
   ),
 };

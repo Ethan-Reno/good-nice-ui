@@ -1,49 +1,56 @@
-import React, { forwardRef, ComponentPropsWithoutRef } from 'react';
-import { clsx } from 'clsx';
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { clsx } from "clsx";
 
-export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
-  size?: 'small' | 'medium' | 'large' | 'square';
-  isLoading?: boolean;
-}
+const buttonVariants = cva(
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "underline-offset-4 hover:underline text-primary",
+      },
+      size: {
+        default: "h-10 py-2 px-4",
+        sm: "h-9 px-3",
+        lg: "h-11 px-8",
+        calendarNav: "h-7 w-7 p-0",
+        calendarDay: "h-9 w-9 p-0",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+      size: "default",
+    },
+  }
+);
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { variant = 'primary', size = 'medium', className, isLoading, ...props },
-    ref
-  ) => {
-    const baseStyles =
-      'shadow-none border text-zinc-50 inline-flex items-center justify-center rounded-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 disabled:opacity-50 dark:focus-visible:ring-zinc-200 disabled:pointer-events-none data-[state=open]:bg-transparent data-[state=open]:text-zinc-900 dark:data-[state=open]:text-zinc-50';
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+};
 
-    const variantStyles = {
-      primary:
-        'bg-blue-600 hover:bg-blue-700 border-blue-600 hover:border-blue-700 active:bg-blue-800',
-      secondary:
-        'bg-red-500 hover:bg-red-600 border-red-500 hover:border-red-600 active:bg-red-700',
-      outline:
-        'bg-transparent border-zinc-900 dark:border-zinc-50 text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700 active:bg-zinc-300 dark:active:bg-zinc-600',
-      ghost:
-        'bg-transparent border-transparent text-zinc-900 dark:text-zinc-50 hover:bg-zinc-200 dark:hover:bg-zinc-700 active:bg-zinc-300 dark:active:bg-zinc-600',
-    };
-
-    const sizeStyles = {
-      small: 'py-1 px-2',
-      medium: 'py-2 px-4',
-      large: 'py-3 px-6',
-      square: 'p-2',
-    };
-
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button"
     return (
-      <button
-        className={clsx(
-          baseStyles,
-          variantStyles[variant],
-          sizeStyles[size],
-          className
-        )}
+      <Comp
+        className={clsx(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       />
-    );
+    )
   }
 );
+Button.displayName = "Button";
+
+export { Button, buttonVariants };
