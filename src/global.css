@@ -1,4 +1,4 @@
-html {
+/* html {
   @apply bg-zinc-50;
   @apply text-zinc-800;
   scrollbar-color: #00000080 transparent;
@@ -10,4 +10,4 @@ html[data-mode*='dark'] {
   @apply text-zinc-50;
   scrollbar-color: #ffffffb3 transparent;
   scrollbar-width: auto;
-}
+} */

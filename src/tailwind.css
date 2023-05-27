@@ -3,7 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  .focus-styles {
-    @apply focus-visible:outline-none focus-visible:border-transparent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-200;
-  } 
+  :root {
+    /* zinc-50 */
+    --background: 0 0% 98%;
+    /* zinc-800 */
+    --foreground: 240 4% 16%;
+ 
+    /* zinc-200 */
+    --muted: 240 5% 96%;
+    /* zinc-700 */
+    --muted-foreground: 240 5% 26%;
+ 
+    /* zinc-50 */
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 4% 16%;
+ 
+    /* --card: 0 0% 98%;
+    --card-foreground: 240 4% 16%; */
+ 
+    /* zinc-500 */
+    --border: 240 5% 65%;
+    --input: 240 5% 65%;
+ 
+    /* zinc-100 */
+    --primary: 240 5% 96%;
+    /* zinc-700 */
+    --primary-foreground: 240 5% 26%;
+ 
+    /* zinc-700 */
+    --secondary: 240 5% 26%;
+    /* zinc-100 */
+    --secondary-foreground: 240 5% 96%;
+ 
+    /* zinc-500 */
+    --accent: 240 5% 65%;
+    /* zinc-100 */
+    --accent-foreground: 240 5% 96%;
+ 
+    /* red-600 */
+    --destructive: 0 72% 51%;
+    /* zinc-100 */
+    --destructive-foreground: 240 5% 96%;
+ 
+    /* zinc-500 */
+    --ring: 240 5% 65%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark, [data-mode="dark"] {
+    /* zinc-800 */
+    --background: 240 4% 16%;
+    /* zinc-50 */
+    --foreground: 0 0% 98%;
+
+    /* zinc-700 */
+    --muted: 240 5% 26%;
+    /* zinc-200 */
+    --muted-foreground: 240 6% 90%;
+ 
+    /* zinc-800 */
+    --popover: 240 4% 16%;
+    /* zinc-200 */
+    --popover-foreground: 240 6% 90%;
+ 
+    /* --card: 240 4% 16%;
+    --card-foreground: 0 0% 98%; */
+ 
+    /* zinc-500 */
+    --border: 240 4% 46%;
+    --input: 240 4% 46%;
+ 
+    /* zinc-100 */
+    --primary: 240 5% 96%;
+    /* zinc-700 */
+    --primary-foreground: 240 5% 26%;
+ 
+    /* zinc-700 */
+    --secondary: 240 5% 26%;
+    /* zinc-100 */
+    --secondary-foreground: 240 5% 96%;
+ 
+    /* zinc-500 */
+    --accent: 240 4% 46%;
+    /* zinc-100 */
+    --accent-foreground: 240 5% 96%;
+ 
+    /* red-600 */
+    --destructive: 0 72% 51%;
+    /* zinc-100 */
+    --destructive-foreground: 240 5% 96%;
+ 
+    /* zinc-500 */
+    --ring: 240 4% 46%;
+ 
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
