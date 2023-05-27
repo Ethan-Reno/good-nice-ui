@@ -8,6 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from './DropdownMenu';
+import { Button } from '../Button/Button';
 
 const meta = {
   title: 'Components/DropdownMenu',
@@ -21,7 +22,11 @@ type Story = StoryObj<typeof meta>;
 const DefaultDropdownMenu = () => {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+      <DropdownMenuTrigger>
+        <Button variant="outline">
+          Menu
+        </Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />

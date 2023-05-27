@@ -7,7 +7,7 @@ import {
   TooltipTrigger
 } from './Tooltip';
 import { Button } from '../Button/Button';
-import { XIcon } from '../Icons';
+import { TriangleIcon } from '../Icons';
 
 const meta = {
   title: 'Components/Tooltip',
@@ -23,13 +23,13 @@ const DefaultTooltip = () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline" className="w-10 rounded-full p-0">
-            <XIcon label="tooltip" />
+          <Button variant="outline">
+            <TriangleIcon label="tooltip" />
             <span className="sr-only">Add</span>
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>Add to library</p>
+          <p>Tooltip test</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
