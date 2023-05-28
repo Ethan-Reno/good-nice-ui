@@ -40,8 +40,8 @@
     /* zinc-100 */
     --accent-foreground: 240 5% 96%;
  
-    /* red-600 */
-    --destructive: 0 72% 51%;
+    /* red-500 */
+    --destructive: 0 84% 60%;
     /* zinc-100 */
     --destructive-foreground: 240 5% 96%;
  
@@ -89,8 +89,8 @@
     /* zinc-100 */
     --accent-foreground: 240 5% 96%;
  
-    /* red-600 */
-    --destructive: 0 72% 51%;
+    /* red-500 */
+    --destructive: 0 84% 60%;
     /* zinc-100 */
     --destructive-foreground: 240 5% 96%;
  

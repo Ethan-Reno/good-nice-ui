@@ -1,6 +1,6 @@
 {
   "name": "lift-companion-ui",
-  "version": "0.2.27",
+  "version": "0.2.33",
   "description": "UI test",
   "author": "Ethan Reno",
   "license": "MIT",
@@ -31,8 +31,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix"
   },
-  "devDependencies": {
-    "@hookform/resolvers": "^3.1.0",
+  "dependencies": {
     "@radix-ui/react-accessible-icon": "^1.0.1",
     "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -44,6 +43,14 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.5",
     "@radix-ui/react-visually-hidden": "^1.0.1",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.30.0",
+    "react-day-picker": "^8.7.1",
+    "react-hook-form": "^7.43.9"
+  },
+  "devDependencies": {
+    "@hookform/resolvers": "^3.1.0",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
@@ -65,10 +72,7 @@
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "chromatic": "^6.17.0",
-    "class-variance-authority": "^0.6.0",
-    "clsx": "^1.2.1",
     "cssnano": "^5.1.15",
-    "date-fns": "^2.30.0",
     "eslint": "^8.37.0",
     "eslint-plugin-react": "^7.32.2",
     "lucide-react": "^0.115.0",
@@ -77,9 +81,7 @@
     "postcss-cli": "^10.1.0",
     "prettier": "2.8.7",
     "react": "^18.2.0",
-    "react-day-picker": "^8.7.1",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.9",
     "rimraf": "^4.4.1",
     "rollup": "^3.20.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
