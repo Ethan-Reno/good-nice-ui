@@ -27,7 +27,7 @@ export const WithIcon: Story = {
   render: () => (
     <Button variant="primary">
       <XIcon label="X Icon" />
-      Close
+      <span className='pl-1'>Close</span>
     </Button>
   ),
 };

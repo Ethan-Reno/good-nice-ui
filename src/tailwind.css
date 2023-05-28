@@ -25,10 +25,10 @@
     --border: 240 5% 65%;
     --input: 240 5% 65%;
  
-    /* zinc-100 */
-    --primary: 240 5% 96%;
-    /* zinc-700 */
-    --primary-foreground: 240 5% 26%;
+    /* blue-600 */
+    --primary: 221 83% 53%;
+    /* zinc-50 */
+    --primary-foreground: 0 0% 98%;
  
     /* zinc-700 */
     --secondary: 240 5% 26%;
@@ -74,10 +74,10 @@
     --border: 240 4% 46%;
     --input: 240 4% 46%;
  
-    /* zinc-100 */
-    --primary: 240 5% 96%;
-    /* zinc-700 */
-    --primary-foreground: 240 5% 26%;
+    /* blue-600 */
+    --primary: 221 83% 53%;
+    /* zinc-50 */
+    --primary-foreground: 0 0% 98%;
  
     /* zinc-700 */
     --secondary: 240 5% 26%;

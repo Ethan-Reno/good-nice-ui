@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 const DefaultSelect = () => {
   return (
-    <Select>
+    <Select defaultValue="light">
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>

@@ -23,10 +23,7 @@ const DefaultTooltip = () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="outline">
-            <TriangleIcon label="tooltip" />
-            <span className="sr-only">Add</span>
-          </Button>
+          <span>Hover here</span>
         </TooltipTrigger>
         <TooltipContent>
           <p>Tooltip test</p>
