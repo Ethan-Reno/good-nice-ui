@@ -24,15 +24,20 @@ const DefaultToast = () => {
         variant="outline"
         onClick={() => {
           toast({
-            title: "Scheduled: Catch up ",
-            description: "Friday, February 10, 2023 at 5:57 PM",
+            title: "Toast Triggered",
+            description: "Here is a description",
             action: (
-              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+              <ToastAction
+                altText="Optional"
+                onClick={() => console.log("toast action clicked")}
+              >
+                Action
+              </ToastAction>
             ),
           })
         }}
       >
-        Add to calendar
+        Trigger Toast
       </Button>
     </>
   )

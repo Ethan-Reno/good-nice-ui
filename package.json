@@ -1,6 +1,6 @@
 {
   "name": "lift-companion-ui",
-  "version": "0.2.33",
+  "version": "0.3.0",
   "description": "UI test",
   "author": "Ethan Reno",
   "license": "MIT",
@@ -102,6 +102,7 @@
   },
   "peerDependencies": {
     "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "react-dom": ">=18.2.0",
+    "react-hook-form": ">=7.43.0"
   }
 }

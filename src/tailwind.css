@@ -45,8 +45,8 @@
     /* zinc-100 */
     --destructive-foreground: 240 5% 96%;
  
-    /* zinc-500 */
-    --ring: 240 5% 65%;
+    /* blue-600 */
+    --ring: 221 83% 53%;
  
     --radius: 0.5rem;
   }
@@ -94,8 +94,8 @@
     /* zinc-100 */
     --destructive-foreground: 240 5% 96%;
  
-    /* zinc-500 */
-    --ring: 240 4% 46%;
+    /* blue-600 */
+    --ring: 221 83% 53%;
  
     --radius: 0.5rem;
   }
