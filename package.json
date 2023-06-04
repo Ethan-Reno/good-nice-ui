@@ -1,6 +1,6 @@
 {
   "name": "lift-companion-ui",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "UI test",
   "author": "Ethan Reno",
   "license": "MIT",
@@ -50,7 +50,8 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.30.0",
     "react-day-picker": "^8.7.1",
-    "react-hook-form": "^7.43.9"
+    "react-hook-form": "^7.43.9",
+    "tailwind-merge": "^1.13.0"
   },
   "devDependencies": {
     "@hookform/resolvers": "^3.1.0",
