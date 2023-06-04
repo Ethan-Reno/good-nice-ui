@@ -1,7 +1,7 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
-import { clsx } from "clsx";
+import { cn } from "../../utils/cn";
 import { Button } from "../Button/Button";
 import { Calendar } from "../Calendar/Calendar";
 import {
@@ -18,7 +18,7 @@ export function DatePicker() {
       <PopoverTrigger asChild>
         <Button
           variant="outline"
-          className={clsx(
+          className={cn(
             "w-[280px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
