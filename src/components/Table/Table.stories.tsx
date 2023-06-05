@@ -81,8 +81,6 @@ const TableDemo = () => {
   )
 }
 
-const groupedRowTable = () => {};
-
 export const Default: Story = {
   render: () => <TableDemo />,
 };
