@@ -1,9 +1,7 @@
 
 # Lift Companion UI
-![Minified Size](https://badgen.net/bundlephobia/min/lift-companion-ui@0.2.17)
-![Minzipped Size](https://badgen.net/bundlephobia/minzip/lift-companion-ui@0.2.17)
-![Dependencies](https://badgen.net/bundlephobia/dependency-count/lift-companion-ui@0.2.17)
-![Treeshaking](https://badgen.net/bundlephobia/tree-shaking/lift-companion-ui@0.2.17)
+![Minified Size](https://img.shields.io/bundlephobia/min/lift-companion-ui)
+![Minified Size](https://img.shields.io/bundlephobia/minzip/lift-companion-ui)
 
 A fully tree-shakeable React component library built with Radix Primitives and styled with Tailwind. 
 

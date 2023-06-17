@@ -4,11 +4,7 @@ export * from './components/Badge';
 
 export * from './components/Button';
 
-export * from './components/Calendar';
-
 export * from './components/Checkbox';
-
-export * from './components/DatePicker';
 
 export * from './components/Dialog';
 
