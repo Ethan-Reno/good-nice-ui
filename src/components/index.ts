@@ -5,8 +5,7 @@ export * from './Avatar';
 export * from './Badge';
 export * from './Button';
 export * from './Checkbox';
-export * from './CompoundDialog';
-export * from './Dialog';
+export { Dialog } from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
 export * from './Input';
@@ -25,5 +24,5 @@ export * from './Toast';
 export * from './Tooltip';
 
 // Icon Exports
-export * from './icons/TriangleIcon';
-export * from './icons/XIcon';
+export { TriangleIcon } from './icons/TriangleIcon';
+export { XIcon } from './icons/XIcon';
