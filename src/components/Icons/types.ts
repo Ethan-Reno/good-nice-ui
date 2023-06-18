@@ -1,11 +1,5 @@
-import * as AccessibleIconPrimitive from '@radix-ui/react-accessible-icon';
-
-interface LucideIconProps {
+export interface IconProps {
   size?: number;
   color?: string;
   strokeWidth?: number;
 }
-
-export interface IconProps
-  extends LucideIconProps,
-    React.ComponentPropsWithoutRef<typeof AccessibleIconPrimitive.Root> {}

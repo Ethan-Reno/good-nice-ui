@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import XIcon from '../components/Icons/XIcon';
+import XIcon from '../Icons/XIcon';
 
 const meta = {
   title: 'Icons/XIcon',
@@ -12,9 +12,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'test',
     size: 24,
-    color: 'currentColor',
+    color: '#000000',
     strokeWidth: 2,
   },
 };

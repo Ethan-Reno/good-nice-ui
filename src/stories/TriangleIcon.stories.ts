@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import TriangleIcon from '../components/Icons/TriangleIcon';
+import TriangleIcon from '../Icons/TriangleIcon';
 
 const meta = {
   title: 'Icons/TriangleIcon',
@@ -12,7 +12,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'test',
     size: 24,
     color: 'currentColor',
     strokeWidth: 2,
