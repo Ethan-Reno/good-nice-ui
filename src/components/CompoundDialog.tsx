@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { XIcon } from "./icons/XIcon";
-import { cn } from "../utils/cn";
+import * as React from 'react';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { XIcon } from './icons/XIcon';
+import { cn } from '../utils/cn';
 
 export const CompoundDialog = ({
   children,
@@ -19,12 +19,12 @@ export const CompoundDialog = ({
     >
       {children}
     </DialogPrimitive.Root>
-  )
+  );
 };
-CompoundDialog.displayName = "CompoundDialog";
+CompoundDialog.displayName = 'CompoundDialog';
 
 const Trigger = DialogPrimitive.Trigger;
-Trigger.displayName = "Dialog.Trigger";
+Trigger.displayName = 'Dialog.Trigger';
 CompoundDialog.Trigger = Trigger;
 
 const Portal = ({
@@ -45,7 +45,7 @@ const Portal = ({
     </div>
   </DialogPrimitive.Portal>
 );
-Portal.displayName = "Dialog.Portal";
+Portal.displayName = 'Dialog.Portal';
 
 // Don't export Overlay as Dialog.Overlay because it should not be used directly
 // This is because it is used by default in the Content subcomponent
@@ -53,68 +53,68 @@ Portal.displayName = "Dialog.Portal";
 const Overlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ 
-  className,
-  asChild,
-  forceMount,
-  ...props 
-}, ref) => (
+>(({ className, asChild, forceMount, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
     asChild={asChild}
     forceMount={forceMount}
     className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100",
-      "data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in",
+      'fixed inset-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-100',
+      'data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in',
       className
     )}
     {...props}
   />
 ));
-Overlay.displayName = "Dialog.Overlay";
+Overlay.displayName = 'Dialog.Overlay';
 
 const Content = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({
-  className,
-  children,
-  asChild,
-  forceMount,
-  onOpenAutoFocus,
-  onCloseAutoFocus,
-  onEscapeKeyDown,
-  onPointerDownOutside,
-  onInteractOutside,
-  ...props
-}, ref) => (
-  <Portal>
-    <Overlay />
-    <DialogPrimitive.Content
-      ref={ref}
-      asChild={asChild}
-      forceMount={forceMount}
-      onOpenAutoFocus={onOpenAutoFocus}
-      onCloseAutoFocus={onCloseAutoFocus}
-      onEscapeKeyDown={onEscapeKeyDown}
-      onPointerDownOutside={onPointerDownOutside}
-      onInteractOutside={onInteractOutside}
-      className={cn(
-        "fixed z-50 grid w-full gap-4 rounded-b-lg border bg-background p-6 shadow-lg animate-in",
-        "data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:max-w-lg sm:rounded-lg sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0",
-        className
-      )}
-      {...props}
-    >
-      {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <XIcon size={16} />
-        <span className="sr-only">Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
-  </Portal>
-));
-Content.displayName = "Dialog.Content";
+>(
+  (
+    {
+      className,
+      children,
+      asChild,
+      forceMount,
+      onOpenAutoFocus,
+      onCloseAutoFocus,
+      onEscapeKeyDown,
+      onPointerDownOutside,
+      onInteractOutside,
+      ...props
+    },
+    ref
+  ) => (
+    <Portal>
+      <Overlay />
+      <DialogPrimitive.Content
+        ref={ref}
+        asChild={asChild}
+        forceMount={forceMount}
+        onOpenAutoFocus={onOpenAutoFocus}
+        onCloseAutoFocus={onCloseAutoFocus}
+        onEscapeKeyDown={onEscapeKeyDown}
+        onPointerDownOutside={onPointerDownOutside}
+        onInteractOutside={onInteractOutside}
+        className={cn(
+          'fixed z-50 grid w-full gap-4 rounded-b-lg border bg-background p-6 shadow-lg animate-in',
+          'data-[state=open]:fade-in-90 data-[state=open]:slide-in-from-bottom-10 sm:max-w-lg sm:rounded-lg sm:zoom-in-90 data-[state=open]:sm:slide-in-from-bottom-0',
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+          <XIcon size={16} />
+          <span className="sr-only">Close</span>
+        </DialogPrimitive.Close>
+      </DialogPrimitive.Content>
+    </Portal>
+  )
+);
+Content.displayName = 'Dialog.Content';
 CompoundDialog.Content = Content;
 
 const Header = ({
@@ -123,52 +123,44 @@ const Header = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col space-y-1.5 text-center sm:text-left",
+      'flex flex-col space-y-1.5 text-center sm:text-left',
       className
     )}
     {...props}
   />
 );
-Header.displayName = "Dialog.Header";
+Header.displayName = 'Dialog.Header';
 CompoundDialog.Header = Header;
 
 const Title = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
->(({ 
-  className,
-  asChild,
-  ...props 
-}, ref) => (
+>(({ className, asChild, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
     asChild={asChild}
     className={cn(
-      "text-lg font-semibold leading-none tracking-tight",
+      'text-lg font-semibold leading-none tracking-tight',
       className
     )}
     {...props}
   />
 ));
-Title.displayName = "Dialog.Title";
+Title.displayName = 'Dialog.Title';
 CompoundDialog.Title = Title;
 
 const Description = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
->(({ 
-  className,
-  asChild,
-  ...props 
-}, ref) => (
+>(({ className, asChild, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
     asChild={asChild}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn('text-sm text-muted-foreground', className)}
     {...props}
   />
 ));
-Description.displayName = "Dialog.Description";
+Description.displayName = 'Dialog.Description';
 CompoundDialog.Description = Description;
 
 const Footer = ({
@@ -177,11 +169,11 @@ const Footer = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
       className
     )}
     {...props}
   />
 );
-Footer.displayName = "Dialog.Footer";
+Footer.displayName = 'Dialog.Footer';
 CompoundDialog.Footer = Footer;

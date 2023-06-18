@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { CompoundDialog } from '../components/CompoundDialog';
-import { Button } from '../components/Button';
-import { Label } from '../components/Label';
-import { Input } from '../components/Input';
+import { CompoundDialog, Button, Label, Input } from '../components';
 
 const meta = {
   title: 'Components/CompoundDialog',
@@ -19,13 +16,15 @@ const DefaultCompoundDialog = () => {
   return (
     <CompoundDialog open={isOpen} onOpenChange={setIsOpen}>
       <CompoundDialog.Trigger asChild>
-        <Button variant="outline" onClick={() => setIsOpen(true)}>Edit Profile</Button>
+        <Button variant="outline" onClick={() => setIsOpen(true)}>
+          Edit Profile
+        </Button>
       </CompoundDialog.Trigger>
       <CompoundDialog.Content className="sm:max-w-[425px]">
         <CompoundDialog.Header>
           <CompoundDialog.Title>Edit profile</CompoundDialog.Title>
           <CompoundDialog.Description>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </CompoundDialog.Description>
         </CompoundDialog.Header>
         <div className="grid gap-4 py-4">
@@ -43,11 +42,13 @@ const DefaultCompoundDialog = () => {
           </div>
         </div>
         <CompoundDialog.Footer>
-          <Button type="submit" onClick={() => setIsOpen(false)}>Save changes</Button>
+          <Button type="submit" onClick={() => setIsOpen(false)}>
+            Save changes
+          </Button>
         </CompoundDialog.Footer>
       </CompoundDialog.Content>
     </CompoundDialog>
-  )
+  );
 };
 
 export const Default: Story = {

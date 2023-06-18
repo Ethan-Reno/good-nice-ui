@@ -1,6 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/Accordion';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '../components';
 
 const meta = {
   title: 'Components/Accordion',
@@ -28,7 +33,7 @@ const DefaultAccordion = () => {
       </AccordionItem>
     </Accordion>
   );
-}
+};
 
 export const Default: Story = {
   render: () => <DefaultAccordion />,

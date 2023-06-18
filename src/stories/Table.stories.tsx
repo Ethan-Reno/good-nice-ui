@@ -1,19 +1,19 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
-} from "../components/Table";
-import { Badge } from "../components/Badge";
+  TableRow,
+  Badge,
+} from '../components';
 
 const meta = {
-  title: "Components/Table",
+  title: 'Components/Table',
   component: Table,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } as Meta<typeof Table>;
 
 export default meta;
@@ -22,37 +22,37 @@ type Story = StoryObj<typeof meta>;
 const exercises = [
   {
     id: 1,
-    name: "Bench Press",
-    description: "Flat bench press with barbell",
-    status: "Active",
-    measurement: "Weight",
-    unit: "Pounds",
+    name: 'Bench Press',
+    description: 'Flat bench press with barbell',
+    status: 'Active',
+    measurement: 'Weight',
+    unit: 'Pounds',
   },
   {
     id: 2,
-    name: "Squat",
-    description: "Squat with barbell",
-    status: "Active",
-    measurement: "Weight",
-    unit: "Pounds",
+    name: 'Squat',
+    description: 'Squat with barbell',
+    status: 'Active',
+    measurement: 'Weight',
+    unit: 'Pounds',
   },
   {
     id: 3,
-    name: "Sprint",
-    description: "Sprint as far as possible in 30 seconds",
-    status: "Inactive",
-    measurement: "Distance",
-    unit: "Meters",
+    name: 'Sprint',
+    description: 'Sprint as far as possible in 30 seconds',
+    status: 'Inactive',
+    measurement: 'Distance',
+    unit: 'Meters',
   },
   {
     id: 4,
-    name: "Deadhang",
-    description: "Hang from a bar for as long as possible",
-    status: "Active",
-    measurement: "Time",
-    unit: "Seconds",
+    name: 'Deadhang',
+    description: 'Hang from a bar for as long as possible',
+    status: 'Active',
+    measurement: 'Time',
+    unit: 'Seconds',
   },
-]
+];
 
 const TableDemo = () => {
   return (
@@ -73,13 +73,15 @@ const TableDemo = () => {
             <TableCell>{exercise.description}</TableCell>
             <TableCell>{exercise.measurement}</TableCell>
             <TableCell>{exercise.unit}</TableCell>
-            <TableCell className="text-right"><Badge>{exercise.status}</Badge></TableCell>
+            <TableCell className="text-right">
+              <Badge>{exercise.status}</Badge>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
     </Table>
-  )
-}
+  );
+};
 
 export const Default: Story = {
   render: () => <TableDemo />,

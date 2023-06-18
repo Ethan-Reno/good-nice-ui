@@ -7,8 +7,8 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-} from '../components/DropdownMenu';
-import { Button } from '../components/Button';
+  Button,
+} from '../components';
 
 const meta = {
   title: 'Components/DropdownMenu',
@@ -23,9 +23,7 @@ const DefaultDropdownMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button variant="outline">
-          Menu
-        </Button>
+        <Button variant="outline">Menu</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -36,7 +34,7 @@ const DefaultDropdownMenu = () => {
         <DropdownMenuItem>Subscription</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 };
 
 export const Default: Story = {

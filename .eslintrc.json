@@ -7,7 +7,6 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier",
         "plugin:storybook/recommended"
     ],
     "overrides": [],
@@ -20,5 +19,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": {}
+    "rules": {
+        "react/prop-types": "off"
+    }
 }

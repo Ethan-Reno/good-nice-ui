@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/Tabs';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components';
 
 const meta = {
   title: 'Components/Tabs',
@@ -27,5 +27,3 @@ const DefaultTabs = () => (
 export const Default: Story = {
   render: () => <DefaultTabs />,
 };
-
-

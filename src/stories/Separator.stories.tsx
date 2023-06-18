@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Separator } from "../components/Separator";
+import { Separator } from '../components';
 
 const meta = {
   title: 'Components/Separator',
@@ -27,7 +27,7 @@ const DefaultSeparator = () => {
       </div>
     </div>
   );
-}
+};
 
 export const Default: Story = {
   render: () => <DefaultSeparator />,

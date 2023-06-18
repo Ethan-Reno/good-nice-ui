@@ -1,10 +1,8 @@
-import React from "react";
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { useForm } from "react-hook-form";
-import { Button } from "../components/Button";
-import { Input } from "../components/Input";
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { useForm } from 'react-hook-form';
 import {
   Form,
   FormControl,
@@ -13,7 +11,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../components/Form';
+  Input,
+  Button,
+} from '../components';
 
 const meta = {
   title: 'Components/Form',
@@ -26,7 +26,7 @@ type Story = StoryObj<typeof meta>;
 
 const formSchema = z.object({
   username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+    message: 'Username must be at least 2 characters.',
   }),
 });
 
@@ -35,16 +35,16 @@ const DefaultForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      username: '',
     },
   });
-  
+
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // This will be type-safe and validated.
-    console.log(values)
-  };
+    console.log(values);
+  }
 
   // 3. Compose and render the form.
   return (

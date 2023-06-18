@@ -6,9 +6,6 @@ export interface ScreenReaderProps {
   children: React.ReactNode;
 }
 
-export const ScreenReader = ({
-  asChild,
-  children,
-}: ScreenReaderProps) => (
+export const ScreenReader = ({ asChild, children }: ScreenReaderProps) => (
   <VisuallyHidden.Root asChild={asChild}>{children}</VisuallyHidden.Root>
 );

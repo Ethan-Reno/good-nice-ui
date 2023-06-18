@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import XIcon from '../Icons/XIcon';
+import { XIcon } from '../components';
 
 const meta = {
   title: 'Icons/XIcon',

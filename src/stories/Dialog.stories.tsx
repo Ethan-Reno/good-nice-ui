@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { 
+import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger } from '../components/Dialog';
-import { Button } from '../components/Button';
-import { Input } from '../components/Input';
-import { Label } from '../components/Label';
+  DialogTrigger,
+  Button,
+  Input,
+  Label,
+} from '../components';
 
 const meta = {
   title: 'Components/Dialog',
@@ -26,13 +27,15 @@ const DefaultDialog = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" onClick={() => setIsOpen(true)}>Edit Profile</Button>
+        <Button variant="outline" onClick={() => setIsOpen(true)}>
+          Edit Profile
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -50,11 +53,13 @@ const DefaultDialog = () => {
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" onClick={() => setIsOpen(false)}>Save changes</Button>
+          <Button type="submit" onClick={() => setIsOpen(false)}>
+            Save changes
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 };
 
 export const Default: Story = {

@@ -7,7 +7,5 @@ export const TriangleIcon = ({
   color = 'currentColor',
   strokeWidth = 2,
 }: IconProps) => {
-  return (
-    <Triangle size={size} color={color} strokeWidth={strokeWidth} />
-  );
+  return <Triangle size={size} color={color} strokeWidth={strokeWidth} />;
 };

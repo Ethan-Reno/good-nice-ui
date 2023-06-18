@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import TriangleIcon from '../Icons/TriangleIcon';
+import { TriangleIcon } from '../components';
 
 const meta = {
   title: 'Icons/TriangleIcon',

@@ -1,12 +1,11 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Switch } from "../components/Switch";
-import { Label } from "../components/Label";
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Switch, Label } from '../components';
 
 const meta = {
-  title: "Components/Switch",
+  title: 'Components/Switch',
   component: Switch,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } as Meta<typeof Switch>;
 
 export default meta;
@@ -18,7 +17,7 @@ const DefaultSwitch = () => {
       <Switch id="Label" />
       <Label htmlFor="Label">Label</Label>
     </div>
-  )
+  );
 };
 
 export const Default: Story = {

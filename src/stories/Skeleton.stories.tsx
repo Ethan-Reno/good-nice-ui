@@ -1,11 +1,11 @@
-import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Skeleton } from "../components/Skeleton";
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Skeleton } from '../components';
 
 const meta = {
-  title: "Components/Skeleton",
+  title: 'Components/Skeleton',
   component: Skeleton,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } as Meta<typeof Skeleton>;
 
 export default meta;

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Toast,
   ToastClose,
@@ -6,12 +6,12 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "../components/Toast";
-import { useToast } from "./useToast";
- 
+} from '../components/Toast';
+import { useToast } from './useToast';
+
 export function Toaster() {
   const { toasts } = useToast();
- 
+
   return (
     <ToastProvider>
       {toasts.map(function ({ id, title, description, action, ...props }) {
@@ -26,9 +26,9 @@ export function Toaster() {
             {action}
             <ToastClose />
           </Toast>
-        )
+        );
       })}
       <ToastViewport />
     </ToastProvider>
   );
-};
+}
