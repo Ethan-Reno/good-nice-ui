@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from '../../src/components/Tooltip';
+} from '../components/Tooltip';
 
 const meta = {
   title: 'Components/Tooltip',

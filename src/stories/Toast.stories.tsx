@@ -1,9 +1,9 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../../src/components/Button";
-import { Toast, ToastAction } from "../../src/components/Toast/Toast";
-import { Toaster } from "../../src/components/Toast/Toaster";
-import { useToast } from "../../src/components/Toast/useToast";
+import { Button } from "../components/Button";
+import { Toast, ToastAction } from "../components/Toast";
+import { Toaster } from "../utils/Toaster";
+import { useToast } from "../utils/useToast";
 
 const meta = {
   title: "Components/Toast",

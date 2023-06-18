@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../src/components/Tabs';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/Tabs';
 
 const meta = {
   title: 'Components/Tabs',

@@ -7,8 +7,8 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-} from '../../src/components/DropdownMenu';
-import { Button } from '../../src/components/Button';
+} from '../components/DropdownMenu';
+import { Button } from '../components/Button';
 
 const meta = {
   title: 'Components/DropdownMenu',

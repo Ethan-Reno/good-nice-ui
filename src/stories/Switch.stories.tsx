@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Switch } from "../../src/components/Switch";
-import { Label } from "../../src/components/Label";
+import { Switch } from "../components/Switch";
+import { Label } from "../components/Label";
 
 const meta = {
   title: "Components/Switch",

@@ -7,10 +7,10 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger } from '../../src/components/Dialog';
-import { Button } from '../../src/components/Button';
-import { Input } from '../../src/components/Input';
-import { Label } from '../../src/components/Label';
+  DialogTrigger } from '../components/Dialog';
+import { Button } from '../components/Button';
+import { Input } from '../components/Input';
+import { Label } from '../components/Label';
 
 const meta = {
   title: 'Components/Dialog',

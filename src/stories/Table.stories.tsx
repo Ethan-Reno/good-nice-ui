@@ -7,8 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from "../../src/components/Table";
-import { Badge } from "../../src/components/Badge";
+} from "../components/Table";
+import { Badge } from "../components/Badge";
 
 const meta = {
   title: "Components/Table",

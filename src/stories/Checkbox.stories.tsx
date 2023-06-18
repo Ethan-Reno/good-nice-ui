@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from '../../src/components/Checkbox';
-import { Label } from '../../src/components/Label';
+import { Checkbox } from '../components/Checkbox';
+import { Label } from '../components/Label';
 
 const meta = {
   title: 'Components/Checkbox',
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 const DefaultCheckbox = () => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-2">
       <Checkbox id="terms" />
       <Label
         htmlFor="terms"

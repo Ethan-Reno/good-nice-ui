@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { Button } from "../../src/components/Button";
-import { Input } from "../../src/components/Input";
+import { Button } from "../components/Button";
+import { Input } from "../components/Input";
 import {
   Form,
   FormControl,
@@ -13,7 +13,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../../src/components/Form';
+} from '../components/Form';
 
 const meta = {
   title: 'Components/Form',
@@ -42,7 +42,7 @@ const DefaultForm = () => {
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    // This will be type-safe and validated.
     console.log(values)
   };
 

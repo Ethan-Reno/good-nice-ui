@@ -1,6 +1,5 @@
 import '../src/tailwind.css';
-import '../src/global.css';
-import { DEFAULT_THEME, withTailwindTheme } from './withTailwindTheme.decorator';
+import { withTailwindTheme } from './withTailwindTheme.decorator';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
