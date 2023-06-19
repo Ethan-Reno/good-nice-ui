@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
-import { CircleIcon } from './icons';
+import { CircleIcon } from './';
 import { cn } from '../utils/cn';
 
 const RadioGroup = React.forwardRef<

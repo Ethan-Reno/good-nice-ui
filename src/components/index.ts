@@ -9,6 +9,7 @@ export * from './Checkbox';
 export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
+export * from './Icons';
 export * from './Input';
 export * from './Label';
 export * from './Popover';
@@ -23,6 +24,3 @@ export * from './Table';
 export * from './Tabs';
 export * from './Toast';
 export * from './Tooltip';
-
-// Icon Exports
-export * from './icons';
