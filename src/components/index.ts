@@ -9,7 +9,7 @@ export * from './Checkbox';
 export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
-export * from './Icons';
+export * from './icons';
 export * from './Input';
 export * from './Label';
 export * from './Popover';
