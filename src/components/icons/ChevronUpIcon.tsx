@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './types';
 
-const ChevronUpIcon = ({
+export const ChevronUpIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -23,5 +23,3 @@ const ChevronUpIcon = ({
     </svg>
   );
 };
-
-export default ChevronUpIcon;

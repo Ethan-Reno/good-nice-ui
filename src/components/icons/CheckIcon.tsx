@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './types';
 
-const CheckIcon = ({
+export const CheckIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -23,5 +23,3 @@ const CheckIcon = ({
     </svg>
   );
 };
-
-export default CheckIcon;

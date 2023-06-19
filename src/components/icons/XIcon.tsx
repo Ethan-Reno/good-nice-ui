@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './types';
 
-const XIcon = ({
+export const XIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -24,5 +24,3 @@ const XIcon = ({
     </svg>
   );
 };
-
-export default XIcon;

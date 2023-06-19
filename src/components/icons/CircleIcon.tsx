@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './types';
 
-const CircleIcon = ({
+export const CircleIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -23,5 +23,3 @@ const CircleIcon = ({
     </svg>
   );
 };
-
-export default CircleIcon;
