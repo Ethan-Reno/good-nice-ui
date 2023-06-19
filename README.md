@@ -1,7 +1,7 @@
 
-# Lift Companion UI
-![Minified Size](https://img.shields.io/bundlephobia/min/lift-companion-ui)
-![Minified Size](https://img.shields.io/bundlephobia/minzip/lift-companion-ui)
+# Good Nice UI
+![Minified Size](https://img.shields.io/bundlephobia/min/good-nice-ui)
+![Minified Size](https://img.shields.io/bundlephobia/minzip/good-nice-ui)
 
 A fully tree-shakeable React component library built with Radix Primitives and styled with Tailwind. 
 
@@ -13,4 +13,4 @@ Use Node >=16
 ```$ npm run storybook```
 
 ### License
-Licensed under the [MIT license](https://github.com/Ethan-Reno/lift-companion-ui/blob/main/LICENSE).
+Licensed under the [MIT license](https://github.com/Ethan-Reno/good-nice-ui/blob/main/LICENSE).
