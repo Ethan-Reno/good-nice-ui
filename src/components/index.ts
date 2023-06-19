@@ -5,7 +5,7 @@ export * from './Avatar';
 export * from './Badge';
 export * from './Button';
 export * from './Checkbox';
-export { Dialog } from './Dialog';
+export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
 export * from './Input';
@@ -24,5 +24,10 @@ export * from './Toast';
 export * from './Tooltip';
 
 // Icon Exports
-export { TriangleIcon } from './icons/TriangleIcon';
+export { CheckIcon } from './icons/CheckIcon';
+export { ChevronUpIcon } from './icons/ChevronUpIcon';
+export { ChevronRightIcon } from './icons/ChevronRightIcon';
+export { ChevronLeftIcon } from './icons/ChevronLeftIcon';
+export { ChevronDownIcon } from './icons/ChevronDownIcon';
+export { CircleIcon } from './icons/CircleIcon';
 export { XIcon } from './icons/XIcon';
