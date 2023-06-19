@@ -23,11 +23,4 @@ export * from './Tabs';
 export * from './Toast';
 export * from './Tooltip';
 
-// Icon Exports
-export { CheckIcon } from './icons/CheckIcon';
-export { ChevronUpIcon } from './icons/ChevronUpIcon';
-export { ChevronRightIcon } from './icons/ChevronRightIcon';
-export { ChevronLeftIcon } from './icons/ChevronLeftIcon';
-export { ChevronDownIcon } from './icons/ChevronDownIcon';
-export { CircleIcon } from './icons/CircleIcon';
-export { XIcon } from './icons/XIcon';
+export * from './icons';
