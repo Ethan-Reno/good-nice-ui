@@ -1,3 +1,4 @@
+// Component Exports
 export * from './Accordion';
 export * from './Alert';
 export * from './AspectRatio';
@@ -23,4 +24,11 @@ export * from './Tabs';
 export * from './Toast';
 export * from './Tooltip';
 
-export * from './icons/index';
+// Icon Exports
+export * from './CheckIcon';
+export * from './ChevronDownIcon';
+export * from './ChevronLeftIcon';
+export * from './ChevronRightIcon';
+export * from './ChevronUpIcon';
+export * from './CircleIcon';
+export * from './XIcon';

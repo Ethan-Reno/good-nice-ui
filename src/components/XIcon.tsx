@@ -1,7 +1,7 @@
 import React from 'react';
-import { IconProps } from './types';
+import { IconProps } from '../types/Icon.types';
 
-export const ChevronLeftIcon = ({
+export const XIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -19,7 +19,8 @@ export const ChevronLeftIcon = ({
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <polyline points="15 18 9 12 15 6"></polyline>
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
   );
 };
