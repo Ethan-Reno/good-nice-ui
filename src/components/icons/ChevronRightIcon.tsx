@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconProps } from '../types/Icon.types';
+import { IconProps } from './types';
 
 export const ChevronRightIcon = ({
   size = 24,

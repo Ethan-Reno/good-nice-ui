@@ -1,7 +1,7 @@
 import React from 'react';
-import { IconProps } from '../types/Icon.types';
+import { IconProps } from './types';
 
-export const ChevronUpIcon = ({
+export const CheckIcon = ({
   size = 24,
   color = 'currentColor',
   strokeWidth = 2,
@@ -19,7 +19,7 @@ export const ChevronUpIcon = ({
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <polyline points="18 15 12 9 6 15"></polyline>
+      <polyline points="20 6 9 17 4 12"></polyline>
     </svg>
   );
 };

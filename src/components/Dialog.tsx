@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon } from './';
+import { XIcon } from './icons';
 import { cn } from '../utils/cn';
 
 export const Dialog = ({
