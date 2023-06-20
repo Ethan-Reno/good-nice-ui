@@ -3,21 +3,30 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
 import { cn } from '../utils/cn';
 
-const Accordion = AccordionPrimitive.Root;
+export const Accordion = ({
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Root>) => (
+  <AccordionPrimitive.Root {...props}>
+    {children}
+  </AccordionPrimitive.Root>
+);
+Accordion.displayName = "Accordion";
 
-const AccordionItem = React.forwardRef<
+const Item = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn('border-b', className)}
+    className={cn("border-b", className)}
     {...props}
   />
 ));
-AccordionItem.displayName = 'AccordionItem';
+Item.displayName = "Accordion.Item";
+Accordion.Item = Item;
 
-const AccordionTrigger = React.forwardRef<
+const Trigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
@@ -35,9 +44,10 @@ const AccordionTrigger = React.forwardRef<
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+Trigger.displayName = 'Accordion.Trigger';
+Accordion.Trigger = Trigger;
 
-const AccordionContent = React.forwardRef<
+const Content = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
@@ -52,6 +62,5 @@ const AccordionContent = React.forwardRef<
     <div className="pb-4 pt-0">{children}</div>
   </AccordionPrimitive.Content>
 ));
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
-
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+Content.displayName = 'Accordion.Content';
+Accordion.Content = Content;

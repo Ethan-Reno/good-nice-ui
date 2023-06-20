@@ -9,24 +9,25 @@ export const Dialog = ({
   defaultOpen,
   onOpenChange,
   modal,
-}: DialogPrimitive.DialogProps) => {
-  return (
-    <DialogPrimitive.Root
-      open={open}
-      defaultOpen={defaultOpen}
-      onOpenChange={onOpenChange}
-      modal={modal}
-    >
-      {children}
-    </DialogPrimitive.Root>
-  );
-};
+}: React.ComponentProps<typeof DialogPrimitive.Root>) => (
+  <DialogPrimitive.Root
+    open={open}
+    defaultOpen={defaultOpen}
+    onOpenChange={onOpenChange}
+    modal={modal}
+  >
+    {children}
+  </DialogPrimitive.Root>
+);
 Dialog.displayName = 'Dialog';
 
 const Trigger = DialogPrimitive.Trigger;
 Trigger.displayName = 'Dialog.Trigger';
 Dialog.Trigger = Trigger;
 
+// Don't export Portal or Overlay because they should not be used directly
+// This is because they are used by default in the Content subcomponent
+// Leaving the implementation pattern intact to enable exposing it in the future
 const Portal = ({
   className,
   children,
@@ -47,9 +48,6 @@ const Portal = ({
 );
 Portal.displayName = 'Dialog.Portal';
 
-// Don't export Overlay as Dialog.Overlay because it should not be used directly
-// This is because it is used by default in the Content subcomponent
-// Leaving the implementation pattern intact to enable exposing it in the future
 const Overlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
