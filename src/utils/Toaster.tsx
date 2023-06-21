@@ -1,10 +1,7 @@
 import React from 'react';
 import {
   Toast,
-  ToastClose,
-  ToastDescription,
   ToastProvider,
-  ToastTitle,
   ToastViewport,
 } from '../components/Toast';
 import { useToast } from './useToast';
@@ -18,13 +15,13 @@ export function Toaster() {
         return (
           <Toast key={id} {...props}>
             <div className="grid gap-1">
-              {title && <ToastTitle>{title}</ToastTitle>}
+              {title && <Toast.Title>{title}</Toast.Title>}
               {description && (
-                <ToastDescription>{description}</ToastDescription>
+                <Toast.Description>{description}</Toast.Description>
               )}
             </div>
             {action}
-            <ToastClose />
+            <Toast.Close />
           </Toast>
         );
       })}

@@ -2,22 +2,24 @@ import * as React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cn } from '../utils/cn';
 
-const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
->(({ className, ...props }, ref) => (
+const Avatar = ({
+  children,
+  className,
+  ...props
+}: React.ComponentProps<typeof AvatarPrimitive.Root>) => (
   <AvatarPrimitive.Root
-    ref={ref}
     className={cn(
       'relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full',
       className
     )}
     {...props}
-  />
-));
-Avatar.displayName = AvatarPrimitive.Root.displayName;
+  >
+    {children}
+  </AvatarPrimitive.Root>
+);
+Avatar.displayName = 'Avatar';
 
-const AvatarImage = React.forwardRef<
+const Image = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
@@ -27,9 +29,10 @@ const AvatarImage = React.forwardRef<
     {...props}
   />
 ));
-AvatarImage.displayName = AvatarPrimitive.Image.displayName;
+Image.displayName = 'Avatat.Image'
+Avatar.Image = Image;
 
-const AvatarFallback = React.forwardRef<
+const Fallback = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Fallback>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
@@ -42,6 +45,7 @@ const AvatarFallback = React.forwardRef<
     {...props}
   />
 ));
-AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
+Fallback.displayName = 'Avatar.Fallback';
+Avatar.Fallback = Fallback;
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar };

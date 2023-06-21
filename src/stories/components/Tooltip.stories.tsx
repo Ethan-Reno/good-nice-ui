@@ -2,9 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Tooltip,
-  TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
 } from '../../components';
 
 const meta = {
@@ -20,12 +18,12 @@ const DefaultTooltip = () => {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <Tooltip.Trigger asChild>
           <span>Hover here</span>
-        </TooltipTrigger>
-        <TooltipContent>
+        </Tooltip.Trigger>
+        <Tooltip.Content>
           <p>Tooltip test</p>
-        </TooltipContent>
+        </Tooltip.Content>
       </Tooltip>
     </TooltipProvider>
   );

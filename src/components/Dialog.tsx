@@ -3,7 +3,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { XIcon } from './icons/XIcon';
 import { cn } from '../utils/cn';
 
-export const Dialog = ({
+const Dialog = ({
   children,
   open,
   defaultOpen,
@@ -175,3 +175,5 @@ const Footer = ({
 );
 Footer.displayName = 'Dialog.Footer';
 Dialog.Footer = Footer;
+
+export { Dialog };

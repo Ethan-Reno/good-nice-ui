@@ -3,21 +3,23 @@ import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { CircleIcon } from './icons/CircleIcon';
 import { cn } from '../utils/cn';
 
-const RadioGroup = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
->(({ className, ...props }, ref) => {
+const RadioGroup = ({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) => {
   return (
     <RadioGroupPrimitive.Root
       className={cn('grid gap-2', className)}
       {...props}
-      ref={ref}
-    />
+    >
+      {children}
+    </RadioGroupPrimitive.Root>
   );
-});
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
+};
+RadioGroup.displayName = 'RadioGroup';
 
-const RadioGroupItem = React.forwardRef<
+const Item = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >(({ className, ...props }, ref) => {
@@ -36,6 +38,7 @@ const RadioGroupItem = React.forwardRef<
     </RadioGroupPrimitive.Item>
   );
 });
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
+Item.displayName = 'RadioGroup.Item';
+RadioGroup.Item = Item;
 
-export { RadioGroup, RadioGroupItem };
+export { RadioGroup };

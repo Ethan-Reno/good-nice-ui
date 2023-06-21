@@ -3,7 +3,7 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
 import { cn } from '../utils/cn';
 
-export const Accordion = ({
+const Accordion = ({
   children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) => (
@@ -64,3 +64,6 @@ const Content = React.forwardRef<
 ));
 Content.displayName = 'Accordion.Content';
 Accordion.Content = Content;
+
+
+export { Accordion };

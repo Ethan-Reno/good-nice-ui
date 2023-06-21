@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, AlertTitle, AlertDescription, CircleIcon } from '../../components';
+import { Alert, CircleIcon } from '../../components';
 
 const meta = {
   title: 'Components/Alert',
@@ -14,9 +14,11 @@ type Story = StoryObj<typeof meta>;
 const DefaultAlert = () => {
   return (
     <Alert>
-      <CircleIcon size={16} />
-      <AlertTitle>Alert</AlertTitle>
-      <AlertDescription>Here is something you should know.</AlertDescription>
+      <Alert.Content>
+        <CircleIcon size={16} />
+        <Alert.Title>Alert</Alert.Title>
+        <Alert.Description>Here is something you should know.</Alert.Description>
+      </Alert.Content>
     </Alert>
   );
 };

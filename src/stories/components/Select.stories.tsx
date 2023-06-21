@@ -1,12 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from '../../components';
+import { Select } from '../../components';
 
 const meta = {
   title: 'Components/Select',
@@ -20,14 +14,14 @@ type Story = StoryObj<typeof meta>;
 const DefaultSelect = () => {
   return (
     <Select defaultValue="light">
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder="Theme" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="light">Light</SelectItem>
-        <SelectItem value="dark">Dark</SelectItem>
-        <SelectItem value="system">System</SelectItem>
-      </SelectContent>
+      <Select.Trigger className="w-[180px]">
+        <Select.Value placeholder="Theme" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="light">Light</Select.Item>
+        <Select.Item value="dark">Dark</Select.Item>
+        <Select.Item value="system">System</Select.Item>
+      </Select.Content>
     </Select>
   );
 };

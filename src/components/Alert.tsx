@@ -18,7 +18,15 @@ const alertVariants = cva(
   }
 );
 
-const Alert = React.forwardRef<
+const Alert = ({
+  children,
+}: React.ComponentPropsWithoutRef<'div'>) => (
+  <div>
+    {children}
+  </div>
+);
+
+const Content = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
 >(({ className, variant, ...props }, ref) => (
@@ -29,9 +37,10 @@ const Alert = React.forwardRef<
     {...props}
   />
 ));
-Alert.displayName = 'Alert';
+Content.displayName = 'Alert.Content';
+Alert.Content = Content;
 
-const AlertTitle = React.forwardRef<
+const Title = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -41,9 +50,10 @@ const AlertTitle = React.forwardRef<
     {...props}
   />
 ));
-AlertTitle.displayName = 'AlertTitle';
+Title.displayName = 'Alert.Title';
+Alert.Title = Title;
 
-const AlertDescription = React.forwardRef<
+const Description = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -53,6 +63,7 @@ const AlertDescription = React.forwardRef<
     {...props}
   />
 ));
-AlertDescription.displayName = 'AlertDescription';
+Description.displayName = 'Alert.Description';
+Alert.Description = Description;
 
-export { Alert, AlertTitle, AlertDescription };
+export { Alert, alertVariants };

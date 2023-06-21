@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar, AvatarImage, AvatarFallback } from '../../components';
+import { Avatar } from '../../components';
 
 const meta = {
   title: 'Components/Avatar',
@@ -15,11 +15,11 @@ export const Default: Story = {
   render: () => {
     return (
       <Avatar>
-        <AvatarImage
+        <Avatar.Image
           src="https://avatars.githubusercontent.com/u/76115441?v=4"
           alt="alt"
         />
-        <AvatarFallback>ER</AvatarFallback>
+        <Avatar.Fallback>ER</Avatar.Fallback>
       </Avatar>
     );
   },
@@ -29,7 +29,7 @@ export const FallbackAvatarStory: Story = {
   render: () => {
     return (
       <Avatar>
-        <AvatarFallback>ER</AvatarFallback>
+        <Avatar.Fallback>ER</Avatar.Fallback>
       </Avatar>
     );
   },

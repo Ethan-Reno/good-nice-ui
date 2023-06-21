@@ -2,11 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
   Badge,
 } from '../../components';
 
@@ -57,28 +52,30 @@ const exercises = [
 const TableDemo = () => {
   return (
     <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Name</TableHead>
-          <TableHead>Description</TableHead>
-          <TableHead>Measurement</TableHead>
-          <TableHead>Unit</TableHead>
-          <TableHead className="text-right">Status</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {exercises.map((exercise) => (
-          <TableRow key={exercise.id}>
-            <TableCell>{exercise.name}</TableCell>
-            <TableCell>{exercise.description}</TableCell>
-            <TableCell>{exercise.measurement}</TableCell>
-            <TableCell>{exercise.unit}</TableCell>
-            <TableCell className="text-right">
-              <Badge>{exercise.status}</Badge>
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
+      <Table.Content>
+        <Table.Header>
+          <Table.Row>
+            <Table.Head className="w-[100px]">Name</Table.Head>
+            <Table.Head>Description</Table.Head>
+            <Table.Head>Measurement</Table.Head>
+            <Table.Head>Unit</Table.Head>
+            <Table.Head className="text-right">Status</Table.Head>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {exercises.map((exercise) => (
+            <Table.Row key={exercise.id}>
+              <Table.Cell>{exercise.name}</Table.Cell>
+              <Table.Cell>{exercise.description}</Table.Cell>
+              <Table.Cell>{exercise.measurement}</Table.Cell>
+              <Table.Cell>{exercise.unit}</Table.Cell>
+              <Table.Cell className="text-right">
+                <Badge>{exercise.status}</Badge>
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Content>
     </Table>
   );
 };

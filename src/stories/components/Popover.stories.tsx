@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Popover, PopoverContent, PopoverTrigger } from '../../components';
+import { Popover } from '../../components';
 
 const meta = {
   title: 'Components/Popover',
@@ -14,8 +14,8 @@ type Story = StoryObj<typeof meta>;
 const DefaultPopover = () => {
   return (
     <Popover>
-      <PopoverTrigger>Open</PopoverTrigger>
-      <PopoverContent>Place content for the popover here.</PopoverContent>
+      <Popover.Trigger>Open</Popover.Trigger>
+      <Popover.Content>Place content for the popover here.</Popover.Content>
     </Popover>
   );
 };

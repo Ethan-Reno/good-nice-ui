@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Toast, ToastAction } from '../../components';
+import { Button, Toast } from '../../components';
 import { Toaster, useToast } from '../../utils';
 
 const meta = {
@@ -25,12 +25,12 @@ const DefaultToast = () => {
             title: 'Toast Triggered',
             description: 'Here is a description',
             action: (
-              <ToastAction
+              <Toast.Action
                 altText="Optional"
                 onClick={() => console.log('toast action clicked')}
               >
                 Action
-              </ToastAction>
+              </Toast.Action>
             ),
           });
         }}

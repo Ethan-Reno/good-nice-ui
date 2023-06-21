@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { RadioGroup, RadioGroupItem, Label } from '../../components';
+import { RadioGroup, Label } from '../../components';
 
 const meta = {
   title: 'Components/RadioGroup',
@@ -15,11 +15,11 @@ const DefaultRadioGroup = () => {
   return (
     <RadioGroup defaultValue="option-one">
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="option-one" id="option-one" />
+        <RadioGroup.Item value="option-one" id="option-one" />
         <Label htmlFor="option-one">Option One</Label>
       </div>
       <div className="flex items-center gap-2">
-        <RadioGroupItem value="option-two" id="option-two" />
+        <RadioGroup.Item value="option-two" id="option-two" />
         <Label htmlFor="option-two">Option Two</Label>
       </div>
     </RadioGroup>
