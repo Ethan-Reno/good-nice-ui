@@ -12,7 +12,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A vertically stacked set of interactive headings that each reveal an associated section of content.'
+        component: 'Displays a button or a component that looks like a button.'
       },
     },
   },

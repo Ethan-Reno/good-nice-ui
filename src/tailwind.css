@@ -30,15 +30,15 @@
     /* zinc-50 */
     --primary-foreground: 0 0% 98%;
 
-    /* zinc-700 */
-    --secondary: 240 5% 26%;
-    /* zinc-100 */
-    --secondary-foreground: 240 5% 96%;
+    /* zinc-300 */
+    --secondary: 240 5% 84%;
+    /* zinc-800 */
+    --secondary-foreground: 240 4% 16%;
 
-    /* zinc-500 */
-    --accent: 240 5% 65%;
-    /* zinc-100 */
-    --accent-foreground: 240 5% 96%;
+    /* zinc-300 */
+    --accent: 240 5% 84%;
+    /* zinc-800 */
+    --accent-foreground: 240 4% 16%;
 
     /* red-500 */
     --destructive: 0 84% 60%;
