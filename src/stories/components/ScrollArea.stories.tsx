@@ -6,13 +6,20 @@ const meta = {
   title: 'Components/ScrollArea',
   component: ScrollArea,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Augments native scroll functionality for custom, cross-browser styling.'
+      },
+    },
+  },
 } as Meta<typeof ScrollArea>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 const tags = Array.from({ length: 50 }).map(
-  (_, i, a) => `v1.2.0-beta.${a.length - i}`
+  (_, i, a) => `Scrollable.${a.length - i}`
 );
 
 const DefaultScrollArea = () => {

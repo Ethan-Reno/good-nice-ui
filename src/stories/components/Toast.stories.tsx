@@ -7,6 +7,13 @@ const meta = {
   title: 'Components/Toast',
   component: Toast,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A succinct message that is displayed temporarily.'
+      },
+    },
+  },
 } as Meta<typeof Toast>;
 
 export default meta;

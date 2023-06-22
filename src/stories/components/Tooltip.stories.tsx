@@ -9,6 +9,13 @@ const meta = {
   title: 'Components/Tooltip',
   component: Tooltip,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
+      },
+    },
+  },
 } satisfies Meta<typeof Tooltip>;
 
 export default meta;

@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Dialog',
   component: Dialog,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+      },
+    },
+  },
 } as Meta<typeof Dialog>;
 
 export default meta;

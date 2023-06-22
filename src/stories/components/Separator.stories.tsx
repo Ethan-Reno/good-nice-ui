@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Separator',
   component: Separator,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Visually or semantically separates content.'
+      },
+    },
+  },
 } as Meta<typeof Separator>;
 
 export default meta;

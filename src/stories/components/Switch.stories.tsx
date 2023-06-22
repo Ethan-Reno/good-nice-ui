@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Switch',
   component: Switch,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A control that allows the user to toggle between checked and not checked.'
+      },
+    },
+  },
 } as Meta<typeof Switch>;
 
 export default meta;

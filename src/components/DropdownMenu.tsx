@@ -19,6 +19,7 @@ DropdownMenu.Trigger = Trigger;
 
 const Portal = DropdownMenuPrimitive.Portal;
 Portal.displayName = 'DropdownMenu.Portal';
+DropdownMenu.Portal = Portal;
 
 const Content = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
@@ -48,9 +49,9 @@ const RadioGroup = DropdownMenuPrimitive.RadioGroup;
 RadioGroup.displayName = 'DropdownMenu.RadioGroup';
 DropdownMenu.RadioGroup = RadioGroup;
 
-const SubGroup = DropdownMenuPrimitive.Sub;
-SubGroup.displayName = 'DropdownMenu.SubGroup';
-DropdownMenu.SubGroup = SubGroup;
+const SubMenu = DropdownMenuPrimitive.Sub;
+SubMenu.displayName = 'DropdownMenu.SubMenu';
+DropdownMenu.SubMenu = SubMenu;
 
 const Item = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,

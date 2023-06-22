@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Alert',
   component: Alert,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A vertically stacked set of interactive headings that each reveal an associated section of content.'
+      },
+    },
+  },
 } as Meta<typeof Alert>;
 
 export default meta;

@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Slider',
   component: Slider,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'An input where the user selects a value from within a given range.'
+      },
+    },
+  },
 } as Meta<typeof Slider>;
 
 export default meta;

@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Select',
   component: Select,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Displays a list of options for the user to pick from—triggered by a button.'
+      },
+    },
+  },
 } satisfies Meta<typeof Select>;
 
 export default meta;

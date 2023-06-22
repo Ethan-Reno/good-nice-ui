@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A control that allows the user to toggle between checked and not checked.'
+      },
+    },
+  },
 } as Meta<typeof Checkbox>;
 
 export default meta;

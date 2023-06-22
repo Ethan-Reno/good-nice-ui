@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Avatar',
   component: Avatar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'An image element with a fallback for representing the user.'
+      },
+    },
+  },
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
@@ -25,7 +32,7 @@ export const Default: Story = {
   },
 };
 
-export const FallbackAvatarStory: Story = {
+export const Fallback: Story = {
   render: () => {
     return (
       <Avatar>

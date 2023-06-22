@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Skeleton',
   component: Skeleton,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A placeholder to show while content is loading.'
+      },
+    },
+  },
 } as Meta<typeof Skeleton>;
 
 export default meta;

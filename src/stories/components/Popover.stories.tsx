@@ -6,6 +6,13 @@ const meta = {
   title: 'Components/Popover',
   component: Popover,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Displays rich content in a portal, triggered by a button.'
+      },
+    },
+  },
 } satisfies Meta<typeof Popover>;
 
 export default meta;

@@ -9,6 +9,13 @@ const meta = {
   title: 'Components/Table',
   component: Table,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'A responsive table component.'
+      },
+    },
+  },
 } as Meta<typeof Table>;
 
 export default meta;
