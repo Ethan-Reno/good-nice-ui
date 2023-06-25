@@ -1,6 +1,6 @@
 {
   "name": "good-nice-ui",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "UI test",
   "author": "Ethan Reno",
   "license": "MIT",
@@ -51,6 +51,7 @@
     "@radix-ui/react-visually-hidden": "^1.0.1",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
+    "cmdk": "^0.2.0",
     "react-hook-form": "^7.44.3",
     "tailwind-merge": "^1.13.0"
   },
