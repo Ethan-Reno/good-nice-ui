@@ -10,7 +10,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A succinct message that is displayed temporarily.'
+        component: 'A succinct message that is displayed temporarily.',
       },
     },
   },

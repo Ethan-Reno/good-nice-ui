@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Toast,
-  ToastProvider,
-  ToastViewport,
-} from '../components/Toast';
+import { Toast, ToastProvider, ToastViewport } from '../components/Toast';
 import { useToast } from './useToast';
 
 export function Toaster() {

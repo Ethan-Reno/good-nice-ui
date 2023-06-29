@@ -11,7 +11,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays a badge or a component that looks like a badge.'
+        component: 'Displays a badge or a component that looks like a badge.',
       },
     },
   },

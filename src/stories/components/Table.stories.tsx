@@ -1,9 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Table,
-  Badge,
-} from '../../components';
+import { Table, Badge } from '../../components';
 
 const meta = {
   title: 'Components/Table',
@@ -12,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A responsive table component.'
+        component: 'A responsive table component.',
       },
     },
   },

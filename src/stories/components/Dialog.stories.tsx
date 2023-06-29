@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.'
+        component:
+          'A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.',
       },
     },
   },

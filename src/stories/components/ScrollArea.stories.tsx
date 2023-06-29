@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Augments native scroll functionality for custom, cross-browser styling.'
+        component:
+          'Augments native scroll functionality for custom, cross-browser styling.',
       },
     },
   },

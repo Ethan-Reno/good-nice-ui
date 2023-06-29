@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'An input where the user selects a value from within a given range.'
+        component:
+          'An input where the user selects a value from within a given range.',
       },
     },
   },

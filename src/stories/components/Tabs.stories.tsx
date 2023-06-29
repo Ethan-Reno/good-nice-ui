@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A set of layered sections of content—known as tab panels—that are displayed one at a time.'
+        component:
+          'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
       },
     },
   },

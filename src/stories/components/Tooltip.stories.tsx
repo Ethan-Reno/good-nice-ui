@@ -1,9 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  Tooltip,
-  TooltipProvider,
-} from '../../components';
+import { Tooltip, TooltipProvider } from '../../components';
 
 const meta = {
   title: 'Components/Tooltip',
@@ -12,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.'
+        component:
+          'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
       },
     },
   },

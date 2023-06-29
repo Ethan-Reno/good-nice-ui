@@ -60,15 +60,11 @@ const Form = ({
   onSubmit,
   ...props
 }: React.ComponentPropsWithoutRef<'form'>) => (
-  <form
-    className={className}
-    onSubmit={onSubmit}
-    {...props}
-  >
+  <form className={className} onSubmit={onSubmit} {...props}>
     {children}
   </form>
 );
-Form.displayName = "Form";
+Form.displayName = 'Form';
 
 const Field = <
   TFieldValues extends FieldValues = FieldValues,
@@ -90,7 +86,6 @@ const Item = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
   const id = React.useId();
-
   return (
     <FormItemContext.Provider value={{ id }}>
       <div ref={ref} className={cn('space-y-2', className)} {...props} />
@@ -105,7 +100,6 @@ const Label = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => {
   const { error, formItemId } = useFormField();
-
   return (
     <InternalLabel
       ref={ref}
@@ -124,7 +118,6 @@ const Control = React.forwardRef<
 >(({ ...props }, ref) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
-
   return (
     <Slot
       ref={ref}
@@ -147,7 +140,6 @@ const Description = React.forwardRef<
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => {
   const { formDescriptionId } = useFormField();
-
   return (
     <p
       ref={ref}
@@ -166,11 +158,9 @@ const Message = React.forwardRef<
 >(({ className, children, ...props }, ref) => {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
-
   if (!body) {
     return null;
   }
-
   return (
     <p
       ref={ref}
@@ -185,8 +175,4 @@ const Message = React.forwardRef<
 Message.displayName = 'Form.Message';
 Form.Message = Message;
 
-export {
-  useFormField,
-  FormProvider,
-  Form,
-};
+export { useFormField, FormProvider, Form };

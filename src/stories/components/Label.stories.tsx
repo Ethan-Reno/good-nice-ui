@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Renders an accessible label associated with controls.'
+        component: 'Renders an accessible label associated with controls.',
       },
     },
   },

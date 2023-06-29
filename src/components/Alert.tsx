@@ -18,12 +18,8 @@ const alertVariants = cva(
   }
 );
 
-const Alert = ({
-  children,
-}: React.ComponentPropsWithoutRef<'div'>) => (
-  <div>
-    {children}
-  </div>
+const Alert = ({ children }: React.ComponentPropsWithoutRef<'div'>) => (
+  <div>{children}</div>
 );
 
 const Content = React.forwardRef<

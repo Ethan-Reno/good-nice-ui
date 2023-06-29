@@ -29,7 +29,7 @@ const Image = React.forwardRef<
     {...props}
   />
 ));
-Image.displayName = 'Avatat.Image'
+Image.displayName = 'Avatar.Image';
 Avatar.Image = Image;
 
 const Fallback = React.forwardRef<

@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays a list of options for the user to pick from—triggered by a button.'
+        component:
+          'Displays a list of options for the user to pick from—triggered by a button.',
       },
     },
   },

@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A control that allows the user to toggle between checked and not checked.'
+        component:
+          'A control that allows the user to toggle between checked and not checked.',
       },
     },
   },

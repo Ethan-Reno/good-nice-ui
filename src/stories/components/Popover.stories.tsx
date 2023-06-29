@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays rich content in a portal, triggered by a button.'
+        component: 'Displays rich content in a portal, triggered by a button.',
       },
     },
   },

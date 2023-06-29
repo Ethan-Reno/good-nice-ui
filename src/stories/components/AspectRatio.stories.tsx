@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays content within a desired ratio.'
+        component: 'Displays content within a desired ratio.',
       },
     },
   },

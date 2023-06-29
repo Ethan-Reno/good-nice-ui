@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A placeholder to show while content is loading.'
+        component: 'A placeholder to show while content is loading.',
       },
     },
   },

@@ -9,7 +9,8 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'A vertically stacked set of interactive headings that each reveal an associated section of content.'
+        component:
+          'A vertically stacked set of interactive headings that each reveal an associated section of content.',
       },
     },
   },
@@ -21,7 +22,11 @@ type Story = StoryObj<typeof meta>;
 export const Multiple: Story = {
   render: () => {
     return (
-      <Accordion type="multiple" className="w-full" defaultValue={['item-1', 'item-2']}>
+      <Accordion
+        type="multiple"
+        className="w-full"
+        defaultValue={['item-1', 'item-2']}
+      >
         <Accordion.Item value="item-1">
           <Accordion.Trigger>One</Accordion.Trigger>
           <Accordion.Content>
@@ -42,7 +47,12 @@ export const Multiple: Story = {
 export const Single: Story = {
   render: () => {
     return (
-      <Accordion type="single" collapsible className="w-full" defaultValue='item-1'>
+      <Accordion
+        type="single"
+        collapsible
+        className="w-full"
+        defaultValue="item-1"
+      >
         <Accordion.Item value="item-1">
           <Accordion.Trigger>One</Accordion.Trigger>
           <Accordion.Content>

@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Displays a callout for user attention.'
+        component: 'Displays a callout for user attention.',
       },
     },
   },
@@ -24,7 +24,9 @@ const DefaultAlert = () => {
       <Alert.Content>
         <CircleIcon size={16} />
         <Alert.Title>Alert</Alert.Title>
-        <Alert.Description>Here is something you should know.</Alert.Description>
+        <Alert.Description>
+          Here is something you should know.
+        </Alert.Description>
       </Alert.Content>
     </Alert>
   );

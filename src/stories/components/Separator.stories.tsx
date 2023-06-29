@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Visually or semantically separates content.'
+        component: 'Visually or semantically separates content.',
       },
     },
   },
