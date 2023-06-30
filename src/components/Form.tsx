@@ -81,6 +81,19 @@ const Field = <
 Field.displayName = 'Form.Field';
 Form.Field = Field;
 
+const FieldSet = React.forwardRef<
+  HTMLFieldSetElement,
+  React.HTMLAttributes<HTMLFieldSetElement>
+>(({ children, ...props }, ref) => {
+  return (
+    <fieldset ref={ref} {...props}>
+      {children}
+    </fieldset>
+  );
+});
+FieldSet.displayName = 'Form.FieldSet';
+Form.FieldSet = FieldSet;
+
 const Item = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>

@@ -26,7 +26,7 @@ export const Default: Story = {
 
     return (
       <DropdownMenu>
-        <DropdownMenu.Trigger>
+        <DropdownMenu.Trigger asChild>
           <Button variant="outline">Click</Button>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
