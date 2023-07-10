@@ -1,11 +1,35 @@
 import * as React from 'react';
 import { cn } from '../utils/cn';
 
-export const Table = ({
-  children,
-}: React.ComponentPropsWithoutRef<'table'>) => <div>{children}</div>;
+interface TableComponents {
+  Header: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+  >;
+  Body: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+  >;
+  Footer: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+  >;
+  Row: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableRowElement> & React.RefAttributes<HTMLTableRowElement>
+  >;
+  Cell: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>
+  >;
+  Head: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>
+  >;
+  Caption: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>
+  >;
+}
 
-const Content = React.forwardRef<
+type TableType = React.ForwardRefExoticComponent<
+  React.HTMLAttributes<HTMLTableElement> & React.RefAttributes<HTMLTableElement>
+> & TableComponents;
+
+const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ className, children, ...props }, ref) => (
@@ -18,9 +42,8 @@ const Content = React.forwardRef<
       {children}
     </table>
   </div>
-));
-Content.displayName = 'Table.content';
-Table.Content = Content;
+)) as TableType;
+Table.displayName = 'Table';
 
 const Header = React.forwardRef<
   HTMLTableSectionElement,
@@ -121,3 +144,5 @@ const Caption = React.forwardRef<
 ));
 Caption.displayName = 'Table.Caption';
 Table.Caption = Caption;
+
+export { Table };

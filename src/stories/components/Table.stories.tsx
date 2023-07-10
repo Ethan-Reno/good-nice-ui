@@ -56,30 +56,28 @@ const exercises = [
 const TableDemo = () => {
   return (
     <Table>
-      <Table.Content>
-        <Table.Header>
-          <Table.Row>
-            <Table.Head className="w-[100px]">Name</Table.Head>
-            <Table.Head>Description</Table.Head>
-            <Table.Head>Measurement</Table.Head>
-            <Table.Head>Unit</Table.Head>
-            <Table.Head className="text-right">Status</Table.Head>
+      <Table.Header>
+        <Table.Row>
+          <Table.Head className="w-[100px]">Name</Table.Head>
+          <Table.Head>Description</Table.Head>
+          <Table.Head>Measurement</Table.Head>
+          <Table.Head>Unit</Table.Head>
+          <Table.Head className="text-right">Status</Table.Head>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {exercises.map((exercise) => (
+          <Table.Row key={exercise.id}>
+            <Table.Cell>{exercise.name}</Table.Cell>
+            <Table.Cell>{exercise.description}</Table.Cell>
+            <Table.Cell>{exercise.measurement}</Table.Cell>
+            <Table.Cell>{exercise.unit}</Table.Cell>
+            <Table.Cell className="text-right">
+              <Badge>{exercise.status}</Badge>
+            </Table.Cell>
           </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {exercises.map((exercise) => (
-            <Table.Row key={exercise.id}>
-              <Table.Cell>{exercise.name}</Table.Cell>
-              <Table.Cell>{exercise.description}</Table.Cell>
-              <Table.Cell>{exercise.measurement}</Table.Cell>
-              <Table.Cell>{exercise.unit}</Table.Cell>
-              <Table.Cell className="text-right">
-                <Badge>{exercise.status}</Badge>
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table.Content>
+        ))}
+      </Table.Body>
     </Table>
   );
 };

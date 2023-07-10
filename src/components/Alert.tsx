@@ -18,23 +18,39 @@ const alertVariants = cva(
   }
 );
 
-const Alert = ({ children }: React.ComponentPropsWithoutRef<'div'>) => (
-  <div>{children}</div>
-);
+interface AlertComponents {
+  Header: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
+  >;
+  Content: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
+  >;
+  Title: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLHeadingElement> & React.RefAttributes<HTMLHeadingElement>
+  >;
+  Description: React.ForwardRefExoticComponent<
+    React.HTMLAttributes<HTMLParagraphElement> & React.RefAttributes<HTMLParagraphElement>
+  >;
+}
 
-const Content = React.forwardRef<
+type AlertType = React.ForwardRefExoticComponent<
+  React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
+> & AlertComponents;
+
+const Alert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ className, variant, ...props }, ref) => (
+>(({ children, className, variant, ...props }, ref) => (
   <div
     ref={ref}
     role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props}
-  />
-));
-Content.displayName = 'Alert.Content';
-Alert.Content = Content;
+  >
+    {children}
+  </div>
+)) as AlertType;
+Alert.displayName = "Alert"
 
 const Title = React.forwardRef<
   HTMLParagraphElement,
