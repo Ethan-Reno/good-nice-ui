@@ -26,16 +26,19 @@ interface AlertComponents {
     React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
   >;
   Title: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLHeadingElement> & React.RefAttributes<HTMLHeadingElement>
+    React.HTMLAttributes<HTMLHeadingElement> &
+      React.RefAttributes<HTMLHeadingElement>
   >;
   Description: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLParagraphElement> & React.RefAttributes<HTMLParagraphElement>
+    React.HTMLAttributes<HTMLParagraphElement> &
+      React.RefAttributes<HTMLParagraphElement>
   >;
 }
 
 type AlertType = React.ForwardRefExoticComponent<
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
-> & AlertComponents;
+> &
+  AlertComponents;
 
 const Alert = React.forwardRef<
   HTMLDivElement,
@@ -50,7 +53,7 @@ const Alert = React.forwardRef<
     {children}
   </div>
 )) as AlertType;
-Alert.displayName = "Alert"
+Alert.displayName = 'Alert';
 
 const Title = React.forwardRef<
   HTMLParagraphElement,

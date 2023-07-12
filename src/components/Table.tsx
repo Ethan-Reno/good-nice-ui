@@ -3,31 +3,39 @@ import { cn } from '../utils/cn';
 
 interface TableComponents {
   Header: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+    React.HTMLAttributes<HTMLTableSectionElement> &
+      React.RefAttributes<HTMLTableSectionElement>
   >;
   Body: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+    React.HTMLAttributes<HTMLTableSectionElement> &
+      React.RefAttributes<HTMLTableSectionElement>
   >;
   Footer: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableSectionElement> & React.RefAttributes<HTMLTableSectionElement>
+    React.HTMLAttributes<HTMLTableSectionElement> &
+      React.RefAttributes<HTMLTableSectionElement>
   >;
   Row: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableRowElement> & React.RefAttributes<HTMLTableRowElement>
-  >;
-  Cell: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>
+    React.HTMLAttributes<HTMLTableRowElement> &
+      React.RefAttributes<HTMLTableRowElement>
   >;
   Head: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableCellElement> & React.RefAttributes<HTMLTableCellElement>
+    React.ThHTMLAttributes<HTMLTableCellElement> &
+      React.RefAttributes<HTMLTableCellElement>
+  >;
+  Cell: React.ForwardRefExoticComponent<
+    React.TdHTMLAttributes<HTMLTableCellElement> &
+      React.RefAttributes<HTMLTableCellElement>
   >;
   Caption: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLTableCaptionElement> & React.RefAttributes<HTMLTableCaptionElement>
+    React.HTMLAttributes<HTMLTableCaptionElement> &
+      React.RefAttributes<HTMLTableCaptionElement>
   >;
 }
 
 type TableType = React.ForwardRefExoticComponent<
   React.HTMLAttributes<HTMLTableElement> & React.RefAttributes<HTMLTableElement>
-> & TableComponents;
+> &
+  TableComponents;
 
 const Table = React.forwardRef<
   HTMLTableElement,
@@ -117,7 +125,7 @@ Table.Head = Head;
 
 const Cell = React.forwardRef<
   HTMLTableCellElement,
-  React.HTMLAttributes<HTMLTableCellElement>
+  React.TdHTMLAttributes<HTMLTableCellElement>
 >(({ className, ...props }, ref) => (
   <td
     ref={ref}

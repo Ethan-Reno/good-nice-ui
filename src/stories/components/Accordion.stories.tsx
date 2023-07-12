@@ -29,20 +29,20 @@ export const Single: Story = {
         defaultValue="item-1"
       >
         <Accordion.Item value="item-1" hasBottomBorder>
-          <Accordion.Trigger className='px-4'>Composable</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Composable</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             Flexible and simple composable component API.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-2" hasBottomBorder>
-          <Accordion.Trigger className='px-4'>Accessible</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Accessible</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             100% WAI-ARIA compliant from Radix.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-3">
-          <Accordion.Trigger className='px-4'>Animated</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Animated</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             Smooth animations powered by tailwindcss-animate.
           </Accordion.Content>
         </Accordion.Item>
@@ -60,20 +60,20 @@ export const Multiple: Story = {
         defaultValue={['item-1', 'item-2']}
       >
         <Accordion.Item value="item-1" hasBottomBorder>
-          <Accordion.Trigger className='px-4'>Composable</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Composable</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             Flexible and simple composable component API.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-2" hasBottomBorder>
-          <Accordion.Trigger className='px-4'>Accessible</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Accessible</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             100% WAI-ARIA compliant from Radix.
           </Accordion.Content>
         </Accordion.Item>
         <Accordion.Item value="item-3">
-          <Accordion.Trigger className='px-4'>Animated</Accordion.Trigger>
-          <Accordion.Content className='px-4'>
+          <Accordion.Trigger className="px-4">Animated</Accordion.Trigger>
+          <Accordion.Content className="px-4">
             Smooth animations powered by tailwindcss-animate.
           </Accordion.Content>
         </Accordion.Item>

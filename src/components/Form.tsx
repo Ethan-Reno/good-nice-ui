@@ -55,48 +55,54 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 );
 
 interface FormComponents {
-  Field: <TFieldValues extends FieldValues = FieldValues,
-    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>
-    (props: ControllerProps<TFieldValues, TName>) => React.ReactElement | null;
+  Field: <
+    TFieldValues extends FieldValues = FieldValues,
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  >(
+    props: ControllerProps<TFieldValues, TName>
+  ) => React.ReactElement | null;
   FieldSet: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLFieldSetElement> & React.RefAttributes<HTMLFieldSetElement>
+    React.HTMLAttributes<HTMLFieldSetElement> &
+      React.RefAttributes<HTMLFieldSetElement>
   >;
   Item: React.ForwardRefExoticComponent<
     React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
   >;
   Label: React.ForwardRefExoticComponent<
-    React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & React.RefAttributes<React.ElementRef<typeof LabelPrimitive.Root>>
+    React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+      React.RefAttributes<React.ElementRef<typeof LabelPrimitive.Root>>
   >;
   Control: React.ForwardRefExoticComponent<
-    React.ComponentPropsWithoutRef<typeof Slot> & React.RefAttributes<React.ElementRef<typeof Slot>>
+    React.ComponentPropsWithoutRef<typeof Slot> &
+      React.RefAttributes<React.ElementRef<typeof Slot>>
   >;
   Content: React.ForwardRefExoticComponent<
     React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>
   >;
   Description: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLParagraphElement> & React.RefAttributes<HTMLParagraphElement>
+    React.HTMLAttributes<HTMLParagraphElement> &
+      React.RefAttributes<HTMLParagraphElement>
   >;
   Message: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLParagraphElement> & React.RefAttributes<HTMLParagraphElement>
+    React.HTMLAttributes<HTMLParagraphElement> &
+      React.RefAttributes<HTMLParagraphElement>
   >;
 }
 
 type FormType = React.ForwardRefExoticComponent<
   React.HTMLAttributes<HTMLFormElement> & React.RefAttributes<HTMLFormElement>
-> & FormComponents;
+> &
+  FormComponents;
 
 const Form = React.forwardRef<
   HTMLFormElement,
   React.HTMLAttributes<HTMLFormElement>
 >(({ children, ...props }, ref) => (
-  <form
-    ref={ref}
-    {...props}
-  >
+  <form ref={ref} {...props}>
     {children}
   </form>
 )) as FormType;
-Form.displayName = "Form";
+Form.displayName = 'Form';
 
 const Field = <
   TFieldValues extends FieldValues = FieldValues,

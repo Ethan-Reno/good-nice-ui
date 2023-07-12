@@ -31,7 +31,7 @@ const Content = React.forwardRef<
     )}
     {...props}
   />
-))
+));
 Content.displayName = 'Tooltip.Content';
 Tooltip.Content = Content;
 

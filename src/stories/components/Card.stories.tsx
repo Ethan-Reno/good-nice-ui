@@ -9,8 +9,7 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component:
-          'Displays a card with header, content, and footer.',
+        component: 'Displays a card with header, content, and footer.',
       },
     },
   },
@@ -24,7 +23,9 @@ const DefaultCard = () => {
     <Card className="w-[350px]">
       <Card.Header>
         <Card.Title>Card Header</Card.Title>
-        <Card.Description>Include a description for more information.</Card.Description>
+        <Card.Description>
+          Include a description for more information.
+        </Card.Description>
       </Card.Header>
       <Card.Content>
         <div className="flex flex-col space-y-1.5">
