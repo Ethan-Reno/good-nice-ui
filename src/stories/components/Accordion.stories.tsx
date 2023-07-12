@@ -19,24 +19,31 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Multiple: Story = {
+export const Single: Story = {
   render: () => {
     return (
       <Accordion
-        type="multiple"
-        className="w-full"
-        defaultValue={['item-1', 'item-2']}
+        type="single"
+        collapsible
+        className="w-[400px] border rounded-md"
+        defaultValue="item-1"
       >
-        <Accordion.Item value="item-1">
-          <Accordion.Trigger>One</Accordion.Trigger>
-          <Accordion.Content>
-            Many accordion items can be open at once
+        <Accordion.Item value="item-1" hasBottomBorder>
+          <Accordion.Trigger className='px-4'>Composable</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            Flexible and simple composable component API.
           </Accordion.Content>
         </Accordion.Item>
-        <Accordion.Item value="item-2">
-          <Accordion.Trigger>Two</Accordion.Trigger>
-          <Accordion.Content>
-            When using type=&quot;multiple&quot;
+        <Accordion.Item value="item-2" hasBottomBorder>
+          <Accordion.Trigger className='px-4'>Accessible</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            100% WAI-ARIA compliant from Radix.
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-3">
+          <Accordion.Trigger className='px-4'>Animated</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            Smooth animations powered by tailwindcss-animate.
           </Accordion.Content>
         </Accordion.Item>
       </Accordion>
@@ -44,25 +51,30 @@ export const Multiple: Story = {
   },
 };
 
-export const Single: Story = {
+export const Multiple: Story = {
   render: () => {
     return (
       <Accordion
-        type="single"
-        collapsible
-        className="w-full"
-        defaultValue="item-1"
+        type="multiple"
+        className="w-[400px] border rounded-md"
+        defaultValue={['item-1', 'item-2']}
       >
-        <Accordion.Item value="item-1">
-          <Accordion.Trigger>One</Accordion.Trigger>
-          <Accordion.Content>
-            Only one accordion item can be open at once
+        <Accordion.Item value="item-1" hasBottomBorder>
+          <Accordion.Trigger className='px-4'>Composable</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            Flexible and simple composable component API.
           </Accordion.Content>
         </Accordion.Item>
-        <Accordion.Item value="item-2">
-          <Accordion.Trigger>Two</Accordion.Trigger>
-          <Accordion.Content>
-            When using type=&quot;single&quot;
+        <Accordion.Item value="item-2" hasBottomBorder>
+          <Accordion.Trigger className='px-4'>Accessible</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            100% WAI-ARIA compliant from Radix.
+          </Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="item-3">
+          <Accordion.Trigger className='px-4'>Animated</Accordion.Trigger>
+          <Accordion.Content className='px-4'>
+            Smooth animations powered by tailwindcss-animate.
           </Accordion.Content>
         </Accordion.Item>
       </Accordion>
