@@ -6,45 +6,44 @@
   :root {
     /* zinc-50 */
     --background: 0 0% 98%;
-    /* zinc-800 */
-    --foreground: 240 4% 16%;
+    /* zinc-100 */
+    --surface: 240 5% 96%;
+    /* zinc-900 */
+    --foreground: 240 6% 10%;
 
     /* zinc-200 */
-    --muted: 240 5% 96%;
+    --muted: 240 6% 90%;
     /* zinc-600 */
     --muted-foreground: 240 5% 34%;
-
-    /* zinc-50 */
-    --popover: 0 0% 98%;
-    /* zinc-800 */
-    --popover-foreground: 240 4% 16%;
-
-    --card: 0 0% 98%;
-    --card-foreground: 240 4% 16%;
-
-    /* zinc-500 */
-    --border: 240 5% 65%;
-    --input: 240 5% 65%;
-
-    /* blue-600 */
-    --primary: 221 83% 53%;
-    /* zinc-50 */
-    --primary-foreground: 0 0% 98%;
-
-    /* zinc-300 */
-    --secondary: 240 5% 84%;
-    /* zinc-800 */
-    --secondary-foreground: 240 4% 16%;
 
     /* zinc-300 */
     --accent: 240 5% 84%;
     /* zinc-700 */
     --accent-foreground: 240 5% 26%;
 
+    /* zinc-500 */
+    --border: 240 4% 46%;
+    /* zinc-600 */
+    --input: 240 5% 34%;
+
+    /* blue-600 */
+    --primary: 221 83% 53%;
+    /* blue-700 */
+    --primary-hover: 224 76% 48%;
+    /* zinc-50 */
+    --primary-foreground: 0 0% 98%;
+
+    /* zinc-200 */
+    --secondary: 240 6% 90%;
+    /* zinc-300 */
+    --secondary-hover: 240 5% 84%;
+    /* zinc-900 */
+    --secondary-foreground: 240 6% 10%;
+
     /* red-500 */
     --destructive: 0 84% 60%;
-    /* zinc-100 */
-    --destructive-foreground: 240 5% 96%;
+    /* zinc-50 */
+    --destructive-foreground: 240 6% 90%;
 
     /* blue-600 */
     --ring: 221 83% 53%;
@@ -54,47 +53,46 @@
 
   .dark,
   [data-mode='dark'] {
+    /* zinc-900 */
+    --background: 240 6% 10%;
     /* zinc-800 */
-    --background: 240 4% 16%;
+    --surface: 240 4% 16%;
     /* zinc-50 */
     --foreground: 0 0% 98%;
 
     /* zinc-700 */
     --muted: 240 5% 26%;
+    /* zinc-300 */
+    --muted-foreground: 240 5% 84%;
+
+    /* zinc-600 */
+    --accent: 240 5% 34%;
     /* zinc-200 */
-    --muted-foreground: 240 6% 90%;
+    --accent-foreground: 240 6% 90%;
 
-    /* zinc-800 */
-    --popover: 240 4% 16%;
-    /* zinc-200 */
-    --popover-foreground: 240 6% 90%;
-
-    --card: 240 4% 16%;
-    --card-foreground: 0 0% 98%;
-
+    /* zinc-600 */
+    --border: 240 5% 34%;
     /* zinc-500 */
-    --border: 240 4% 46%;
     --input: 240 4% 46%;
 
     /* blue-600 */
     --primary: 221 83% 53%;
+    /* blue-700 */
+    --primary-hover: 224 76% 48%;
     /* zinc-50 */
     --primary-foreground: 0 0% 98%;
 
     /* zinc-700 */
     --secondary: 240 5% 26%;
-    /* zinc-100 */
-    --secondary-foreground: 240 5% 96%;
-
-    /* zinc-500 */
-    --accent: 240 4% 46%;
-    /* zinc-100 */
-    --accent-foreground: 240 5% 96%;
+    /* zinc-600 */
+    --secondary-hover: 240 5% 34%;
+    /* zinc-50 */
+    --secondary-foreground: 0 0% 98%;
 
     /* red-500 */
     --destructive: 0 84% 60%;
-    /* zinc-100 */
-    --destructive-foreground: 240 5% 96%;
+    /* zinc-50 */
+    --destructive-foreground: 0 0% 98%;
 
     /* blue-600 */
     --ring: 221 83% 53%;

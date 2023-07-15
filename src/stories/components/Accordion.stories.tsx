@@ -25,7 +25,7 @@ export const Single: Story = {
       <Accordion
         type="single"
         collapsible
-        className="w-[400px] border rounded-md"
+        className="w-[400px] border rounded-md bg-surface"
         defaultValue="item-1"
       >
         <Accordion.Item value="item-1" hasBottomBorder>
@@ -56,7 +56,7 @@ export const Multiple: Story = {
     return (
       <Accordion
         type="multiple"
-        className="w-[400px] border rounded-md"
+        className="w-[400px] border rounded-md bg-surface"
         defaultValue={['item-1', 'item-2']}
       >
         <Accordion.Item value="item-1" hasBottomBorder>

@@ -22,12 +22,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => <Button variant="primary">Button</Button>,
+  render: () => <Button variant="default">Button</Button>,
 };
 
 export const WithIcon: Story = {
   render: () => (
-    <Button variant="primary">
+    <Button variant="default">
       <XIcon size={16} />
       <span className="pl-1">Close</span>
     </Button>

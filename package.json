@@ -1,13 +1,13 @@
 {
   "name": "good-nice-ui",
-  "version": "0.4.13",
+  "version": "0.5.0",
   "description": "A Tree-shakeable React UI component library built with Radix UI and Tailwind",
   "author": "Ethan Reno",
   "license": "MIT",
   "private": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist/**"
   ],

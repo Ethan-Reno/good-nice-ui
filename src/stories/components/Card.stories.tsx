@@ -34,7 +34,7 @@ const DefaultCard = () => {
         </div>
       </Card.Content>
       <Card.Footer className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
+        <Button variant="secondary">Cancel</Button>
         <Button>Save</Button>
       </Card.Footer>
     </Card>
