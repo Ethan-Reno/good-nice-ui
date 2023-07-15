@@ -18,13 +18,9 @@
 
     /* zinc-300 */
     --accent: 240 5% 84%;
-    /* zinc-700 */
-    --accent-foreground: 240 5% 26%;
 
     /* zinc-500 */
     --border: 240 4% 46%;
-    /* zinc-600 */
-    --input: 240 5% 34%;
 
     /* blue-600 */
     --primary: 221 83% 53%;
@@ -42,8 +38,10 @@
 
     /* red-500 */
     --destructive: 0 84% 60%;
+    /* red-600 */
+    --destructive-hover: 0 72% 51%;
     /* zinc-50 */
-    --destructive-foreground: 240 6% 90%;
+    --destructive-foreground: 0 0% 98%;
 
     /* blue-600 */
     --ring: 221 83% 53%;
@@ -55,32 +53,24 @@
   [data-mode='dark'] {
     /* zinc-900 */
     --background: 240 6% 10%;
+
     /* zinc-800 */
     --surface: 240 4% 16%;
+
     /* zinc-50 */
     --foreground: 0 0% 98%;
 
     /* zinc-700 */
     --muted: 240 5% 26%;
+
     /* zinc-300 */
     --muted-foreground: 240 5% 84%;
 
     /* zinc-600 */
     --accent: 240 5% 34%;
-    /* zinc-200 */
-    --accent-foreground: 240 6% 90%;
 
-    /* zinc-600 */
-    --border: 240 5% 34%;
-    /* zinc-500 */
-    --input: 240 4% 46%;
-
-    /* blue-600 */
-    --primary: 221 83% 53%;
-    /* blue-700 */
-    --primary-hover: 224 76% 48%;
-    /* zinc-50 */
-    --primary-foreground: 0 0% 98%;
+    /* zinc-700 */
+    --border: 240 5% 26%;
 
     /* zinc-700 */
     --secondary: 240 5% 26%;
@@ -88,16 +78,6 @@
     --secondary-hover: 240 5% 34%;
     /* zinc-50 */
     --secondary-foreground: 0 0% 98%;
-
-    /* red-500 */
-    --destructive: 0 84% 60%;
-    /* zinc-50 */
-    --destructive-foreground: 0 0% 98%;
-
-    /* blue-600 */
-    --ring: 221 83% 53%;
-
-    --radius: 0.5rem;
   }
 }
 

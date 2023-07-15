@@ -29,11 +29,11 @@ const DefaultCard = () => {
       </Card.Header>
       <Card.Content>
         <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="Name of your project" />
+          <Label className="text-accent-foreground" htmlFor="name">Name</Label>
+          <Input className="bg-background" id="name" placeholder="Name of your project" />
         </div>
       </Card.Content>
-      <Card.Footer className="flex justify-between">
+      <Card.Footer className="flex justify-end gap-4">
         <Button variant="secondary">Cancel</Button>
         <Button>Save</Button>
       </Card.Footer>

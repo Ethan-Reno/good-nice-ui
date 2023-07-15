@@ -71,5 +71,3 @@ export const Default: Story = {
     );
   },
 };
-
-export const Checkboxes: Story = {};
