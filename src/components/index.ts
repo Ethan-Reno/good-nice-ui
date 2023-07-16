@@ -19,6 +19,7 @@ export * from './RadioGroup';
 export * from './ScrollArea';
 export * from './Select';
 export * from './Separator';
+export * from './Sheet';
 export * from './Skeleton';
 export * from './Slider';
 export * from './Switch';
