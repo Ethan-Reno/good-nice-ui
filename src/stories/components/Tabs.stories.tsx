@@ -20,15 +20,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const DefaultTabs = () => (
-  <Tabs defaultValue="one">
-    <Tabs.List>
-      <Tabs.Trigger value="one">One</Tabs.Trigger>
-      <Tabs.Trigger value="two">Two</Tabs.Trigger>
-      <Tabs.Trigger value="three">Three</Tabs.Trigger>
+  <Tabs className="w-fit border rounded-md bg-surface" defaultValue="one">
+    <Tabs.List className="w-fit border-b">
+      <Tabs.Trigger className='w-[100px] hover:bg-muted' value="one">One</Tabs.Trigger>
+      <Tabs.Trigger className='w-[100px] hover:bg-muted' value="two">Two</Tabs.Trigger>
+      <Tabs.Trigger className='w-[100px] hover:bg-muted' value="three">Three</Tabs.Trigger>
     </Tabs.List>
-    <Tabs.Content value="one">Content for tab one</Tabs.Content>
-    <Tabs.Content value="two">Content for tab two</Tabs.Content>
-    <Tabs.Content value="three">Content for tab three</Tabs.Content>
+    <Tabs.Content className='p-4' value="one">Content for tab one</Tabs.Content>
+    <Tabs.Content className='p-4' value="two">Content for tab two</Tabs.Content>
+    <Tabs.Content className='p-4' value="three">Content for tab three</Tabs.Content>
   </Tabs>
 );
 
