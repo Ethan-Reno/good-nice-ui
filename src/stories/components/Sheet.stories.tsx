@@ -23,7 +23,7 @@ const DefaultSheet = () => {
   return (
     <Sheet>
       <Sheet.Trigger>Open</Sheet.Trigger>
-      <Sheet.Content side="top">
+      <Sheet.Content animationDuration={700} side="top">
         <Sheet.Header>
           <Sheet.Title>Are you sure absolutely sure?</Sheet.Title>
           <Sheet.Description>
