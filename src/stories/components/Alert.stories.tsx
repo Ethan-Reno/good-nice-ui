@@ -21,13 +21,11 @@ type Story = StoryObj<typeof meta>;
 const DefaultAlert = () => {
   return (
     <Alert>
-      <Alert.Content>
-        <CircleIcon size={16} />
-        <Alert.Title>Alert</Alert.Title>
-        <Alert.Description>
-          Here is something you should know.
-        </Alert.Description>
-      </Alert.Content>
+      <CircleIcon size={16} />
+      <Alert.Title>Alert</Alert.Title>
+      <Alert.Description>
+        Here is something you should know.
+      </Alert.Description>
     </Alert>
   );
 };
