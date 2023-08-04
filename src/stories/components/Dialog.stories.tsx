@@ -30,14 +30,14 @@ export const Default: Story = {
           </Button>
         </Dialog.Trigger>
         <Dialog.Content className="sm:max-w-[425px]">
-          <Dialog.Header>
-            <Dialog.Title>Dialog Test</Dialog.Title>
-            <Dialog.Description>
-              Here is a description for the dialog.
-            </Dialog.Description>
-          </Dialog.Header>
-          Here is the body content of the dialog.
+          <Dialog.Title>Dialog Test</Dialog.Title>
+          <Dialog.Description>
+            Here is a description for the dialog.
+          </Dialog.Description>
           <Dialog.Footer>
+            <Button type="button" variant='secondary' onClick={() => setIsOpen(false)}>
+              Action
+            </Button>
             <Button type="button" onClick={() => setIsOpen(false)}>
               Action
             </Button>

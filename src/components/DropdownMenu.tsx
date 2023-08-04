@@ -61,7 +61,7 @@ const Item = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors',
+      'relative flex cursor-default select-none items-center rounded-sm p-2 text-sm outline-none transition-colors',
       'focus:bg-accent',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8',
@@ -80,7 +80,7 @@ const CheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors',
+      'relative flex cursor-default select-none items-center rounded-sm p-2 pl-8 text-sm outline-none transition-colors',
       'focus:bg-accent',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className
@@ -106,7 +106,7 @@ const RadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors',
+      'relative flex cursor-default select-none items-center rounded-sm p-2 pl-8 text-sm outline-none transition-colors',
       'focus:bg-accent',
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className

@@ -30,15 +30,11 @@ export const Default: Story = {
           <Button variant="outline">Click</Button>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
-          <DropdownMenu.Label>All options</DropdownMenu.Label>
+          <DropdownMenu.Label>Label</DropdownMenu.Label>
           <DropdownMenu.Separator />
           <DropdownMenu.Item>
             <span>Item</span>
           </DropdownMenu.Item>
-          <DropdownMenu.Item inset>
-            <span>Inset Item</span>
-          </DropdownMenu.Item>
-          <DropdownMenu.Separator />
           <DropdownMenu.CheckboxItem
             checked={isChecked}
             onCheckedChange={setIsChecked}
