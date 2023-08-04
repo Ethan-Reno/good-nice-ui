@@ -1,5 +1,5 @@
-import React from "react";
 import { withThemeByDataAttribute } from '@storybook/addon-styling';
+import theme from './theme';
 import '../src/tailwind.css';
 
 export const parameters = {
@@ -11,6 +11,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  docs: {
+    theme: theme,
   },
 };
 
