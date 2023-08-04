@@ -57,12 +57,12 @@ const Content = React.forwardRef<
       {children}
       <DialogPrimitive.Close
         className={cn(
-          'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-surface transition-opacity hover:opacity-100',
+          'absolute right-4 top-4 rounded-sm ring-offset-surface text-lowContrast-foreground hover:text-foreground transition-colors',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none',
           'data-[state=open]:bg-accent data-[state=open]:text-muted-foreground'
         )}
       >
-        <XIcon size={16} />
+        <XIcon size={20} />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

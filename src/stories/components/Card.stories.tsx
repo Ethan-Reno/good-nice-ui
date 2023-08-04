@@ -29,7 +29,7 @@ const DefaultCard = () => {
       </Card.Header>
       <Card.Content>
         <div className="flex flex-col space-y-1.5">
-          <Label className="text-accent-foreground" htmlFor="name">
+          <Label className="text-lowContrast-foreground" htmlFor="name">
             Name
           </Label>
           <Input

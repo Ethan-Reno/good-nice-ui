@@ -28,13 +28,14 @@ const Trigger = React.forwardRef<
     className={cn(
       'flex h-10 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground',
       'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+      '[&>svg]:rotate-0 [&>svg]:transition-transform [&>svg]:data-[state=open]:rotate-180 [&>svg]:data-[state=open]:transition-transform',
       className
     )}
     {...props}
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDownIcon size={16} className="opacity-50" />
+      <ChevronDownIcon size={20} className="text-lowContrast-foreground" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));

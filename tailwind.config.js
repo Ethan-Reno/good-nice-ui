@@ -14,6 +14,7 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         surface: "hsl(var(--surface))",
+        accent: "hsl(var(--accent))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           hover: "hsl(var(--primary-hover))",
@@ -33,9 +34,9 @@ module.exports = {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+        lowContrast: {
+          DEFAULT: "hsl(var(--lowContrast))",
+          foreground: "hsl(var(--lowContrast-foreground))",
         },
       },
       borderRadius: {
