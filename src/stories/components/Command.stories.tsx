@@ -10,7 +10,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'A command element with a fallback for representing the user.',
+          'A fast, composable command menu.',
       },
     },
   },
