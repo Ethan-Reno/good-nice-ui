@@ -15,6 +15,7 @@ export * from './icons';
 export * from './Input';
 export * from './Label';
 export * from './Popover';
+export * from './Progress';
 export * from './RadioGroup';
 export * from './ScrollArea';
 export * from './Select';
