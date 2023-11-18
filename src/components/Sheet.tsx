@@ -19,8 +19,8 @@ Sheet.Trigger = Trigger;
 const Close = SheetPrimitive.Close;
 Close.displayName = 'Sheet.Close';
 
-const Portal = ({ className, ...props }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal className={cn(className)} {...props} />
+const Portal = ({ ...props }: SheetPrimitive.DialogPortalProps) => (
+  <SheetPrimitive.Portal {...props} />
 );
 Portal.displayName = 'Sheet.Portal';
 Sheet.Portal = Portal;

@@ -18,8 +18,8 @@ Dialog.Trigger = Trigger;
 // Don't export Portal or Overlay because they should not be used directly
 // This is because they are used by default in the Content subcomponent
 // Leaving the implementation pattern intact to enable exposing it in the future
-const Portal = ({ className, ...props }: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={cn(className)} {...props} />
+const Portal = ({ ...props }: DialogPrimitive.DialogPortalProps) => (
+  <DialogPrimitive.Portal {...props} />
 );
 Portal.displayName = 'Dialog.Portal';
 
