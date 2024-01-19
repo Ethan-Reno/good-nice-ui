@@ -6,7 +6,6 @@ import {
   ControllerProps,
   FieldPath,
   FieldValues,
-  FormProvider,
   useFormContext,
 } from 'react-hook-form';
 import { cn } from '../utils/cn';
@@ -226,4 +225,4 @@ const Message = React.forwardRef<
 Message.displayName = 'Form.Message';
 Form.Message = Message;
 
-export { useFormField, FormProvider, Form };
+export { useFormField, Form };

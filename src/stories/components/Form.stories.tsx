@@ -2,8 +2,8 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useForm } from 'react-hook-form';
-import { Form, FormProvider, Input, Button } from '../../components';
+import { useForm, FormProvider } from 'react-hook-form';
+import { Form, Input, Button } from '../../components';
 
 const meta = {
   title: 'Components/Form',
