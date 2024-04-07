@@ -27,9 +27,9 @@ export type BreadcrumbType = React.ForwardRefExoticComponent<BreadcrumbProps> & 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   BreadcrumbProps
->(({ children, ...props }, ref) => (
+>(({ children, ...props }, forwardedRef) => (
   <nav
-    ref={ref}
+    ref={forwardedRef}
     aria-label="breadcrumb"
     {...props}
   >
@@ -41,9 +41,9 @@ Breadcrumb.displayName = "Breadcrumb";
 const List = React.forwardRef<
   HTMLOListElement,
   BreadcrumbListProps
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <ol
-    ref={ref}
+    ref={forwardedRef}
     className={cn(
       "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
       className
@@ -57,9 +57,9 @@ Breadcrumb.List = List;
 const Item = React.forwardRef<
   HTMLLIElement,
   BreadcrumbItemProps
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <li
-    ref={ref}
+    ref={forwardedRef}
     className={cn("inline-flex items-center gap-1.5", className)}
     {...props}
   />
@@ -70,12 +70,12 @@ Breadcrumb.Item = Item;
 const Link = React.forwardRef<
   HTMLAnchorElement,
   BreadcrumbLinkProps
->(({ asChild, className, ...props }, ref) => {
+>(({ asChild, className, ...props }, forwardedRef) => {
   const Comp = asChild ? Slot : "a"
 
   return (
     <Comp
-      ref={ref}
+      ref={forwardedRef}
       className={cn("transition-colors hover:text-foreground", className)}
       {...props}
     />
@@ -87,9 +87,9 @@ Breadcrumb.Link = Link;
 const Page = React.forwardRef<
   HTMLSpanElement,
   BreadcrumbPageProps
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <span
-    ref={ref}
+    ref={forwardedRef}
     role="link"
     aria-disabled="true"
     aria-current="page"
@@ -103,9 +103,9 @@ Breadcrumb.Page = Page;
 const Separator = React.forwardRef<
   HTMLLIElement,
   BreadcrumbSeparatorProps
->(({ children, className, ...props }, ref) => (
+>(({ children, className, ...props }, forwardedRef) => (
   <li
-    ref={ref}
+    ref={forwardedRef}
     role="presentation"
     aria-hidden="true"
     className={cn("[&>svg]:size-3.5", className)}
@@ -120,9 +120,9 @@ Breadcrumb.Separator = Separator;
 const Ellipsis = React.forwardRef<
   HTMLSpanElement,
   BreadcrumbEllipsisProps
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <span
-    ref={ref}
+    ref={forwardedRef}
     role="presentation"
     aria-hidden="true"
     className={cn("flex h-9 w-9 items-center justify-center", className)}

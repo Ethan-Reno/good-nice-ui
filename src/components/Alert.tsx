@@ -43,9 +43,9 @@ type AlertType = React.ForwardRefExoticComponent<
 const Alert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
->(({ children, className, variant, ...props }, ref) => (
+>(({ children, className, variant, ...props }, forwardedRef) => (
   <div
-    ref={ref}
+    ref={forwardedRef}
     role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props}

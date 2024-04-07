@@ -28,14 +28,14 @@ Sheet.Portal = Portal;
 const Overlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SheetPrimitive.Overlay
     className={cn(
       'fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       className
     )}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   />
 ));
 Overlay.displayName = 'Sheet.Overlay';
@@ -70,11 +70,11 @@ interface SheetContentProps
 const Content = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({side = 'right', hasClose = true, animationDuration = 300, className, children, ...props}, ref) => (
+>(({side = 'right', hasClose = true, animationDuration = 300, className, children, ...props}, forwardedRef) => (
   <Portal>
     <Overlay />
     <SheetPrimitive.Content
-      ref={ref}
+      ref={forwardedRef}
       className={cn(sheetVariants({ side }), `data-[state=closed]:duration-${animationDuration} data-[state=open]:duration-${animationDuration}`, className)}
       {...props}
     >
@@ -124,9 +124,9 @@ Sheet.Footer = Footer;
 const Title = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SheetPrimitive.Title
-    ref={ref}
+    ref={forwardedRef}
     className={cn('text-lg font-semibold text-foreground', className)}
     {...props}
   />
@@ -137,9 +137,9 @@ Sheet.Title = Title;
 const Description = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SheetPrimitive.Description
-    ref={ref}
+    ref={forwardedRef}
     className={cn('text-sm text-muted-foreground', className)}
     {...props}
   />

@@ -13,8 +13,8 @@ Tabs.displayName = 'Tabs';
 const List = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
-  <TabsPrimitive.List ref={ref} className={cn('flex', className)} {...props} />
+>(({ className, ...props }, forwardedRef) => (
+  <TabsPrimitive.List ref={forwardedRef} className={cn('flex', className)} {...props} />
 ));
 List.displayName = 'Tabs.List';
 Tabs.List = List;
@@ -22,9 +22,9 @@ Tabs.List = List;
 const Trigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <TabsPrimitive.Trigger
-    ref={ref}
+    ref={forwardedRef}
     className={cn(
       'flex items-center justify-center text-muted-foreground whitespace-nowrap border-b-2 border-transparent px-3 py-1.5 text-sm font-medium ring-offset-background transition-all',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:rounded-sm disabled:pointer-events-none disabled:opacity-50',
@@ -40,9 +40,9 @@ Tabs.Trigger = Trigger;
 const Content = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <TabsPrimitive.Content
-    ref={ref}
+    ref={forwardedRef}
     tabIndex={-1}
     className={cn('mt-2 outline-none', className)}
     {...props}

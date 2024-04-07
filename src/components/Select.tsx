@@ -22,9 +22,9 @@ Select.Value = Value;
 const Trigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...props }, forwardedRef) => (
   <SelectPrimitive.Trigger
-    ref={ref}
+    ref={forwardedRef}
     className={cn(
       'flex h-10 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground',
       'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
@@ -45,10 +45,10 @@ Select.Trigger = Trigger;
 const Content = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = 'popper', ...props }, ref) => (
+>(({ className, children, position = 'popper', ...props }, forwardedRef) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
-      ref={ref}
+      ref={forwardedRef}
       className={cn(
         'relative z-50 min-w-[8rem] overflow-hidden rounded-md border bg-surface text-foreground shadow-md animate-in fade-in-80',
         position === 'popper' && 'translate-y-1',
@@ -75,9 +75,9 @@ Select.Content = Content;
 const Label = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SelectPrimitive.Label
-    ref={ref}
+    ref={forwardedRef}
     className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
     {...props}
   />
@@ -88,9 +88,9 @@ Select.Label = Label;
 const Item = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...props }, forwardedRef) => (
   <SelectPrimitive.Item
-    ref={ref}
+    ref={forwardedRef}
     className={cn(
       'relative flex w-full cursor-default select-none items-center rounded-sm p-2 pl-8 text-sm outline-none',
       'focus:bg-accent',
@@ -114,9 +114,9 @@ Select.Item = Item;
 const Separator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SelectPrimitive.Separator
-    ref={ref}
+    ref={forwardedRef}
     className={cn('-mx-1 my-1 h-px bg-muted', className)}
     {...props}
   />

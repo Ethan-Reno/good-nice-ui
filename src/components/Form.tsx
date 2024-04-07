@@ -96,8 +96,8 @@ type FormType = React.ForwardRefExoticComponent<
 const Form = React.forwardRef<
   HTMLFormElement,
   React.HTMLAttributes<HTMLFormElement>
->(({ children, ...props }, ref) => (
-  <form ref={ref} {...props}>
+>(({ children, ...props }, forwardedRef) => (
+  <form ref={forwardedRef} {...props}>
     {children}
   </form>
 )) as FormType;
@@ -121,9 +121,9 @@ Form.Field = Field;
 const FieldSet = React.forwardRef<
   HTMLFieldSetElement,
   React.HTMLAttributes<HTMLFieldSetElement>
->(({ children, ...props }, ref) => {
+>(({ children, ...props }, forwardedRef) => {
   return (
-    <fieldset ref={ref} {...props}>
+    <fieldset ref={forwardedRef} {...props}>
       {children}
     </fieldset>
   );
@@ -134,11 +134,11 @@ Form.FieldSet = FieldSet;
 const Item = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const id = React.useId();
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} className={className} {...props} />
+      <div ref={forwardedRef} className={className} {...props} />
     </FormItemContext.Provider>
   );
 });
@@ -148,11 +148,11 @@ Form.Item = Item;
 const Label = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const { error, formItemId } = useFormField();
   return (
     <InternalLabel
-      ref={ref}
+      ref={forwardedRef}
       className={cn(error && 'text-destructive', className)}
       htmlFor={formItemId}
       {...props}
@@ -165,12 +165,12 @@ Form.Label = Label;
 const Control = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
+>(({ ...props }, forwardedRef) => {
   const { error, formItemId, formDescriptionId, formMessageId } =
     useFormField();
   return (
     <Slot
-      ref={ref}
+      ref={forwardedRef}
       id={formItemId}
       aria-describedby={
         !error
@@ -188,11 +188,11 @@ Form.Control = Control;
 const Description = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
+>(({ className, ...props }, forwardedRef) => {
   const { formDescriptionId } = useFormField();
   return (
     <p
-      ref={ref}
+      ref={forwardedRef}
       id={formDescriptionId}
       className={cn('text-sm text-muted-foreground', className)}
       {...props}
@@ -205,7 +205,7 @@ Form.Description = Description;
 const Message = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
+>(({ className, children, ...props }, forwardedRef) => {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message) : children;
   if (!body) {
@@ -213,7 +213,7 @@ const Message = React.forwardRef<
   }
   return (
     <p
-      ref={ref}
+      ref={forwardedRef}
       id={formMessageId}
       className={cn('text-sm font-medium text-destructive', className)}
       {...props}

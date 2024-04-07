@@ -5,9 +5,9 @@ import { cn } from '../utils/cn';
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...props }, forwardedRef) => (
   <ScrollAreaPrimitive.Root
-    ref={ref}
+    ref={forwardedRef}
     className={cn('relative overflow-hidden', className)}
     {...props}
   >
@@ -23,9 +23,9 @@ ScrollArea.displayName = 'ScrollArea';
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
->(({ className, orientation = 'vertical', ...props }, ref) => (
+>(({ className, orientation = 'vertical', ...props }, forwardedRef) => (
   <ScrollAreaPrimitive.ScrollAreaScrollbar
-    ref={ref}
+    ref={forwardedRef}
     orientation={orientation}
     className={cn(
       'flex touch-none select-none transition-colors',

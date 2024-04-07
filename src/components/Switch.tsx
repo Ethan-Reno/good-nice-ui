@@ -5,7 +5,7 @@ import { cn } from '../utils/cn';
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
->(({ className, ...props }, ref) => (
+>(({ className, ...props }, forwardedRef) => (
   <SwitchPrimitives.Root
     className={cn(
       'peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors',
@@ -14,7 +14,7 @@ const Switch = React.forwardRef<
       className
     )}
     {...props}
-    ref={ref}
+    ref={forwardedRef}
   >
     <SwitchPrimitives.Thumb
       className={cn(
