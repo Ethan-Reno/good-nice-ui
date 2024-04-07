@@ -3,48 +3,30 @@ import { Slot } from "@radix-ui/react-slot"
 import { cn } from '../utils';
 import { ChevronRight, MoreHorizontal } from "lucide-react"
 
-interface BreadcrumbComponents {
-  List: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLOListElement> &
-    React.RefAttributes<HTMLOListElement>
-  >;
-  Item: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLLIElement> &
-    React.RefAttributes<HTMLLIElement>
-  >;
-  Link: React.ForwardRefExoticComponent<
-    React.AnchorHTMLAttributes<HTMLAnchorElement> &
-    React.RefAttributes<HTMLAnchorElement>
-  >;
-  Page: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLSpanElement> &
-    React.RefAttributes<HTMLSpanElement>
-  >;
-  Separator: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLLIElement> &
-    React.RefAttributes<HTMLLIElement>
-  >;
-  Ellipsis: React.ForwardRefExoticComponent<
-    React.HTMLAttributes<HTMLSpanElement> &
-    React.RefAttributes<HTMLSpanElement>
-  >;
+export type BreadcrumbProps = React.ComponentPropsWithoutRef<"nav">
+export type BreadcrumbListProps = React.ComponentPropsWithoutRef<"ol">
+export type BreadcrumbItemProps = React.ComponentPropsWithoutRef<"li">
+export type BreadcrumbLinkProps = React.ComponentPropsWithoutRef<"a"> & {
+  asChild?: boolean
+}
+export type BreadcrumbPageProps = React.ComponentPropsWithoutRef<"span">
+export type BreadcrumbSeparatorProps = React.ComponentPropsWithoutRef<"li">
+export type BreadcrumbEllipsisProps = React.ComponentPropsWithoutRef<"span">
+
+export interface BreadcrumbComponents {
+  List: React.ForwardRefExoticComponent<BreadcrumbListProps>;
+  Item: React.ForwardRefExoticComponent<BreadcrumbItemProps>;
+  Link: React.ForwardRefExoticComponent<BreadcrumbLinkProps>;
+  Page: React.ForwardRefExoticComponent<BreadcrumbPageProps>;
+  Separator: React.ForwardRefExoticComponent<BreadcrumbSeparatorProps>;
+  Ellipsis: React.ForwardRefExoticComponent<BreadcrumbEllipsisProps>;
 }
 
-type BreadcrumbType = React.ForwardRefExoticComponent<
-  React.HTMLAttributes<HTMLElement> & React.RefAttributes<HTMLElement>
-> & BreadcrumbComponents;
-
-type Breadcrumb = React.ForwardRefExoticComponent<
-  HTMLElement & React.ComponentPropsWithoutRef<'nav'> & {
-    separator?: React.ReactNode
-  }
-> & BreadcrumbComponents;
+export type BreadcrumbType = React.ForwardRefExoticComponent<BreadcrumbProps> & BreadcrumbComponents;
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
-  React.ComponentPropsWithoutRef<'nav'> & {
-    separator?: React.ReactNode
-  }
+  BreadcrumbProps
 >(({ children, ...props }, ref) => (
   <nav
     ref={ref}
@@ -58,7 +40,7 @@ Breadcrumb.displayName = "Breadcrumb";
 
 const List = React.forwardRef<
   HTMLOListElement,
-  React.ComponentPropsWithoutRef<'ol'>
+  BreadcrumbListProps
 >(({ className, ...props }, ref) => (
   <ol
     ref={ref}
@@ -72,10 +54,9 @@ const List = React.forwardRef<
 List.displayName = "Breadcrumb.List";
 Breadcrumb.List = List;
 
-
 const Item = React.forwardRef<
   HTMLLIElement,
-  React.ComponentPropsWithoutRef<'li'>
+  BreadcrumbItemProps
 >(({ className, ...props }, ref) => (
   <li
     ref={ref}
@@ -87,10 +68,8 @@ Item.displayName = "Breadcrumb.Item";
 Breadcrumb.Item = Item;
 
 const Link = React.forwardRef<
-  HTMLAnchorElement, 
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & { 
-      asChild?: boolean;
-  }
+  HTMLAnchorElement,
+  BreadcrumbLinkProps
 >(({ asChild, className, ...props }, ref) => {
   const Comp = asChild ? Slot : "a"
 
@@ -107,7 +86,7 @@ Breadcrumb.Link = Link;
 
 const Page = React.forwardRef<
   HTMLSpanElement,
-  React.ComponentPropsWithoutRef<'span'>
+  BreadcrumbPageProps
 >(({ className, ...props }, ref) => (
   <span
     ref={ref}
@@ -123,7 +102,7 @@ Breadcrumb.Page = Page;
 
 const Separator = React.forwardRef<
   HTMLLIElement,
-  React.ComponentPropsWithoutRef<'li'>
+  BreadcrumbSeparatorProps
 >(({ children, className, ...props }, ref) => (
   <li
     ref={ref}
@@ -140,7 +119,7 @@ Breadcrumb.Separator = Separator;
 
 const Ellipsis = React.forwardRef<
   HTMLSpanElement,
-  React.ComponentPropsWithoutRef<'span'>
+  BreadcrumbEllipsisProps
 >(({ className, ...props }, ref) => (
   <span
     ref={ref}
