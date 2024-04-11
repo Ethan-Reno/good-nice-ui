@@ -10,6 +10,7 @@ export * from './Calendar';
 export * from './Card';
 export * from './Checkbox';
 export * from './Command';
+export * from './dataTable';
 export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
